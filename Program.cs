@@ -16,11 +16,7 @@ namespace QLThuCung
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            //dacx
-            //dac2
+            Application.Run(new FormTest());
         }
-        //dac2
-        //daa
     }
 }
