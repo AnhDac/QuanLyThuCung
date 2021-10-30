@@ -46,11 +46,12 @@ namespace QLThuCung.Views
            if (tabctrlMain.SelectedTab == tabThuCung)
             {
                 LoadThuCung();
-               
+                tabctrlMain.TabPages.Remove(tabAdmin);
+                tabctrlMain.TabPages.Add(tabAdmin);
             }
             else if (tabctrlMain.SelectedTab == tabNhanVien)
             {
-                MessageBox.Show("SCHEDULE PAGE");
+                //db.usp_MuaDichVu("C101", "E001", "C001", DateTime.Today, 190000, "", "", "S003", "");
             }
             else if (tabctrlMain.SelectedTab == tabKhachHang)
             {
@@ -67,7 +68,7 @@ namespace QLThuCung.Views
             tbIDThuCung.Text = dgvThuCung.CurrentRow.Cells[0].Value.ToString();
             tbLoaiThuCung.Text = dgvThuCung.CurrentRow.Cells[1].Value.ToString();
             //cbLoaiThuCung.SelectedIndex = cbLoaiThuCung.FindStringExact("");
-            
+            cbbTimThuCung.SelectedItem = "Loại";
             cbGioitinh.SelectedItem = dgvThuCung.CurrentRow.Cells[2].Value.ToString(); 
             tbGiaNhapThuCung.Text = dgvThuCung.CurrentRow.Cells[3].Value.ToString();
             tbNccThuCung.Text = dgvThuCung.CurrentRow.Cells[4].Value.ToString();
@@ -187,9 +188,19 @@ namespace QLThuCung.Views
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            String a = cbbTimThuCung.Text.ToString().Trim();
-            MessageBox.Show(a+"hhh", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+            String loaitimkiem = cbbTimThuCung.Text.ToString();
+            var ms = db.Pets.Where(p => p.ID_Spec == tbTimThuCung.Text.ToString()).Select(c => new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age }).ToList();
+            switch (loaitimkiem)
+            {
+                case "Giới Tính":
+                    ms = db.Pets.Where(p => p.Sex == tbTimThuCung.Text.ToString()).Select(c => new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age }).ToList();
+                    break;
+                case "Tuổi":
+                    int age = Convert.ToInt32(tbTimThuCung.Text.ToString());
+                    ms = db.Pets.Where(p => p.Age == age).Select(c => new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age }).ToList();
+                    break;
+            }
+            dgvThuCung.DataSource = ms;
         }
         //======================End THU CUNG============================
     }
