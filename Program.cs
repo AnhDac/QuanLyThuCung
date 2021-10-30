@@ -18,6 +18,7 @@ namespace QLThuCung
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             //dacx
+            //dac2
         }
     }
 }
