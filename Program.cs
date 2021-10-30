@@ -18,5 +18,6 @@ namespace QLThuCung
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormTest());
         }
+        /// test commit
     }
 }
