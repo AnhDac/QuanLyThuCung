@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ThuCungModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Contract_Sell">
+          <Key>
+            <PropertyRef Name="ID_ConSell" />
+          </Key>
+          <Property Name="ID_ConSell" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Emp" Type="char" MaxLength="10" />
+          <Property Name="ID_Cus" Type="char" MaxLength="10" />
+          <Property Name="ID_Pet" Type="char" MaxLength="10" />
+          <Property Name="CateInsurance" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DateSell" Type="date" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="Contract_Ser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+          </Key>
+          <Property Name="ID_ConSer" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Emp" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Cus" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DateBuy" Type="date" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID_Cus" />
+          </Key>
+          <Property Name="ID_Cus" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" />
+          <Property Name="Age" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetailContractSer">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Ser" />
+          </Key>
+          <Property Name="ID_ConSer" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Ser" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_Emp" />
+          </Key>
+          <Property Name="ID_Emp" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Salary" Type="int" />
+          <Property Name="DateStart" Type="date" />
+        </EntityType>
+        <EntityType Name="Pet">
+          <Key>
+            <PropertyRef Name="ID_Pet" />
+          </Key>
+          <Property Name="ID_Pet" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Spec" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Sex" Type="varchar" MaxLength="10" />
+          <Property Name="PriceImport" Type="int" />
+          <Property Name="ID_Sup" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="Age" Type="int" />
+        </EntityType>
+        <EntityType Name="Servic">
+          <Key>
+            <PropertyRef Name="ID_Ser" />
+          </Key>
+          <Property Name="ID_Ser" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="Species">
+          <Key>
+            <PropertyRef Name="ID_Spec" />
+          </Key>
+          <Property Name="ID_Spec" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID_Sup" />
+          </Key>
+          <Property Name="ID_Sup" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PassWord" Type="varchar" MaxLength="30" />
+          <Property Name="Permission" Type="nchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WarrantyType">
+          <Key>
+            <PropertyRef Name="ID_Warr" />
+          </Key>
+          <Property Name="ID_Warr" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Months" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Work">
+          <Key>
+            <PropertyRef Name="DateWork" />
+            <PropertyRef Name="Shifts" />
+            <PropertyRef Name="ID_Emp" />
+          </Key>
+          <Property Name="DateWork" Type="date" Nullable="false" />
+          <Property Name="Shifts" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_Emp" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_IDConSer_DetailContractSer_IDConSer_ConSer">
+          <End Role="Contract_Ser" Type="Self.Contract_Ser" Multiplicity="1" />
+          <End Role="DetailContractSer" Type="Self.DetailContractSer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract_Ser">
+              <PropertyRef Name="ID_ConSer" />
+            </Principal>
+            <Dependent Role="DetailContractSer">
+              <PropertyRef Name="ID_ConSer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDCus_ConSell_IDCus_Custom">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID_Cus" />
+            </Principal>
+            <Dependent Role="Contract_Sell">
+              <PropertyRef Name="ID_Cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDCus_ConSer_IDCus_Custom">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Contract_Ser" Type="Self.Contract_Ser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID_Cus" />
+            </Principal>
+            <Dependent Role="Contract_Ser">
+              <PropertyRef Name="ID_Cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDEmp_ConSell_IDEmp_Emp">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Emp" />
+            </Principal>
+            <Dependent Role="Contract_Sell">
+              <PropertyRef Name="ID_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDEmp_ConSer_IDEmp_Emp">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Contract_Ser" Type="Self.Contract_Ser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Emp" />
+            </Principal>
+            <Dependent Role="Contract_Ser">
+              <PropertyRef Name="ID_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDEmp_Work_IDEmp_Emp">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Work" Type="Self.Work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Emp" />
+            </Principal>
+            <Dependent Role="Work">
+              <PropertyRef Name="ID_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDPet_ContractSell_IDPet_Pet">
+          <End Role="Pet" Type="Self.Pet" Multiplicity="0..1" />
+          <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pet">
+              <PropertyRef Name="ID_Pet" />
+            </Principal>
+            <Dependent Role="Contract_Sell">
+              <PropertyRef Name="ID_Pet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDSer_DetailContractSer_IDSer_Servic">
+          <End Role="Servic" Type="Self.Servic" Multiplicity="1" />
+          <End Role="DetailContractSer" Type="Self.DetailContractSer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servic">
+              <PropertyRef Name="ID_Ser" />
+            </Principal>
+            <Dependent Role="DetailContractSer">
+              <PropertyRef Name="ID_Ser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDSpec_Pet_IDSpec_Spec">
+          <End Role="Species" Type="Self.Species" Multiplicity="1" />
+          <End Role="Pet" Type="Self.Pet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="ID_Spec" />
+            </Principal>
+            <Dependent Role="Pet">
+              <PropertyRef Name="ID_Spec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDSup_Pet_IDSup_Sup">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Pet" Type="Self.Pet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID_Sup" />
+            </Principal>
+            <Dependent Role="Pet">
+              <PropertyRef Name="ID_Sup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDWarr_ContractSell_IDWarr_Warr">
+          <End Role="WarrantyType" Type="Self.WarrantyType" Multiplicity="1" />
+          <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WarrantyType">
+              <PropertyRef Name="ID_Warr" />
+            </Principal>
+            <Dependent Role="Contract_Sell">
+              <PropertyRef Name="CateInsurance" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="usp_MuaDichVu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idconser" Type="char" Mode="In" />
+          <Parameter Name="idemp" Type="char" Mode="In" />
+          <Parameter Name="idcus" Type="char" Mode="In" />
+          <Parameter Name="datebuy" Type="date" Mode="In" />
+          <Parameter Name="price" Type="int" Mode="In" />
+          <Parameter Name="idser1" Type="char" Mode="In" />
+          <Parameter Name="idser2" Type="char" Mode="In" />
+          <Parameter Name="idser3" Type="char" Mode="In" />
+          <Parameter Name="idser4" Type="char" Mode="In" />
+        </Function>
+        <EntityContainer Name="ThuCungModelStoreContainer">
+          <EntitySet Name="Contract_Sell" EntityType="Self.Contract_Sell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contract_Ser" EntityType="Self.Contract_Ser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetailContractSer" EntityType="Self.DetailContractSer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pet" EntityType="Self.Pet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Servic" EntityType="Self.Servic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Species" EntityType="Self.Species" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WarrantyType" EntityType="Self.WarrantyType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Work" EntityType="Self.Work" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_IDConSer_DetailContractSer_IDConSer_ConSer" Association="Self.FK_IDConSer_DetailContractSer_IDConSer_ConSer">
+            <End Role="Contract_Ser" EntitySet="Contract_Ser" />
+            <End Role="DetailContractSer" EntitySet="DetailContractSer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDCus_ConSell_IDCus_Custom" Association="Self.FK_IDCus_ConSell_IDCus_Custom">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Contract_Sell" EntitySet="Contract_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDCus_ConSer_IDCus_Custom" Association="Self.FK_IDCus_ConSer_IDCus_Custom">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Contract_Ser" EntitySet="Contract_Ser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDEmp_ConSell_IDEmp_Emp" Association="Self.FK_IDEmp_ConSell_IDEmp_Emp">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Contract_Sell" EntitySet="Contract_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDEmp_ConSer_IDEmp_Emp" Association="Self.FK_IDEmp_ConSer_IDEmp_Emp">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Contract_Ser" EntitySet="Contract_Ser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDEmp_Work_IDEmp_Emp" Association="Self.FK_IDEmp_Work_IDEmp_Emp">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Work" EntitySet="Work" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDPet_ContractSell_IDPet_Pet" Association="Self.FK_IDPet_ContractSell_IDPet_Pet">
+            <End Role="Pet" EntitySet="Pet" />
+            <End Role="Contract_Sell" EntitySet="Contract_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDSer_DetailContractSer_IDSer_Servic" Association="Self.FK_IDSer_DetailContractSer_IDSer_Servic">
+            <End Role="Servic" EntitySet="Servic" />
+            <End Role="DetailContractSer" EntitySet="DetailContractSer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDSpec_Pet_IDSpec_Spec" Association="Self.FK_IDSpec_Pet_IDSpec_Spec">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="Pet" EntitySet="Pet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDSup_Pet_IDSup_Sup" Association="Self.FK_IDSup_Pet_IDSup_Sup">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Pet" EntitySet="Pet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDWarr_ContractSell_IDWarr_Warr" Association="Self.FK_IDWarr_ContractSell_IDWarr_Warr">
+            <End Role="WarrantyType" EntitySet="WarrantyType" />
+            <End Role="Contract_Sell" EntitySet="Contract_Sell" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ThuCungModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Contract_Sell">
+          <Key>
+            <PropertyRef Name="ID_ConSell" />
+          </Key>
+          <Property Name="ID_ConSell" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Emp" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ID_Cus" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ID_Pet" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="CateInsurance" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DateSell" Type="DateTime" Precision="0" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_IDCus_ConSell_IDCus_Custom" FromRole="Contract_Sell" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_IDEmp_ConSell_IDEmp_Emp" FromRole="Contract_Sell" ToRole="Employee" />
+          <NavigationProperty Name="Pet" Relationship="Self.FK_IDPet_ContractSell_IDPet_Pet" FromRole="Contract_Sell" ToRole="Pet" />
+          <NavigationProperty Name="WarrantyType" Relationship="Self.FK_IDWarr_ContractSell_IDWarr_Warr" FromRole="Contract_Sell" ToRole="WarrantyType" />
+        </EntityType>
+        <EntityType Name="Contract_Ser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+          </Key>
+          <Property Name="ID_ConSer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Emp" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Cus" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DateBuy" Type="DateTime" Precision="0" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="DetailContractSers" Relationship="Self.FK_IDConSer_DetailContractSer_IDConSer_ConSer" FromRole="Contract_Ser" ToRole="DetailContractSer" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_IDCus_ConSer_IDCus_Custom" FromRole="Contract_Ser" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_IDEmp_ConSer_IDEmp_Emp" FromRole="Contract_Ser" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID_Cus" />
+          </Key>
+          <Property Name="ID_Cus" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Contract_Sell" Relationship="Self.FK_IDCus_ConSell_IDCus_Custom" FromRole="Customer" ToRole="Contract_Sell" />
+          <NavigationProperty Name="Contract_Ser" Relationship="Self.FK_IDCus_ConSer_IDCus_Custom" FromRole="Customer" ToRole="Contract_Ser" />
+        </EntityType>
+        <EntityType Name="DetailContractSer">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Ser" />
+          </Key>
+          <Property Name="ID_ConSer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Ser" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="Contract_Ser" Relationship="Self.FK_IDConSer_DetailContractSer_IDConSer_ConSer" FromRole="DetailContractSer" ToRole="Contract_Ser" />
+          <NavigationProperty Name="Servic" Relationship="Self.FK_IDSer_DetailContractSer_IDSer_Servic" FromRole="DetailContractSer" ToRole="Servic" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_Emp" />
+          </Key>
+          <Property Name="ID_Emp" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Int32" />
+          <Property Name="DateStart" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Contract_Sell" Relationship="Self.FK_IDEmp_ConSell_IDEmp_Emp" FromRole="Employee" ToRole="Contract_Sell" />
+          <NavigationProperty Name="Contract_Ser" Relationship="Self.FK_IDEmp_ConSer_IDEmp_Emp" FromRole="Employee" ToRole="Contract_Ser" />
+          <NavigationProperty Name="Works" Relationship="Self.FK_IDEmp_Work_IDEmp_Emp" FromRole="Employee" ToRole="Work" />
+        </EntityType>
+        <EntityType Name="Pet">
+          <Key>
+            <PropertyRef Name="ID_Pet" />
+          </Key>
+          <Property Name="ID_Pet" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Spec" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PriceImport" Type="Int32" />
+          <Property Name="ID_Sup" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="Age" Type="Int32" />
+          <NavigationProperty Name="Contract_Sell" Relationship="Self.FK_IDPet_ContractSell_IDPet_Pet" FromRole="Pet" ToRole="Contract_Sell" />
+          <NavigationProperty Name="Species" Relationship="Self.FK_IDSpec_Pet_IDSpec_Spec" FromRole="Pet" ToRole="Species" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_IDSup_Pet_IDSup_Sup" FromRole="Pet" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="Servic">
+          <Key>
+            <PropertyRef Name="ID_Ser" />
+          </Key>
+          <Property Name="ID_Ser" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="DetailContractSers" Relationship="Self.FK_IDSer_DetailContractSer_IDSer_Servic" FromRole="Servic" ToRole="DetailContractSer" />
+        </EntityType>
+        <EntityType Name="Species">
+          <Key>
+            <PropertyRef Name="ID_Spec" />
+          </Key>
+          <Property Name="ID_Spec" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Pets" Relationship="Self.FK_IDSpec_Pet_IDSpec_Spec" FromRole="Species" ToRole="Pet" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID_Sup" />
+          </Key>
+          <Property Name="ID_Sup" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Pets" Relationship="Self.FK_IDSup_Pet_IDSup_Sup" FromRole="Supplier" ToRole="Pet" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PassWord" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Permission" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WarrantyType">
+          <Key>
+            <PropertyRef Name="ID_Warr" />
+          </Key>
+          <Property Name="ID_Warr" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Months" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contract_Sell" Relationship="Self.FK_IDWarr_ContractSell_IDWarr_Warr" FromRole="WarrantyType" ToRole="Contract_Sell" />
+        </EntityType>
+        <EntityType Name="Work">
+          <Key>
+            <PropertyRef Name="DateWork" />
+            <PropertyRef Name="Shifts" />
+            <PropertyRef Name="ID_Emp" />
+          </Key>
+          <Property Name="DateWork" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Shifts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_Emp" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_IDEmp_Work_IDEmp_Emp" FromRole="Work" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FK_IDCus_ConSell_IDCus_Custom">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID_Cus" />
+            </Principal>
+            <Dependent Role="Contract_Sell">
+              <PropertyRef Name="ID_Cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDEmp_ConSell_IDEmp_Emp">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Emp" />
+            </Principal>
+            <Dependent Role="Contract_Sell">
+              <PropertyRef Name="ID_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDPet_ContractSell_IDPet_Pet">
+          <End Role="Pet" Type="Self.Pet" Multiplicity="0..1" />
+          <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pet">
+              <PropertyRef Name="ID_Pet" />
+            </Principal>
+            <Dependent Role="Contract_Sell">
+              <PropertyRef Name="ID_Pet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDWarr_ContractSell_IDWarr_Warr">
+          <End Role="WarrantyType" Type="Self.WarrantyType" Multiplicity="1" />
+          <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WarrantyType">
+              <PropertyRef Name="ID_Warr" />
+            </Principal>
+            <Dependent Role="Contract_Sell">
+              <PropertyRef Name="CateInsurance" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDConSer_DetailContractSer_IDConSer_ConSer">
+          <End Role="Contract_Ser" Type="Self.Contract_Ser" Multiplicity="1" />
+          <End Role="DetailContractSer" Type="Self.DetailContractSer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract_Ser">
+              <PropertyRef Name="ID_ConSer" />
+            </Principal>
+            <Dependent Role="DetailContractSer">
+              <PropertyRef Name="ID_ConSer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDCus_ConSer_IDCus_Custom">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Contract_Ser" Type="Self.Contract_Ser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID_Cus" />
+            </Principal>
+            <Dependent Role="Contract_Ser">
+              <PropertyRef Name="ID_Cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDEmp_ConSer_IDEmp_Emp">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Contract_Ser" Type="Self.Contract_Ser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Emp" />
+            </Principal>
+            <Dependent Role="Contract_Ser">
+              <PropertyRef Name="ID_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDSer_DetailContractSer_IDSer_Servic">
+          <End Role="Servic" Type="Self.Servic" Multiplicity="1" />
+          <End Role="DetailContractSer" Type="Self.DetailContractSer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servic">
+              <PropertyRef Name="ID_Ser" />
+            </Principal>
+            <Dependent Role="DetailContractSer">
+              <PropertyRef Name="ID_Ser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDEmp_Work_IDEmp_Emp">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Work" Type="Self.Work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Emp" />
+            </Principal>
+            <Dependent Role="Work">
+              <PropertyRef Name="ID_Emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDSpec_Pet_IDSpec_Spec">
+          <End Role="Species" Type="Self.Species" Multiplicity="1" />
+          <End Role="Pet" Type="Self.Pet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="ID_Spec" />
+            </Principal>
+            <Dependent Role="Pet">
+              <PropertyRef Name="ID_Spec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDSup_Pet_IDSup_Sup">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Pet" Type="Self.Pet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID_Sup" />
+            </Principal>
+            <Dependent Role="Pet">
+              <PropertyRef Name="ID_Sup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ThụCungEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Contract_Sell" EntityType="Self.Contract_Sell" />
+          <EntitySet Name="Contract_Ser" EntityType="Self.Contract_Ser" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="DetailContractSers" EntityType="Self.DetailContractSer" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Pets" EntityType="Self.Pet" />
+          <EntitySet Name="Servics" EntityType="Self.Servic" />
+          <EntitySet Name="Species" EntityType="Self.Species" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="WarrantyTypes" EntityType="Self.WarrantyType" />
+          <EntitySet Name="Works" EntityType="Self.Work" />
+          <AssociationSet Name="FK_IDCus_ConSell_IDCus_Custom" Association="Self.FK_IDCus_ConSell_IDCus_Custom">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Contract_Sell" EntitySet="Contract_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDEmp_ConSell_IDEmp_Emp" Association="Self.FK_IDEmp_ConSell_IDEmp_Emp">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Contract_Sell" EntitySet="Contract_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDPet_ContractSell_IDPet_Pet" Association="Self.FK_IDPet_ContractSell_IDPet_Pet">
+            <End Role="Pet" EntitySet="Pets" />
+            <End Role="Contract_Sell" EntitySet="Contract_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDWarr_ContractSell_IDWarr_Warr" Association="Self.FK_IDWarr_ContractSell_IDWarr_Warr">
+            <End Role="WarrantyType" EntitySet="WarrantyTypes" />
+            <End Role="Contract_Sell" EntitySet="Contract_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDConSer_DetailContractSer_IDConSer_ConSer" Association="Self.FK_IDConSer_DetailContractSer_IDConSer_ConSer">
+            <End Role="Contract_Ser" EntitySet="Contract_Ser" />
+            <End Role="DetailContractSer" EntitySet="DetailContractSers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDCus_ConSer_IDCus_Custom" Association="Self.FK_IDCus_ConSer_IDCus_Custom">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Contract_Ser" EntitySet="Contract_Ser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDEmp_ConSer_IDEmp_Emp" Association="Self.FK_IDEmp_ConSer_IDEmp_Emp">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Contract_Ser" EntitySet="Contract_Ser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDSer_DetailContractSer_IDSer_Servic" Association="Self.FK_IDSer_DetailContractSer_IDSer_Servic">
+            <End Role="Servic" EntitySet="Servics" />
+            <End Role="DetailContractSer" EntitySet="DetailContractSers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDEmp_Work_IDEmp_Emp" Association="Self.FK_IDEmp_Work_IDEmp_Emp">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Work" EntitySet="Works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDSpec_Pet_IDSpec_Spec" Association="Self.FK_IDSpec_Pet_IDSpec_Spec">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="Pet" EntitySet="Pets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IDSup_Pet_IDSup_Sup" Association="Self.FK_IDSup_Pet_IDSup_Sup">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Pet" EntitySet="Pets" />
+          </AssociationSet>
+          <FunctionImport Name="usp_MuaDichVu">
+            <Parameter Name="idconser" Mode="In" Type="String" />
+            <Parameter Name="idemp" Mode="In" Type="String" />
+            <Parameter Name="idcus" Mode="In" Type="String" />
+            <Parameter Name="datebuy" Mode="In" Type="DateTime" />
+            <Parameter Name="price" Mode="In" Type="Int32" />
+            <Parameter Name="idser1" Mode="In" Type="String" />
+            <Parameter Name="idser2" Mode="In" Type="String" />
+            <Parameter Name="idser3" Mode="In" Type="String" />
+            <Parameter Name="idser4" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ThuCungModelStoreContainer" CdmEntityContainer="ThụCungEntities">
+          <EntitySetMapping Name="Contract_Sell">
+            <EntityTypeMapping TypeName="ThuCungModel.Contract_Sell">
+              <MappingFragment StoreEntitySet="Contract_Sell">
+                <ScalarProperty Name="ID_ConSell" ColumnName="ID_ConSell" />
+                <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+                <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
+                <ScalarProperty Name="ID_Pet" ColumnName="ID_Pet" />
+                <ScalarProperty Name="CateInsurance" ColumnName="CateInsurance" />
+                <ScalarProperty Name="DateSell" ColumnName="DateSell" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contract_Ser">
+            <EntityTypeMapping TypeName="ThuCungModel.Contract_Ser">
+              <MappingFragment StoreEntitySet="Contract_Ser">
+                <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
+                <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+                <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
+                <ScalarProperty Name="DateBuy" ColumnName="DateBuy" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ThuCungModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetailContractSers">
+            <EntityTypeMapping TypeName="ThuCungModel.DetailContractSer">
+              <MappingFragment StoreEntitySet="DetailContractSer">
+                <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
+                <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="ThuCungModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pets">
+            <EntityTypeMapping TypeName="ThuCungModel.Pet">
+              <MappingFragment StoreEntitySet="Pet">
+                <ScalarProperty Name="ID_Pet" ColumnName="ID_Pet" />
+                <ScalarProperty Name="ID_Spec" ColumnName="ID_Spec" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="PriceImport" ColumnName="PriceImport" />
+                <ScalarProperty Name="ID_Sup" ColumnName="ID_Sup" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servics">
+            <EntityTypeMapping TypeName="ThuCungModel.Servic">
+              <MappingFragment StoreEntitySet="Servic">
+                <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Species">
+            <EntityTypeMapping TypeName="ThuCungModel.Species">
+              <MappingFragment StoreEntitySet="Species">
+                <ScalarProperty Name="ID_Spec" ColumnName="ID_Spec" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="ThuCungModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="ID_Sup" ColumnName="ID_Sup" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ThuCungModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WarrantyTypes">
+            <EntityTypeMapping TypeName="ThuCungModel.WarrantyType">
+              <MappingFragment StoreEntitySet="WarrantyType">
+                <ScalarProperty Name="ID_Warr" ColumnName="ID_Warr" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Months" ColumnName="Months" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Works">
+            <EntityTypeMapping TypeName="ThuCungModel.Work">
+              <MappingFragment StoreEntitySet="Work">
+                <ScalarProperty Name="DateWork" ColumnName="DateWork" />
+                <ScalarProperty Name="Shifts" ColumnName="Shifts" />
+                <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_MuaDichVu" FunctionName="ThuCungModel.Store.usp_MuaDichVu" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
