@@ -1,7 +1,7 @@
 ﻿
 namespace QLThuCung
 {
-    partial class Form1
+    partial class FormTest
     {
         /// <summary>
         /// Required designer variable.

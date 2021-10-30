@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace QLThuCung
 {
-    public partial class Form1 : Form
+    public partial class FormTest : Form
     {
         ThụCungEntities db = new ThụCungEntities();
 
-        public Form1()
+        public FormTest()
         {
             InitializeComponent();
         }
