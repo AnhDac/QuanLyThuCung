@@ -20,6 +20,6 @@ namespace QLThuCung
             //dacx
             //dac2
         }
-        //dac
+        //dac2
     }
 }
