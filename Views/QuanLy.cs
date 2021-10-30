@@ -54,8 +54,7 @@ namespace QLThuCung.Views
             }
             else if (tabctrlMain.SelectedTab == tabKhachHang)
             {
-                //var result = from c in db.Customers select new { IDCus = c.ID_Cus, Name = c.Name, Phone = c.Phone };
-               // dgvThuCung.DataSource = result.ToList();
+                //var result = from c in db.Customers select new { IDCus = c.ID_Cus, Name = c.Name, Phone = c.Phone };            
             }
         }
 
@@ -79,7 +78,6 @@ namespace QLThuCung.Views
         {
             var result = from c in db.Pets select new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age };
             dgvThuCung.DataSource = result.ToList();
-
             //using (ThụCungEntities spec = new ThụCungEntities())
             //{ 
             //    cbLoaiThuCung.DataSource = spec.Species.ToList();
