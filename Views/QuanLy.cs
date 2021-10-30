@@ -20,10 +20,10 @@ namespace QLThuCung.Views
         ThụCungEntities db = new ThụCungEntities();
         private void QuanLy_Load(object sender, EventArgs e)
         {
-            
+            panelLuuHuy.Hide();
         }
 
-        void ClearDataBind()
+        void ClearTextBox()
         {
             foreach (Control c in pnlDataBind.Controls)
             {
@@ -38,17 +38,14 @@ namespace QLThuCung.Views
             }
 
         }
-        void DataBindThuCung()
-        {
+       
 
-        }
+
         private void tabctrlMain_Click(object sender, EventArgs e)
         {
            if (tabctrlMain.SelectedTab == tabThuCung)
             {
-                var result = from c in db.Pets select new { IDCus = c.ID_Pet, Name = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age };
-                dgvThuCung.DataSource = result.ToList();
-                DataBindThuCung();
+                LoadThuCung();
                
             }
             else if (tabctrlMain.SelectedTab == tabNhanVien)
@@ -61,5 +58,139 @@ namespace QLThuCung.Views
                // dgvThuCung.DataSource = result.ToList();
             }
         }
+
+
+        //======================Start THU CUNG============================
+        void DataBindThuCung()
+        {
+
+            tbIDThuCung.Text = dgvThuCung.CurrentRow.Cells[0].Value.ToString();
+            tbLoaiThuCung.Text = dgvThuCung.CurrentRow.Cells[1].Value.ToString();
+            //cbLoaiThuCung.SelectedIndex = cbLoaiThuCung.FindStringExact("");
+            
+            cbGioitinh.SelectedItem = dgvThuCung.CurrentRow.Cells[2].Value.ToString(); 
+            tbGiaNhapThuCung.Text = dgvThuCung.CurrentRow.Cells[3].Value.ToString();
+            tbNccThuCung.Text = dgvThuCung.CurrentRow.Cells[4].Value.ToString();
+            tbCanNangThuCung.Text = dgvThuCung.CurrentRow.Cells[5].Value.ToString();
+            tbTuoiThuCung.Text = dgvThuCung.CurrentRow.Cells[6].Value.ToString();
+        }
+
+        void LoadThuCung()
+        {
+            var result = from c in db.Pets select new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age };
+            dgvThuCung.DataSource = result.ToList();
+
+            //using (ThụCungEntities spec = new ThụCungEntities())
+            //{ 
+            //    cbLoaiThuCung.DataSource = spec.Species.ToList();
+            //    cbLoaiThuCung.ValueMember = "ID_Spec";
+            //    cbLoaiThuCung.DisplayMember = "Name";
+            //}
+            DataBindThuCung();
+        }
+
+        private void dgvThuCung_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataBindThuCung();
+        }
+
+        private void btnThemThuCung_Click(object sender, EventArgs e)
+        {
+            ClearTextBox();
+            btnSuaThuCung.Enabled = false;
+            btnXoaThuCung.Enabled = false;
+            panelLuuHuy.Show();
+        }
+
+        private void btnLuuThuCung_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pet pet = new Pet();
+   
+                pet.ID_Pet = tbIDThuCung.Text.ToString().Trim();
+                pet.ID_Spec = tbLoaiThuCung.Text.ToString().Trim();
+                pet.Sex = cbGioitinh.Text.ToString().Trim();
+                pet.PriceImport = Convert.ToInt32(tbGiaNhapThuCung.Text);
+                pet.ID_Sup = tbNccThuCung.Text.ToString().Trim();
+                pet.Weight = Convert.ToDouble(tbCanNangThuCung.Text);
+                pet.Age = Convert.ToInt32(tbTuoiThuCung.Text);
+
+                db.Pets.Add(pet);
+                db.SaveChanges();
+
+                MessageBox.Show("Thêm Thành Công!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadThuCung();
+                panelLuuHuy.Hide();
+                btnSuaThuCung.Enabled = true;
+                btnXoaThuCung.Enabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThụCungEntities();
+                LoadThuCung();
+            }
+        }
+
+        private void btnHuyThuCung_Click(object sender, EventArgs e)
+        {
+            LoadThuCung();
+            panelLuuHuy.Hide();
+            btnSuaThuCung.Enabled = true;
+            btnXoaThuCung.Enabled = true;
+        }
+
+        private void btnSuaThuCung_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string idpet = dgvThuCung.SelectedCells[0].OwningRow.Cells[0].Value.ToString().Trim();
+                Pet pet = db.Pets.Find(idpet);
+                pet.ID_Spec = tbLoaiThuCung.Text.ToString().Trim();
+                pet.Sex = cbGioitinh.Text.ToString().Trim();
+                pet.PriceImport = Convert.ToInt32(tbGiaNhapThuCung.Text);
+                pet.ID_Sup = tbNccThuCung.Text.ToString().Trim();
+                pet.Weight = Convert.ToDouble(tbCanNangThuCung.Text);
+                pet.Age = Convert.ToInt32(tbTuoiThuCung.Text);
+
+                db.SaveChanges();
+                MessageBox.Show("Update Successfull!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadThuCung();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Update Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThụCungEntities();
+                LoadThuCung();
+            }
+        }
+
+        private void btnXoaThuCung_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pet pet = db.Pets.Where(p => p.ID_Pet == tbIDThuCung.Text.ToString()).SingleOrDefault();
+                db.Pets.Remove(pet);
+                db.SaveChanges();
+                MessageBox.Show("Delete Successfull!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadThuCung();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Delete Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThụCungEntities();
+                LoadThuCung();
+            }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            String a = cbbTimThuCung.Text.ToString().Trim();
+            MessageBox.Show(a+"hhh", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+        //======================End THU CUNG============================
     }
 }

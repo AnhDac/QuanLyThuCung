@@ -40,8 +40,6 @@ namespace QLThuCung.Views
             this.btnXoaThuCung = new System.Windows.Forms.Button();
             this.btnThemThuCung = new System.Windows.Forms.Button();
             this.pnlDataBind = new System.Windows.Forms.Panel();
-            this.tbGioiTinhThuCung = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.tbGiaNhapThuCung = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,7 +51,7 @@ namespace QLThuCung.Views
             this.label3 = new System.Windows.Forms.Label();
             this.tbLoaiThuCung = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtIDThuCung = new System.Windows.Forms.TextBox();
+            this.tbIDThuCung = new System.Windows.Forms.TextBox();
             this.labMaDoUong = new System.Windows.Forms.Label();
             this.tbTimThuCung = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
@@ -61,13 +59,16 @@ namespace QLThuCung.Views
             this.tabKhachHang = new System.Windows.Forms.TabPage();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.tabAdmin = new System.Windows.Forms.TabPage();
+            this.btnSuaThuCung = new System.Windows.Forms.Button();
+            this.panelLuuHuy = new System.Windows.Forms.Panel();
+            this.cbGioitinh = new System.Windows.Forms.ComboBox();
             this.tabctrlMain.SuspendLayout();
             this.tabThuCung.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlDataBind.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuCung)).BeginInit();
+            this.panelLuuHuy.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabctrlMain
@@ -122,6 +123,10 @@ namespace QLThuCung.Views
             // cbbTimThuCung
             // 
             this.cbbTimThuCung.FormattingEnabled = true;
+            this.cbbTimThuCung.Items.AddRange(new object[] {
+            "Loại",
+            "Giới Tính",
+            "Tuổi"});
             this.cbbTimThuCung.Location = new System.Drawing.Point(22, 32);
             this.cbbTimThuCung.Name = "cbbTimThuCung";
             this.cbbTimThuCung.Size = new System.Drawing.Size(90, 21);
@@ -129,44 +134,47 @@ namespace QLThuCung.Views
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnHuyThuCung);
-            this.panel2.Controls.Add(this.btnLuuThuCung);
+            this.panel2.Controls.Add(this.panelLuuHuy);
+            this.panel2.Controls.Add(this.btnSuaThuCung);
             this.panel2.Controls.Add(this.btnXoaThuCung);
             this.panel2.Controls.Add(this.btnThemThuCung);
             this.panel2.Location = new System.Drawing.Point(0, 394);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(388, 99);
+            this.panel2.Size = new System.Drawing.Size(397, 138);
             this.panel2.TabIndex = 15;
             // 
             // btnHuyThuCung
             // 
             this.btnHuyThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyThuCung.Location = new System.Drawing.Point(282, 54);
+            this.btnHuyThuCung.Location = new System.Drawing.Point(115, 9);
             this.btnHuyThuCung.Name = "btnHuyThuCung";
             this.btnHuyThuCung.Size = new System.Drawing.Size(89, 30);
             this.btnHuyThuCung.TabIndex = 19;
             this.btnHuyThuCung.Text = "Hủy";
             this.btnHuyThuCung.UseVisualStyleBackColor = true;
+            this.btnHuyThuCung.Click += new System.EventHandler(this.btnHuyThuCung_Click);
             // 
             // btnLuuThuCung
             // 
             this.btnLuuThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuThuCung.Location = new System.Drawing.Point(187, 54);
+            this.btnLuuThuCung.Location = new System.Drawing.Point(9, 9);
             this.btnLuuThuCung.Name = "btnLuuThuCung";
             this.btnLuuThuCung.Size = new System.Drawing.Size(89, 30);
             this.btnLuuThuCung.TabIndex = 20;
             this.btnLuuThuCung.Text = "Lưu";
             this.btnLuuThuCung.UseVisualStyleBackColor = true;
+            this.btnLuuThuCung.Click += new System.EventHandler(this.btnLuuThuCung_Click);
             // 
             // btnXoaThuCung
             // 
             this.btnXoaThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaThuCung.Location = new System.Drawing.Point(112, 9);
+            this.btnXoaThuCung.Location = new System.Drawing.Point(222, 9);
             this.btnXoaThuCung.Name = "btnXoaThuCung";
             this.btnXoaThuCung.Size = new System.Drawing.Size(89, 30);
             this.btnXoaThuCung.TabIndex = 18;
             this.btnXoaThuCung.Text = "Xóa";
             this.btnXoaThuCung.UseVisualStyleBackColor = true;
+            this.btnXoaThuCung.Click += new System.EventHandler(this.btnXoaThuCung_Click);
             // 
             // btnThemThuCung
             // 
@@ -177,11 +185,13 @@ namespace QLThuCung.Views
             this.btnThemThuCung.TabIndex = 16;
             this.btnThemThuCung.Text = "Thêm";
             this.btnThemThuCung.UseVisualStyleBackColor = true;
+            this.btnThemThuCung.Click += new System.EventHandler(this.btnThemThuCung_Click);
             // 
             // pnlDataBind
             // 
-            this.pnlDataBind.Controls.Add(this.tbGioiTinhThuCung);
-            this.pnlDataBind.Controls.Add(this.panel6);
+            this.pnlDataBind.Controls.Add(this.cbGioitinh);
+            this.pnlDataBind.Controls.Add(this.tbGiaNhapThuCung);
+            this.pnlDataBind.Controls.Add(this.label6);
             this.pnlDataBind.Controls.Add(this.label5);
             this.pnlDataBind.Controls.Add(this.tbCanNangThuCung);
             this.pnlDataBind.Controls.Add(this.label4);
@@ -191,32 +201,16 @@ namespace QLThuCung.Views
             this.pnlDataBind.Controls.Add(this.label3);
             this.pnlDataBind.Controls.Add(this.tbLoaiThuCung);
             this.pnlDataBind.Controls.Add(this.label7);
-            this.pnlDataBind.Controls.Add(this.txtIDThuCung);
+            this.pnlDataBind.Controls.Add(this.tbIDThuCung);
             this.pnlDataBind.Controls.Add(this.labMaDoUong);
             this.pnlDataBind.Location = new System.Drawing.Point(4, 86);
             this.pnlDataBind.Name = "pnlDataBind";
             this.pnlDataBind.Size = new System.Drawing.Size(381, 277);
             this.pnlDataBind.TabIndex = 9;
             // 
-            // tbGioiTinhThuCung
-            // 
-            this.tbGioiTinhThuCung.Location = new System.Drawing.Point(108, 166);
-            this.tbGioiTinhThuCung.Name = "tbGioiTinhThuCung";
-            this.tbGioiTinhThuCung.Size = new System.Drawing.Size(66, 20);
-            this.tbGioiTinhThuCung.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.tbGiaNhapThuCung);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(9, 210);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(261, 42);
-            this.panel6.TabIndex = 14;
-            // 
             // tbGiaNhapThuCung
             // 
-            this.tbGiaNhapThuCung.Location = new System.Drawing.Point(112, 12);
+            this.tbGiaNhapThuCung.Location = new System.Drawing.Point(106, 212);
             this.tbGiaNhapThuCung.Name = "tbGiaNhapThuCung";
             this.tbGiaNhapThuCung.Size = new System.Drawing.Size(109, 20);
             this.tbGiaNhapThuCung.TabIndex = 1;
@@ -225,7 +219,7 @@ namespace QLThuCung.Views
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 13);
+            this.label6.Location = new System.Drawing.Point(13, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 17);
             this.label6.TabIndex = 0;
@@ -294,7 +288,7 @@ namespace QLThuCung.Views
             // 
             // tbLoaiThuCung
             // 
-            this.tbLoaiThuCung.Location = new System.Drawing.Point(78, 42);
+            this.tbLoaiThuCung.Location = new System.Drawing.Point(78, 41);
             this.tbLoaiThuCung.Name = "tbLoaiThuCung";
             this.tbLoaiThuCung.Size = new System.Drawing.Size(106, 20);
             this.tbLoaiThuCung.TabIndex = 3;
@@ -309,12 +303,12 @@ namespace QLThuCung.Views
             this.label7.TabIndex = 2;
             this.label7.Text = "Loại: ";
             // 
-            // txtIDThuCung
+            // tbIDThuCung
             // 
-            this.txtIDThuCung.Location = new System.Drawing.Point(78, 4);
-            this.txtIDThuCung.Name = "txtIDThuCung";
-            this.txtIDThuCung.Size = new System.Drawing.Size(78, 20);
-            this.txtIDThuCung.TabIndex = 1;
+            this.tbIDThuCung.Location = new System.Drawing.Point(78, 4);
+            this.tbIDThuCung.Name = "tbIDThuCung";
+            this.tbIDThuCung.Size = new System.Drawing.Size(78, 20);
+            this.tbIDThuCung.TabIndex = 1;
             // 
             // labMaDoUong
             // 
@@ -342,6 +336,7 @@ namespace QLThuCung.Views
             this.btnTim.TabIndex = 0;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // dgvThuCung
             // 
@@ -351,6 +346,7 @@ namespace QLThuCung.Views
             this.dgvThuCung.Name = "dgvThuCung";
             this.dgvThuCung.Size = new System.Drawing.Size(524, 560);
             this.dgvThuCung.TabIndex = 0;
+            this.dgvThuCung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuCung_CellClick);
             // 
             // tabKhachHang
             // 
@@ -382,6 +378,37 @@ namespace QLThuCung.Views
             this.tabAdmin.Text = "Admin";
             this.tabAdmin.UseVisualStyleBackColor = true;
             // 
+            // btnSuaThuCung
+            // 
+            this.btnSuaThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaThuCung.Location = new System.Drawing.Point(112, 9);
+            this.btnSuaThuCung.Name = "btnSuaThuCung";
+            this.btnSuaThuCung.Size = new System.Drawing.Size(89, 30);
+            this.btnSuaThuCung.TabIndex = 21;
+            this.btnSuaThuCung.Text = "Sửa";
+            this.btnSuaThuCung.UseVisualStyleBackColor = true;
+            this.btnSuaThuCung.Click += new System.EventHandler(this.btnSuaThuCung_Click);
+            // 
+            // panelLuuHuy
+            // 
+            this.panelLuuHuy.Controls.Add(this.btnLuuThuCung);
+            this.panelLuuHuy.Controls.Add(this.btnHuyThuCung);
+            this.panelLuuHuy.Location = new System.Drawing.Point(178, 69);
+            this.panelLuuHuy.Name = "panelLuuHuy";
+            this.panelLuuHuy.Size = new System.Drawing.Size(207, 49);
+            this.panelLuuHuy.TabIndex = 22;
+            // 
+            // cbGioitinh
+            // 
+            this.cbGioitinh.FormattingEnabled = true;
+            this.cbGioitinh.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbGioitinh.Location = new System.Drawing.Point(104, 168);
+            this.cbGioitinh.Name = "cbGioitinh";
+            this.cbGioitinh.Size = new System.Drawing.Size(67, 21);
+            this.cbGioitinh.TabIndex = 4;
+            // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,9 +425,8 @@ namespace QLThuCung.Views
             this.panel2.ResumeLayout(false);
             this.pnlDataBind.ResumeLayout(false);
             this.pnlDataBind.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuCung)).EndInit();
+            this.panelLuuHuy.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -416,7 +442,7 @@ namespace QLThuCung.Views
         private System.Windows.Forms.TabPage tabNhanVien;
         private System.Windows.Forms.TabPage tabAdmin;
         private System.Windows.Forms.Panel pnlDataBind;
-        private System.Windows.Forms.TextBox txtIDThuCung;
+        private System.Windows.Forms.TextBox tbIDThuCung;
         private System.Windows.Forms.Label labMaDoUong;
         private System.Windows.Forms.TextBox tbTimThuCung;
         private System.Windows.Forms.Button btnTim;
@@ -428,8 +454,6 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbGiaNhapThuCung;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox tbGioiTinhThuCung;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbLoaiThuCung;
         private System.Windows.Forms.Label label7;
@@ -439,5 +463,8 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Button btnLuuThuCung;
         private System.Windows.Forms.Button btnHuyThuCung;
         private System.Windows.Forms.ComboBox cbbTimThuCung;
+        private System.Windows.Forms.Button btnSuaThuCung;
+        private System.Windows.Forms.Panel panelLuuHuy;
+        private System.Windows.Forms.ComboBox cbGioitinh;
     }
 }
