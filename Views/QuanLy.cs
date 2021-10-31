@@ -60,7 +60,7 @@ namespace QLThuCung.Views
             }
         }
 
-
+        
         //======================Start THU CUNG============================
         void DataBindThuCung()
         {
@@ -201,6 +201,12 @@ namespace QLThuCung.Views
                     break;
             }
             dgvThuCung.DataSource = ms;
+        }
+
+        private void btnHD_Click(object sender, EventArgs e)
+        {
+            HD hd = new HD();
+            hd.ShowDialog();
         }
         //======================End THU CUNG============================
     }

@@ -22,8 +22,16 @@ namespace QLThuCung
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            var result = from c in db.Customers select new { IDCus = c.ID_Cus, Name = c.Name, Phone = c.Phone};
+            
+ 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var result = from c in db.Customers select new { IDCus = c.ID_Cus, Name = c.Name, Phone = c.Phone };
             dgvTest.DataSource = result.ToList();
+            var result1 = from c in db.Customers select new { IDCus = c.ID_Cus, Name = c.Name, Phone = c.Phone };
+            dataGridView1.DataSource = result1.ToList();
         }
     }
 }
