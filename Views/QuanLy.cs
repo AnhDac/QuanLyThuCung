@@ -17,7 +17,7 @@ namespace QLThuCung.Views
         {
             InitializeComponent();
         }
-        ThụCungEntities db = new ThụCungEntities();
+        ThuCungEntities db = new ThuCungEntities();
         private void QuanLy_Load(object sender, EventArgs e)
         {
             panelLuuHuy.Hide();
@@ -81,7 +81,7 @@ namespace QLThuCung.Views
             var result = from c in db.Pets select new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age };
             dgvThuCung.DataSource = result.ToList();
 
-            //using (ThụCungEntities spec = new ThụCungEntities())
+            //using (ThuCungEntities spec = new ThuCungEntities())
             //{ 
             //    cbLoaiThuCung.DataSource = spec.Species.ToList();
             //    cbLoaiThuCung.ValueMember = "ID_Spec";
@@ -129,7 +129,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThụCungEntities();
+                db = new ThuCungEntities();
                 LoadThuCung();
             }
         }
@@ -163,7 +163,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Update Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThụCungEntities();
+                db = new ThuCungEntities();
                 LoadThuCung();
             }
         }
@@ -181,7 +181,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Delete Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThụCungEntities();
+                db = new ThuCungEntities();
                 LoadThuCung();
             }
         }
