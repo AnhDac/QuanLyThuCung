@@ -28,14 +28,14 @@ namespace QLThuCung.Views
         private void BaoCao_Load(object sender, EventArgs e)
         {
             LoadDataComboboxContractSell();
+            LoadDataComboboxContractSer();
             ShowDataContractSell();
         }
 
         private void tabMain_Click(object sender, EventArgs e)
         {
             if (tabMain.SelectedTab == tabContractSer)
-            {
-                LoadDataComboboxContractSer();
+            {            
                 ShowDataContractSer();
             }
         }
