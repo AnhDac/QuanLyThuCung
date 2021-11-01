@@ -13,7 +13,7 @@ namespace QLThuCung
 {
     public partial class FormTest : Form
     {
-        ThụCungEntities db = new ThụCungEntities();
+        ThuCungEntities db = new ThuCungEntities();
 
         public FormTest()
         {
@@ -24,6 +24,11 @@ namespace QLThuCung
         {
             var result = from c in db.Customers select new { IDCus = c.ID_Cus, Name = c.Name, Phone = c.Phone};
             dgvTest.DataSource = result.ToList();
+        }
+
+        private void FormTest_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
