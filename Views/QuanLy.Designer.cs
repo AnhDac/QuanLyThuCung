@@ -33,6 +33,7 @@ namespace QLThuCung.Views
             this.tabHome = new System.Windows.Forms.TabPage();
             this.tabThuCung = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tbTimThuCung = new System.Windows.Forms.TextBox();
             this.cbbTimThuCung = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelLuuHuy = new System.Windows.Forms.Panel();
@@ -59,10 +60,8 @@ namespace QLThuCung.Views
             this.btnTim = new System.Windows.Forms.Button();
             this.dgvThuCung = new System.Windows.Forms.DataGridView();
             this.tabKhachHang = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.tabAdmin = new System.Windows.Forms.TabPage();
-            this.tbTimThuCung = new System.Windows.Forms.TextBox();
             this.tabctrlMain.SuspendLayout();
             this.tabThuCung.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,8 +69,6 @@ namespace QLThuCung.Views
             this.panelLuuHuy.SuspendLayout();
             this.pnlDataBind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuCung)).BeginInit();
-            this.tabKhachHang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabctrlMain
@@ -93,7 +90,7 @@ namespace QLThuCung.Views
             // 
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Name = "tabHome";
-            this.tabHome.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabHome.Padding = new System.Windows.Forms.Padding(3);
             this.tabHome.Size = new System.Drawing.Size(961, 595);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
@@ -105,7 +102,7 @@ namespace QLThuCung.Views
             this.tabThuCung.Controls.Add(this.dgvThuCung);
             this.tabThuCung.Location = new System.Drawing.Point(4, 22);
             this.tabThuCung.Name = "tabThuCung";
-            this.tabThuCung.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabThuCung.Padding = new System.Windows.Forms.Padding(3);
             this.tabThuCung.Size = new System.Drawing.Size(961, 595);
             this.tabThuCung.TabIndex = 1;
             this.tabThuCung.Text = "ThuCung";
@@ -122,6 +119,13 @@ namespace QLThuCung.Views
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(388, 532);
             this.panel1.TabIndex = 1;
+            // 
+            // tbTimThuCung
+            // 
+            this.tbTimThuCung.Location = new System.Drawing.Point(142, 32);
+            this.tbTimThuCung.Name = "tbTimThuCung";
+            this.tbTimThuCung.Size = new System.Drawing.Size(100, 20);
+            this.tbTimThuCung.TabIndex = 17;
             // 
             // cbbTimThuCung
             // 
@@ -378,31 +382,19 @@ namespace QLThuCung.Views
             // 
             // tabKhachHang
             // 
-            this.tabKhachHang.Controls.Add(this.dataGridView1);
             this.tabKhachHang.Location = new System.Drawing.Point(4, 22);
             this.tabKhachHang.Name = "tabKhachHang";
-            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
             this.tabKhachHang.Size = new System.Drawing.Size(961, 595);
             this.tabKhachHang.TabIndex = 2;
             this.tabKhachHang.Text = "Khách Hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 19);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(180, 122);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // tabNhanVien
             // 
             this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
             this.tabNhanVien.Name = "tabNhanVien";
-            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
             this.tabNhanVien.Size = new System.Drawing.Size(961, 595);
             this.tabNhanVien.TabIndex = 3;
             this.tabNhanVien.Text = "Nhân Viên";
@@ -412,18 +404,11 @@ namespace QLThuCung.Views
             // 
             this.tabAdmin.Location = new System.Drawing.Point(4, 22);
             this.tabAdmin.Name = "tabAdmin";
-            this.tabAdmin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAdmin.Padding = new System.Windows.Forms.Padding(3);
             this.tabAdmin.Size = new System.Drawing.Size(961, 595);
             this.tabAdmin.TabIndex = 4;
             this.tabAdmin.Text = "Admin";
             this.tabAdmin.UseVisualStyleBackColor = true;
-            // 
-            // tbTimThuCung
-            // 
-            this.tbTimThuCung.Location = new System.Drawing.Point(142, 32);
-            this.tbTimThuCung.Name = "tbTimThuCung";
-            this.tbTimThuCung.Size = new System.Drawing.Size(100, 20);
-            this.tbTimThuCung.TabIndex = 17;
             // 
             // QuanLy
             // 
@@ -443,8 +428,6 @@ namespace QLThuCung.Views
             this.pnlDataBind.ResumeLayout(false);
             this.pnlDataBind.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuCung)).EndInit();
-            this.tabKhachHang.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,7 +466,6 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Button btnSuaThuCung;
         private System.Windows.Forms.Panel panelLuuHuy;
         private System.Windows.Forms.ComboBox cbGioitinh;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox tbTimThuCung;
     }
 }
