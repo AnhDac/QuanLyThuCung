@@ -36,6 +36,7 @@ namespace QLThuCung.Views
             this.tbTimThuCung = new System.Windows.Forms.TextBox();
             this.cbbTimThuCung = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReloadTC = new System.Windows.Forms.Button();
             this.panelLuuHuy = new System.Windows.Forms.Panel();
             this.btnLuuThuCung = new System.Windows.Forms.Button();
             this.btnHuyThuCung = new System.Windows.Forms.Button();
@@ -61,6 +62,7 @@ namespace QLThuCung.Views
             this.dgvThuCung = new System.Windows.Forms.DataGridView();
             this.tabKhachHang = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnReloadKH = new System.Windows.Forms.Button();
             this.panelLuuHuyKH = new System.Windows.Forms.Panel();
             this.btnHuyKhachHang = new System.Windows.Forms.Button();
             this.btnLuuKhachHang = new System.Windows.Forms.Button();
@@ -84,6 +86,7 @@ namespace QLThuCung.Views
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnReloadNV = new System.Windows.Forms.Button();
             this.panelLuuHuyNV = new System.Windows.Forms.Panel();
             this.btnHuyNhanVien = new System.Windows.Forms.Button();
             this.btnLuuNhanVien = new System.Windows.Forms.Button();
@@ -110,9 +113,7 @@ namespace QLThuCung.Views
             this.label14 = new System.Windows.Forms.Label();
             this.btnTimNhanVien = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabPage();
-            this.btnReloadTC = new System.Windows.Forms.Button();
-            this.btnReloadKH = new System.Windows.Forms.Button();
-            this.btnReloadNV = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             this.tabctrlMain.SuspendLayout();
             this.tabThuCung.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -132,6 +133,7 @@ namespace QLThuCung.Views
             this.panelLuuHuyNV.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pnlDataBindNV.SuspendLayout();
+            this.tabAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabctrlMain
@@ -215,6 +217,17 @@ namespace QLThuCung.Views
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(399, 151);
             this.panel2.TabIndex = 15;
+            // 
+            // btnReloadTC
+            // 
+            this.btnReloadTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReloadTC.Location = new System.Drawing.Point(288, 78);
+            this.btnReloadTC.Name = "btnReloadTC";
+            this.btnReloadTC.Size = new System.Drawing.Size(97, 48);
+            this.btnReloadTC.TabIndex = 23;
+            this.btnReloadTC.Text = "Tải Lại";
+            this.btnReloadTC.UseVisualStyleBackColor = true;
+            this.btnReloadTC.Click += new System.EventHandler(this.btnReloadTC_Click);
             // 
             // panelLuuHuy
             // 
@@ -479,6 +492,17 @@ namespace QLThuCung.Views
             this.panel3.Size = new System.Drawing.Size(404, 587);
             this.panel3.TabIndex = 2;
             // 
+            // btnReloadKH
+            // 
+            this.btnReloadKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReloadKH.Location = new System.Drawing.Point(258, 481);
+            this.btnReloadKH.Name = "btnReloadKH";
+            this.btnReloadKH.Size = new System.Drawing.Size(94, 56);
+            this.btnReloadKH.TabIndex = 24;
+            this.btnReloadKH.Text = "Tải Lại";
+            this.btnReloadKH.UseVisualStyleBackColor = true;
+            this.btnReloadKH.Click += new System.EventHandler(this.btnReloadKH_Click);
+            // 
             // panelLuuHuyKH
             // 
             this.panelLuuHuyKH.Controls.Add(this.btnHuyKhachHang);
@@ -723,6 +747,17 @@ namespace QLThuCung.Views
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(404, 587);
             this.panel7.TabIndex = 3;
+            // 
+            // btnReloadNV
+            // 
+            this.btnReloadNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReloadNV.Location = new System.Drawing.Point(281, 513);
+            this.btnReloadNV.Name = "btnReloadNV";
+            this.btnReloadNV.Size = new System.Drawing.Size(107, 56);
+            this.btnReloadNV.TabIndex = 24;
+            this.btnReloadNV.Text = "Tải Lại";
+            this.btnReloadNV.UseVisualStyleBackColor = true;
+            this.btnReloadNV.Click += new System.EventHandler(this.btnReloadNV_Click);
             // 
             // panelLuuHuyNV
             // 
@@ -982,6 +1017,7 @@ namespace QLThuCung.Views
             // 
             // tabAdmin
             // 
+            this.tabAdmin.Controls.Add(this.btnReport);
             this.tabAdmin.Location = new System.Drawing.Point(4, 22);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.Padding = new System.Windows.Forms.Padding(3);
@@ -990,38 +1026,16 @@ namespace QLThuCung.Views
             this.tabAdmin.Text = "Admin";
             this.tabAdmin.UseVisualStyleBackColor = true;
             // 
-            // btnReloadTC
+            // btnReport
             // 
-            this.btnReloadTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReloadTC.Location = new System.Drawing.Point(288, 78);
-            this.btnReloadTC.Name = "btnReloadTC";
-            this.btnReloadTC.Size = new System.Drawing.Size(97, 48);
-            this.btnReloadTC.TabIndex = 23;
-            this.btnReloadTC.Text = "Tải Lại";
-            this.btnReloadTC.UseVisualStyleBackColor = true;
-            this.btnReloadTC.Click += new System.EventHandler(this.btnReloadTC_Click);
-            // 
-            // btnReloadKH
-            // 
-            this.btnReloadKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReloadKH.Location = new System.Drawing.Point(258, 481);
-            this.btnReloadKH.Name = "btnReloadKH";
-            this.btnReloadKH.Size = new System.Drawing.Size(94, 56);
-            this.btnReloadKH.TabIndex = 24;
-            this.btnReloadKH.Text = "Tải Lại";
-            this.btnReloadKH.UseVisualStyleBackColor = true;
-            this.btnReloadKH.Click += new System.EventHandler(this.btnReloadKH_Click);
-            // 
-            // btnReloadNV
-            // 
-            this.btnReloadNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReloadNV.Location = new System.Drawing.Point(281, 513);
-            this.btnReloadNV.Name = "btnReloadNV";
-            this.btnReloadNV.Size = new System.Drawing.Size(107, 56);
-            this.btnReloadNV.TabIndex = 24;
-            this.btnReloadNV.Text = "Tải Lại";
-            this.btnReloadNV.UseVisualStyleBackColor = true;
-            this.btnReloadNV.Click += new System.EventHandler(this.btnReloadNV_Click);
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Location = new System.Drawing.Point(623, 282);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(103, 41);
+            this.btnReport.TabIndex = 0;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // QuanLy
             // 
@@ -1059,6 +1073,7 @@ namespace QLThuCung.Views
             this.panel8.ResumeLayout(false);
             this.pnlDataBindNV.ResumeLayout(false);
             this.pnlDataBindNV.PerformLayout();
+            this.tabAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1149,5 +1164,6 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Button btnReloadTC;
         private System.Windows.Forms.Button btnReloadKH;
         private System.Windows.Forms.Button btnReloadNV;
+        private System.Windows.Forms.Button btnReport;
     }
 }

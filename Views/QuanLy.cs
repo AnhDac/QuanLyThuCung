@@ -595,5 +595,16 @@ namespace QLThuCung.Views
 
         #endregion
 
+        #region TAB ADMIN
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BaoCao frmbaocao = new BaoCao();
+            frmbaocao.ShowDialog();
+            this.Show();
+        }
+
+
+        #endregion
     }
 }
