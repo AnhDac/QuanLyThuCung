@@ -95,8 +95,6 @@ namespace QLThuCung.Views
                 cbTimKhachHang.SelectedItem = "Tên";
                 tabctrlMain.TabPages.Remove(tabAdmin);
                 tabctrlMain.TabPages.Add(tabAdmin);
-                //var result = from c in db.Customers select new { IDCus = c.ID_Cus, Name = c.Name, Phone = c.Phone };
-                // dgvThuCung.DataSource = result.ToList();
             }
         }
 
