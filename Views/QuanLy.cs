@@ -77,12 +77,14 @@ namespace QLThuCung.Views
             if (tabctrlMain.SelectedTab == tabThuCung)
             {
                 LoadThuCung();
+                cbbTimThuCung.SelectedItem = "Loại";
                 tabctrlMain.TabPages.Remove(tabAdmin);
                 tabctrlMain.TabPages.Add(tabAdmin);
             }
             else if (tabctrlMain.SelectedTab == tabNhanVien)
             {
                 LoadNhanVien();
+                cbbTimNhanVien.SelectedItem = "Tên";
                 tabctrlMain.TabPages.Remove(tabAdmin);
                 tabctrlMain.TabPages.Add(tabAdmin);
                 //db.usp_MuaDichVu("C101", "E001", "C001", DateTime.Today, 190000, "", "", "S003", "");
@@ -90,6 +92,7 @@ namespace QLThuCung.Views
             else if (tabctrlMain.SelectedTab == tabKhachHang)
             {
                 LoadKhachHang();
+                cbTimKhachHang.SelectedItem = "Tên";
                 tabctrlMain.TabPages.Remove(tabAdmin);
                 tabctrlMain.TabPages.Add(tabAdmin);
                 //var result = from c in db.Customers select new { IDCus = c.ID_Cus, Name = c.Name, Phone = c.Phone };
@@ -105,7 +108,6 @@ namespace QLThuCung.Views
             tbIDThuCung.Text = dgvThuCung.CurrentRow.Cells[0].Value.ToString();
             tbLoaiThuCung.Text = dgvThuCung.CurrentRow.Cells[1].Value.ToString();
             //cbLoaiThuCung.SelectedIndex = cbLoaiThuCung.FindStringExact("");
-            cbbTimThuCung.SelectedItem = "Loại";
             cbGioitinh.SelectedItem = dgvThuCung.CurrentRow.Cells[2].Value.ToString();
             tbGiaNhapThuCung.Text = dgvThuCung.CurrentRow.Cells[3].Value.ToString();
             tbNccThuCung.Text = dgvThuCung.CurrentRow.Cells[4].Value.ToString();
@@ -255,6 +257,12 @@ namespace QLThuCung.Views
             }else
                 dgvThuCung.DataSource = ms;
         }
+
+        private void btnReloadTC_Click(object sender, EventArgs e)
+        {
+            LoadThuCung();
+        }
+
         //======================End THU CUNG============================
         #endregion
 
@@ -263,7 +271,6 @@ namespace QLThuCung.Views
         {
             txtMaKhachHang.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
             txtTenKhachHang.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
-            cbTimKhachHang.SelectedItem = "Tên";
             txtSDTKhachHang.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
             txtTuoiKhachHang.Text = dgvKhachHang.CurrentRow.Cells[3].Value.ToString();
         }
@@ -359,14 +366,62 @@ namespace QLThuCung.Views
             btnSuaKhachHang.Enabled = true;
             btnXoaKhachHang.Enabled = true;
         }
+        private void btnTimKhachHang_Click(object sender, EventArgs e)
+        {
+            String loaitimkiem = cbTimKhachHang.Text.ToString();
+            Boolean flag_error = false;
+
+
+            var ms = db.Customers.Where(p => p.Name.Contains(tbTimKhachHang.Text.ToString())).Select(c => new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age }).ToList();
+            switch (loaitimkiem)
+            {
+                case "SĐT":
+                    try
+                    {
+                        int age = Convert.ToInt32(tbTimKhachHang.Text.ToString());
+                        ms = db.Customers.Where(p => p.Phone == tbTimKhachHang.Text.ToString()).Select(c => new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age }).ToList();
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        flag_error = true;
+                        break;
+                    }
+                case "Tuổi":
+                    try
+                    {
+                        int age = Convert.ToInt32(tbTimKhachHang.Text.ToString());
+                        ms = db.Customers.Where(p => p.Age == age).Select(c => new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age }).ToList();
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        flag_error = true;
+                        break;
+                    }
+            }
+            if (flag_error)
+            {
+                MessageBox.Show("Lỗi! Vui lòng kiểm tra dữ liệu nhập vào.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //var result = from c in db.Customers select new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age };
+                //dgvKhachHang.DataSource = result.ToList();
+                LoadKhachHang();
+            }
+            else
+                dgvKhachHang.DataSource = ms;
+        }
+
+        private void btnReloadKH_Click(object sender, EventArgs e)
+        {
+            LoadKhachHang();
+        }
         #endregion
 
         #region TAB NHAN VIEN
         void DataBindNhanVien()
         {
             txtMaNhanVien.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
-            txtTenNhanVien.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
-            cbbTimNhanVien.SelectedItem = "Tên";
+            txtTenNhanVien.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();   
             txtSDTNhanVien.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
             txtTuoiNhanVien.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
             txtDiaChiNhanVien.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
@@ -455,6 +510,7 @@ namespace QLThuCung.Views
 
                 MessageBox.Show("Thêm Thành Công!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadNhanVien();
+
                 panelLuuHuyNV.Hide();
                 btnSuaNhanVien.Enabled = true;
                 btnXoaNhanVien.Enabled = true;
@@ -466,6 +522,8 @@ namespace QLThuCung.Views
                 LoadNhanVien();
             }
         }
+
+
         private void btnHuyNhanVien_Click(object sender, EventArgs e)
         {
             LoadNhanVien();
@@ -473,59 +531,14 @@ namespace QLThuCung.Views
             btnSuaNhanVien.Enabled = true;
             btnXoaNhanVien.Enabled = true;
         }
-        #endregion
 
-        private void btnTimKhachHang_Click(object sender, EventArgs e)
-        {
-            String loaitimkiem = cbTimKhachHang.Text.ToString();
-            Boolean flag_error = false;
-           
-            var  ms = db.Customers.Where(p => p.Name == tbTimKhachHang.Text.ToString()).Select(c => new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age }).ToList();
-            //MessageBox.Show(cbTimKhachHang.Text.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            switch (loaitimkiem)
-            {
-                case "SĐT":
-                    try
-                    {
-                        int age = Convert.ToInt32(tbTimKhachHang.Text.ToString());
-                        ms = db.Customers.Where(p => p.Phone == tbTimKhachHang.Text.ToString()).Select(c => new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age }).ToList();
-                        break;
-                    }
-                    catch (Exception)
-                    {
-                        flag_error = true;
-                        break;
-                    }
-                case "Tuổi":
-                    try
-                    {
-                        int age = Convert.ToInt32(tbTimKhachHang.Text.ToString());
-                        ms = db.Customers.Where(p => p.Age == age).Select(c => new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age }).ToList();
-                        break;
-                    }
-                    catch (Exception)
-                    {
-                        flag_error = true;
-                        break;
-                    }
-            }
-            if (flag_error)
-            {
-                MessageBox.Show("Lỗi! Vui lòng kiểm tra dữ liệu nhập vào.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                var result = from c in db.Customers select new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age };
-                dgvKhachHang.DataSource = result.ToList();
-            }
-            else
-                dgvKhachHang.DataSource = ms;
-        }
 
         private void btnTimNhanVien_Click(object sender, EventArgs e)
         {
             String loaitimkiem = cbbTimNhanVien.Text.ToString();
             Boolean flag_error = false;
 
-            var ms = db.Employees.Where(p => p.Name == tbTimNhanVien.Text.ToString()).Select(c => new { IDEmp = c.ID_Emp, TenNhanVien = c.Name, SDT = c.Phone, Tuoi = c.Age, DiaChi = c.Address, Luong = c.Salary, NgayVaoLam = c.DateStart }).ToList();
-            //MessageBox.Show(cbTimKhachHang.Text.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var ms = db.Employees.Where(p => p.Name.Contains(tbTimNhanVien.Text.ToString())).Select(c => new { IDEmp = c.ID_Emp, TenNhanVien = c.Name, SDT = c.Phone, Tuoi = c.Age, DiaChi = c.Address, Luong = c.Salary, NgayVaoLam = c.DateStart }).ToList();
             switch (loaitimkiem)
             {
                 case "SĐT":
@@ -569,11 +582,20 @@ namespace QLThuCung.Views
             if (flag_error)
             {
                 MessageBox.Show("Lỗi! Vui lòng kiểm tra dữ liệu nhập vào.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                var result = from c in db.Employees select new { IDEmp = c.ID_Emp, TenNhanVien = c.Name, SDT = c.Phone, Tuoi = c.Age, DiaChi = c.Address, Luong = c.Salary, NgayVaoLam = c.DateStart };
-                dgvNhanVien.DataSource = result.ToList();
+                //var result = from c in db.Employees select new { IDEmp = c.ID_Emp, TenNhanVien = c.Name, SDT = c.Phone, Tuoi = c.Age, DiaChi = c.Address, Luong = c.Salary, NgayVaoLam = c.DateStart };
+                //dgvNhanVien.DataSource = result.ToList();
+                LoadNhanVien();
             }
             else
                 dgvNhanVien.DataSource = ms;
         }
+
+        private void btnReloadNV_Click(object sender, EventArgs e)
+        {
+            LoadNhanVien();
+        }
+
+        #endregion
+
     }
 }

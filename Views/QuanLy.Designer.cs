@@ -110,6 +110,9 @@ namespace QLThuCung.Views
             this.label14 = new System.Windows.Forms.Label();
             this.btnTimNhanVien = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabPage();
+            this.btnReloadTC = new System.Windows.Forms.Button();
+            this.btnReloadKH = new System.Windows.Forms.Button();
+            this.btnReloadNV = new System.Windows.Forms.Button();
             this.tabctrlMain.SuspendLayout();
             this.tabThuCung.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -150,7 +153,7 @@ namespace QLThuCung.Views
             // 
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Name = "tabHome";
-            this.tabHome.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabHome.Padding = new System.Windows.Forms.Padding(3);
             this.tabHome.Size = new System.Drawing.Size(961, 595);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
@@ -162,7 +165,7 @@ namespace QLThuCung.Views
             this.tabThuCung.Controls.Add(this.dgvThuCung);
             this.tabThuCung.Location = new System.Drawing.Point(4, 22);
             this.tabThuCung.Name = "tabThuCung";
-            this.tabThuCung.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabThuCung.Padding = new System.Windows.Forms.Padding(3);
             this.tabThuCung.Size = new System.Drawing.Size(961, 595);
             this.tabThuCung.TabIndex = 1;
             this.tabThuCung.Text = "ThuCung";
@@ -203,13 +206,14 @@ namespace QLThuCung.Views
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnReloadTC);
             this.panel2.Controls.Add(this.panelLuuHuy);
             this.panel2.Controls.Add(this.btnSuaThuCung);
             this.panel2.Controls.Add(this.btnXoaThuCung);
             this.panel2.Controls.Add(this.btnThemThuCung);
             this.panel2.Location = new System.Drawing.Point(0, 394);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(397, 138);
+            this.panel2.Size = new System.Drawing.Size(399, 151);
             this.panel2.TabIndex = 15;
             // 
             // panelLuuHuy
@@ -455,7 +459,7 @@ namespace QLThuCung.Views
             this.tabKhachHang.Controls.Add(this.dgvKhachHang);
             this.tabKhachHang.Location = new System.Drawing.Point(4, 22);
             this.tabKhachHang.Name = "tabKhachHang";
-            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
             this.tabKhachHang.Size = new System.Drawing.Size(961, 595);
             this.tabKhachHang.TabIndex = 2;
             this.tabKhachHang.Text = "Khách Hàng";
@@ -463,6 +467,7 @@ namespace QLThuCung.Views
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnReloadKH);
             this.panel3.Controls.Add(this.panelLuuHuyKH);
             this.panel3.Controls.Add(this.tbTimKhachHang);
             this.panel3.Controls.Add(this.cbTimKhachHang);
@@ -479,7 +484,7 @@ namespace QLThuCung.Views
             this.panelLuuHuyKH.Controls.Add(this.btnHuyKhachHang);
             this.panelLuuHuyKH.Controls.Add(this.btnLuuKhachHang);
             this.panelLuuHuyKH.Location = new System.Drawing.Point(142, 360);
-            this.panelLuuHuyKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLuuHuyKH.Margin = new System.Windows.Forms.Padding(2);
             this.panelLuuHuyKH.Name = "panelLuuHuyKH";
             this.panelLuuHuyKH.Size = new System.Drawing.Size(210, 60);
             this.panelLuuHuyKH.TabIndex = 23;
@@ -673,7 +678,7 @@ namespace QLThuCung.Views
             this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Location = new System.Drawing.Point(5, 6);
-            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
@@ -687,7 +692,7 @@ namespace QLThuCung.Views
             this.tabNhanVien.Controls.Add(this.panel7);
             this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
             this.tabNhanVien.Name = "tabNhanVien";
-            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
             this.tabNhanVien.Size = new System.Drawing.Size(961, 595);
             this.tabNhanVien.TabIndex = 3;
             this.tabNhanVien.Text = "Nhân Viên";
@@ -697,7 +702,7 @@ namespace QLThuCung.Views
             // 
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Location = new System.Drawing.Point(5, 6);
-            this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
@@ -707,6 +712,7 @@ namespace QLThuCung.Views
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.btnReloadNV);
             this.panel7.Controls.Add(this.panelLuuHuyNV);
             this.panel7.Controls.Add(this.tbTimNhanVien);
             this.panel7.Controls.Add(this.cbbTimNhanVien);
@@ -723,7 +729,7 @@ namespace QLThuCung.Views
             this.panelLuuHuyNV.Controls.Add(this.btnHuyNhanVien);
             this.panelLuuHuyNV.Controls.Add(this.btnLuuNhanVien);
             this.panelLuuHuyNV.Location = new System.Drawing.Point(151, 396);
-            this.panelLuuHuyNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLuuHuyNV.Margin = new System.Windows.Forms.Padding(2);
             this.panelLuuHuyNV.Name = "panelLuuHuyNV";
             this.panelLuuHuyNV.Size = new System.Drawing.Size(210, 60);
             this.panelLuuHuyNV.TabIndex = 23;
@@ -840,7 +846,7 @@ namespace QLThuCung.Views
             // 
             this.dtpNgayVaoLam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayVaoLam.Location = new System.Drawing.Point(146, 258);
-            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
             this.dtpNgayVaoLam.Size = new System.Drawing.Size(228, 23);
             this.dtpNgayVaoLam.TabIndex = 9;
@@ -978,11 +984,44 @@ namespace QLThuCung.Views
             // 
             this.tabAdmin.Location = new System.Drawing.Point(4, 22);
             this.tabAdmin.Name = "tabAdmin";
-            this.tabAdmin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAdmin.Padding = new System.Windows.Forms.Padding(3);
             this.tabAdmin.Size = new System.Drawing.Size(961, 595);
             this.tabAdmin.TabIndex = 4;
             this.tabAdmin.Text = "Admin";
             this.tabAdmin.UseVisualStyleBackColor = true;
+            // 
+            // btnReloadTC
+            // 
+            this.btnReloadTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReloadTC.Location = new System.Drawing.Point(288, 78);
+            this.btnReloadTC.Name = "btnReloadTC";
+            this.btnReloadTC.Size = new System.Drawing.Size(97, 48);
+            this.btnReloadTC.TabIndex = 23;
+            this.btnReloadTC.Text = "Tải Lại";
+            this.btnReloadTC.UseVisualStyleBackColor = true;
+            this.btnReloadTC.Click += new System.EventHandler(this.btnReloadTC_Click);
+            // 
+            // btnReloadKH
+            // 
+            this.btnReloadKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReloadKH.Location = new System.Drawing.Point(258, 481);
+            this.btnReloadKH.Name = "btnReloadKH";
+            this.btnReloadKH.Size = new System.Drawing.Size(94, 56);
+            this.btnReloadKH.TabIndex = 24;
+            this.btnReloadKH.Text = "Tải Lại";
+            this.btnReloadKH.UseVisualStyleBackColor = true;
+            this.btnReloadKH.Click += new System.EventHandler(this.btnReloadKH_Click);
+            // 
+            // btnReloadNV
+            // 
+            this.btnReloadNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReloadNV.Location = new System.Drawing.Point(281, 513);
+            this.btnReloadNV.Name = "btnReloadNV";
+            this.btnReloadNV.Size = new System.Drawing.Size(107, 56);
+            this.btnReloadNV.TabIndex = 24;
+            this.btnReloadNV.Text = "Tải Lại";
+            this.btnReloadNV.UseVisualStyleBackColor = true;
+            this.btnReloadNV.Click += new System.EventHandler(this.btnReloadNV_Click);
             // 
             // QuanLy
             // 
@@ -990,7 +1029,9 @@ namespace QLThuCung.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 636);
             this.Controls.Add(this.tabctrlMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "QuanLy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLy";
             this.Load += new System.EventHandler(this.QuanLy_Load);
             this.tabctrlMain.ResumeLayout(false);
@@ -1105,5 +1146,8 @@ namespace QLThuCung.Views
         private System.Windows.Forms.TextBox txtDiaChiNhanVien;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker dtpNgayVaoLam;
+        private System.Windows.Forms.Button btnReloadTC;
+        private System.Windows.Forms.Button btnReloadKH;
+        private System.Windows.Forms.Button btnReloadNV;
     }
 }
