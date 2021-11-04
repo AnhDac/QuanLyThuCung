@@ -229,6 +229,7 @@ namespace QLThuCung.Views
         private void btnTim_Click(object sender, EventArgs e)
         {
             String loaitimkiem = cbbTimThuCung.Text.ToString();
+            Boolean flag_error = false;
             var ms = db.Pets.Where(p => p.ID_Spec == tbTimThuCung.Text.ToString()).Select(c => new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age }).ToList();
             switch (loaitimkiem)
             {
@@ -236,11 +237,23 @@ namespace QLThuCung.Views
                     ms = db.Pets.Where(p => p.Sex == tbTimThuCung.Text.ToString()).Select(c => new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age }).ToList();
                     break;
                 case "Tuổi":
-                    int age = Convert.ToInt32(tbTimThuCung.Text.ToString());
-                    ms = db.Pets.Where(p => p.Age == age).Select(c => new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age }).ToList();
-                    break;
+                    try{
+                        int age = Convert.ToInt32(tbTimThuCung.Text.ToString());
+                        ms = db.Pets.Where(p => p.Age == age).Select(c => new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age }).ToList();
+                        break;
+                    }catch(Exception )
+                    {
+                        flag_error=true;
+                        break;
+                    }
             }
-            dgvThuCung.DataSource = ms;
+            if (flag_error)
+            {
+                MessageBox.Show("Lỗi! Vui lòng kiểm tra dữ liệu nhập vào.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var result = from c in db.Pets select new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age };
+                dgvThuCung.DataSource = result.ToList();
+            }else
+                dgvThuCung.DataSource = ms;
         }
         //======================End THU CUNG============================
         #endregion
@@ -250,7 +263,7 @@ namespace QLThuCung.Views
         {
             txtMaKhachHang.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
             txtTenKhachHang.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
-            cbbTimKhachHang.SelectedItem = "Tùy Chọn";
+            cbTimKhachHang.SelectedItem = "Tên";
             txtSDTKhachHang.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
             txtTuoiKhachHang.Text = dgvKhachHang.CurrentRow.Cells[3].Value.ToString();
         }
@@ -353,7 +366,7 @@ namespace QLThuCung.Views
         {
             txtMaNhanVien.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
             txtTenNhanVien.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
-            cbbTimNhanVien.SelectedItem = "Tùy Chọn";
+            cbbTimNhanVien.SelectedItem = "Tên";
             txtSDTNhanVien.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
             txtTuoiNhanVien.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
             txtDiaChiNhanVien.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
@@ -461,5 +474,106 @@ namespace QLThuCung.Views
             btnXoaNhanVien.Enabled = true;
         }
         #endregion
+
+        private void btnTimKhachHang_Click(object sender, EventArgs e)
+        {
+            String loaitimkiem = cbTimKhachHang.Text.ToString();
+            Boolean flag_error = false;
+           
+            var  ms = db.Customers.Where(p => p.Name == tbTimKhachHang.Text.ToString()).Select(c => new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age }).ToList();
+            //MessageBox.Show(cbTimKhachHang.Text.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            switch (loaitimkiem)
+            {
+                case "SĐT":
+                    try
+                    {
+                        int age = Convert.ToInt32(tbTimKhachHang.Text.ToString());
+                        ms = db.Customers.Where(p => p.Phone == tbTimKhachHang.Text.ToString()).Select(c => new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age }).ToList();
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        flag_error = true;
+                        break;
+                    }
+                case "Tuổi":
+                    try
+                    {
+                        int age = Convert.ToInt32(tbTimKhachHang.Text.ToString());
+                        ms = db.Customers.Where(p => p.Age == age).Select(c => new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age }).ToList();
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        flag_error = true;
+                        break;
+                    }
+            }
+            if (flag_error)
+            {
+                MessageBox.Show("Lỗi! Vui lòng kiểm tra dữ liệu nhập vào.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var result = from c in db.Customers select new { IDCus = c.ID_Cus, TenKhachHang = c.Name, SDT = c.Phone, Tuoi = c.Age };
+                dgvKhachHang.DataSource = result.ToList();
+            }
+            else
+                dgvKhachHang.DataSource = ms;
+        }
+
+        private void btnTimNhanVien_Click(object sender, EventArgs e)
+        {
+            String loaitimkiem = cbbTimNhanVien.Text.ToString();
+            Boolean flag_error = false;
+
+            var ms = db.Employees.Where(p => p.Name == tbTimNhanVien.Text.ToString()).Select(c => new { IDEmp = c.ID_Emp, TenNhanVien = c.Name, SDT = c.Phone, Tuoi = c.Age, DiaChi = c.Address, Luong = c.Salary, NgayVaoLam = c.DateStart }).ToList();
+            //MessageBox.Show(cbTimKhachHang.Text.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            switch (loaitimkiem)
+            {
+                case "SĐT":
+                    try
+                    {
+                        int age = Convert.ToInt32(tbTimNhanVien.Text.ToString());
+                        ms = db.Employees.Where(p => p.Phone == tbTimNhanVien.Text.ToString()).Select(c => new { IDEmp = c.ID_Emp, TenNhanVien = c.Name, SDT = c.Phone, Tuoi = c.Age, DiaChi = c.Address, Luong = c.Salary, NgayVaoLam = c.DateStart }).ToList();
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        flag_error = true;
+                        break;
+                    }
+                case "Tuổi":
+                    try
+                    {
+                        int age = Convert.ToInt32(tbTimNhanVien.Text.ToString());
+                        ms = db.Employees.Where(p => p.Age == age).Select(c => new { IDEmp = c.ID_Emp, TenNhanVien = c.Name, SDT = c.Phone, Tuoi = c.Age, DiaChi = c.Address, Luong = c.Salary, NgayVaoLam = c.DateStart }).ToList();
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        flag_error = true;
+                        break;
+                    }
+                case "Lương":
+                    try
+                    {
+                        int salary = Convert.ToInt32(tbTimNhanVien.Text.ToString());
+                        ms = db.Employees.Where(p => p.Salary == salary).Select(c => new { IDEmp = c.ID_Emp, TenNhanVien = c.Name, SDT = c.Phone, Tuoi = c.Age, DiaChi = c.Address, Luong = c.Salary, NgayVaoLam = c.DateStart }).ToList();
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        flag_error = true;
+                        break;
+                    }
+            }
+
+            if (flag_error)
+            {
+                MessageBox.Show("Lỗi! Vui lòng kiểm tra dữ liệu nhập vào.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var result = from c in db.Employees select new { IDEmp = c.ID_Emp, TenNhanVien = c.Name, SDT = c.Phone, Tuoi = c.Age, DiaChi = c.Address, Luong = c.Salary, NgayVaoLam = c.DateStart };
+                dgvNhanVien.DataSource = result.ToList();
+            }
+            else
+                dgvNhanVien.DataSource = ms;
+        }
     }
 }
