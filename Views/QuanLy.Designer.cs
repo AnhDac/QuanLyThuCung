@@ -114,7 +114,6 @@ namespace QLThuCung.Views
             this.btnLuuThuCung = new System.Windows.Forms.Button();
             this.btnReloadTC = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabctrlMain.SuspendLayout();
             this.tabThuCung.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -234,7 +233,7 @@ namespace QLThuCung.Views
             this.pnlDataBind.Location = new System.Drawing.Point(5, 106);
             this.pnlDataBind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDataBind.Name = "pnlDataBind";
-            this.pnlDataBind.Size = new System.Drawing.Size(508, 341);
+            this.pnlDataBind.Size = new System.Drawing.Size(530, 343);
             this.pnlDataBind.TabIndex = 9;
             // 
             // cbGioitinh
@@ -420,7 +419,6 @@ namespace QLThuCung.Views
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.btnReloadKH);
             this.panel3.Controls.Add(this.panelLuuHuyKH);
             this.panel3.Controls.Add(this.tbTimKhachHang);
@@ -563,7 +561,7 @@ namespace QLThuCung.Views
             this.pnlDataBindKH.Location = new System.Drawing.Point(5, 106);
             this.pnlDataBindKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDataBindKH.Name = "pnlDataBindKH";
-            this.pnlDataBindKH.Size = new System.Drawing.Size(528, 320);
+            this.pnlDataBindKH.Size = new System.Drawing.Size(528, 329);
             this.pnlDataBindKH.TabIndex = 9;
             // 
             // txtTuoiKhachHang
@@ -1069,7 +1067,7 @@ namespace QLThuCung.Views
             this.panelLuuHuy.Location = new System.Drawing.Point(188, 457);
             this.panelLuuHuy.Margin = new System.Windows.Forms.Padding(4);
             this.panelLuuHuy.Name = "panelLuuHuy";
-            this.panelLuuHuy.Size = new System.Drawing.Size(313, 75);
+            this.panelLuuHuy.Size = new System.Drawing.Size(287, 75);
             this.panelLuuHuy.TabIndex = 22;
             // 
             // btnHuyThuCung
@@ -1113,22 +1111,11 @@ namespace QLThuCung.Views
             this.panel2.Controls.Add(this.btnSuaThuCung);
             this.panel2.Controls.Add(this.btnXoaThuCung);
             this.panel2.Controls.Add(this.btnThemThuCung);
-            this.panel2.Location = new System.Drawing.Point(7, 457);
+            this.panel2.Location = new System.Drawing.Point(5, 457);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(528, 75);
+            this.panel2.Size = new System.Drawing.Size(530, 75);
             this.panel2.TabIndex = 15;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(389, 608);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 56);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Tải Lại";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // QuanLy
             // 
@@ -1259,6 +1246,5 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Button btnSuaThuCung;
         private System.Windows.Forms.Button btnXoaThuCung;
         private System.Windows.Forms.Button btnThemThuCung;
-        private System.Windows.Forms.Button button1;
     }
 }
