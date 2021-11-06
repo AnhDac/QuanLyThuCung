@@ -232,7 +232,7 @@ namespace QLThuCung.Views
             this.btnLuuHD.Name = "btnLuuHD";
             this.btnLuuHD.Size = new System.Drawing.Size(75, 23);
             this.btnLuuHD.TabIndex = 11;
-            this.btnLuuHD.Text = "Lưu";
+            this.btnLuuHD.Text = "Sửa";
             this.btnLuuHD.UseVisualStyleBackColor = true;
             this.btnLuuHD.Click += new System.EventHandler(this.btnLuuHD_Click);
             // 
