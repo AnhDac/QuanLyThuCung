@@ -79,7 +79,7 @@ namespace QLThuCung.Views
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1011, 562);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Dịch vụ chăm sóc";
+            this.tabPage1.Text = "Hóa đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -134,6 +134,7 @@ namespace QLThuCung.Views
             this.bthHD_Thoat.TabIndex = 19;
             this.bthHD_Thoat.Text = "Thoát";
             this.bthHD_Thoat.UseVisualStyleBackColor = true;
+            this.bthHD_Thoat.Click += new System.EventHandler(this.bthHD_Thoat_Click);
             // 
             // bthHD_chiTiet
             // 

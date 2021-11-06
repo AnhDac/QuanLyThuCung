@@ -149,5 +149,17 @@ namespace QLThuCung.Views
             var kq = db.view_DetaiContracser(tam);
             dgvChiTietHD.DataSource = kq.ToList();
         }
+
+        private void bthHD_Thoat_Click(object sender, EventArgs e)
+        {
+            DialogResult tl =
+                 MessageBox.Show("Bạn muốn Thoát ???", "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (tl == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

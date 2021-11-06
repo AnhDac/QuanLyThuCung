@@ -205,7 +205,8 @@ namespace QLThuCung.Views
 
         private void btnHD_Click(object sender, EventArgs e)
         {
-            
+            HopDongDV hopDongDV = new HopDongDV();
+            hopDongDV.ShowDialog();
         }
         //======================End THU CUNG============================
     }
