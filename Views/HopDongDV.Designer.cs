@@ -33,25 +33,25 @@ namespace QLThuCung.Views
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvHD = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtHD_IDConser = new System.Windows.Forms.TextBox();
+            this.txtHD_IDEmp = new System.Windows.Forms.TextBox();
+            this.txtHD_IDCus = new System.Windows.Forms.TextBox();
+            this.txtHD_DateBuy = new System.Windows.Forms.TextBox();
+            this.txtHD_Price = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.cbHD = new System.Windows.Forms.ComboBox();
+            this.bthHD_Insert = new System.Windows.Forms.Button();
+            this.btnHD_xoa = new System.Windows.Forms.Button();
+            this.btnLuuHD = new System.Windows.Forms.Button();
+            this.btnHD_Reload = new System.Windows.Forms.Button();
+            this.bthHD_TimKiem = new System.Windows.Forms.Button();
+            this.txtHD_SoLuong = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.bthHD_chiTiet = new System.Windows.Forms.Button();
             this.dgvChiTietHD = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
+            this.bthHD_Thoat = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
@@ -82,24 +82,24 @@ namespace QLThuCung.Views
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.button6);
+            this.tabPage2.Controls.Add(this.bthHD_Thoat);
+            this.tabPage2.Controls.Add(this.bthHD_chiTiet);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.txtHD_SoLuong);
+            this.tabPage2.Controls.Add(this.bthHD_TimKiem);
+            this.tabPage2.Controls.Add(this.btnHD_Reload);
+            this.tabPage2.Controls.Add(this.btnLuuHD);
+            this.tabPage2.Controls.Add(this.btnHD_xoa);
+            this.tabPage2.Controls.Add(this.bthHD_Insert);
+            this.tabPage2.Controls.Add(this.cbHD);
             this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txtHD_Price);
+            this.tabPage2.Controls.Add(this.txtHD_DateBuy);
+            this.tabPage2.Controls.Add(this.txtHD_IDCus);
+            this.tabPage2.Controls.Add(this.txtHD_IDEmp);
+            this.tabPage2.Controls.Add(this.txtHD_IDConser);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -119,40 +119,40 @@ namespace QLThuCung.Views
             this.dgvHD.TabIndex = 0;
             this.dgvHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellClick);
             // 
-            // textBox1
+            // txtHD_IDConser
             // 
-            this.textBox1.Location = new System.Drawing.Point(663, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtHD_IDConser.Location = new System.Drawing.Point(663, 105);
+            this.txtHD_IDConser.Name = "txtHD_IDConser";
+            this.txtHD_IDConser.Size = new System.Drawing.Size(131, 22);
+            this.txtHD_IDConser.TabIndex = 1;
             // 
-            // textBox2
+            // txtHD_IDEmp
             // 
-            this.textBox2.Location = new System.Drawing.Point(905, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 2;
+            this.txtHD_IDEmp.Location = new System.Drawing.Point(663, 152);
+            this.txtHD_IDEmp.Name = "txtHD_IDEmp";
+            this.txtHD_IDEmp.Size = new System.Drawing.Size(131, 22);
+            this.txtHD_IDEmp.TabIndex = 2;
             // 
-            // textBox3
+            // txtHD_IDCus
             // 
-            this.textBox3.Location = new System.Drawing.Point(892, 288);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 3;
+            this.txtHD_IDCus.Location = new System.Drawing.Point(663, 198);
+            this.txtHD_IDCus.Name = "txtHD_IDCus";
+            this.txtHD_IDCus.Size = new System.Drawing.Size(131, 22);
+            this.txtHD_IDCus.TabIndex = 3;
             // 
-            // textBox4
+            // txtHD_DateBuy
             // 
-            this.textBox4.Location = new System.Drawing.Point(892, 338);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 4;
+            this.txtHD_DateBuy.Location = new System.Drawing.Point(663, 243);
+            this.txtHD_DateBuy.Name = "txtHD_DateBuy";
+            this.txtHD_DateBuy.Size = new System.Drawing.Size(131, 22);
+            this.txtHD_DateBuy.TabIndex = 4;
             // 
-            // textBox5
+            // txtHD_Price
             // 
-            this.textBox5.Location = new System.Drawing.Point(892, 229);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 5;
+            this.txtHD_Price.Location = new System.Drawing.Point(663, 284);
+            this.txtHD_Price.Name = "txtHD_Price";
+            this.txtHD_Price.Size = new System.Drawing.Size(131, 22);
+            this.txtHD_Price.TabIndex = 5;
             // 
             // textBox6
             // 
@@ -161,65 +161,68 @@ namespace QLThuCung.Views
             this.textBox6.Size = new System.Drawing.Size(100, 22);
             this.textBox6.TabIndex = 6;
             // 
-            // comboBox1
+            // cbHD
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(652, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 7;
+            this.cbHD.FormattingEnabled = true;
+            this.cbHD.Location = new System.Drawing.Point(652, 45);
+            this.cbHD.Name = "cbHD";
+            this.cbHD.Size = new System.Drawing.Size(121, 24);
+            this.cbHD.TabIndex = 7;
             // 
-            // button1
+            // bthHD_Insert
             // 
-            this.button1.Location = new System.Drawing.Point(677, 482);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bthHD_Insert.Location = new System.Drawing.Point(677, 482);
+            this.bthHD_Insert.Name = "bthHD_Insert";
+            this.bthHD_Insert.Size = new System.Drawing.Size(75, 23);
+            this.bthHD_Insert.TabIndex = 8;
+            this.bthHD_Insert.Text = "Thêm";
+            this.bthHD_Insert.UseVisualStyleBackColor = true;
+            this.bthHD_Insert.Click += new System.EventHandler(this.bthHD_Insert_Click);
             // 
-            // button3
+            // btnHD_xoa
             // 
-            this.button3.Location = new System.Drawing.Point(708, 391);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "xóa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnHD_xoa.Location = new System.Drawing.Point(708, 391);
+            this.btnHD_xoa.Name = "btnHD_xoa";
+            this.btnHD_xoa.Size = new System.Drawing.Size(75, 23);
+            this.btnHD_xoa.TabIndex = 10;
+            this.btnHD_xoa.Text = "xóa";
+            this.btnHD_xoa.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnLuuHD
             // 
-            this.button4.Location = new System.Drawing.Point(771, 439);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "sửa";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnLuuHD.Location = new System.Drawing.Point(771, 439);
+            this.btnLuuHD.Name = "btnLuuHD";
+            this.btnLuuHD.Size = new System.Drawing.Size(75, 23);
+            this.btnLuuHD.TabIndex = 11;
+            this.btnLuuHD.Text = "Lưu";
+            this.btnLuuHD.UseVisualStyleBackColor = true;
+            this.btnLuuHD.Click += new System.EventHandler(this.btnLuuHD_Click);
             // 
-            // button5
+            // btnHD_Reload
             // 
-            this.button5.Location = new System.Drawing.Point(882, 466);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "ReLoad";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnHD_Reload.Location = new System.Drawing.Point(882, 466);
+            this.btnHD_Reload.Name = "btnHD_Reload";
+            this.btnHD_Reload.Size = new System.Drawing.Size(75, 23);
+            this.btnHD_Reload.TabIndex = 12;
+            this.btnHD_Reload.Text = "ReLoad";
+            this.btnHD_Reload.UseVisualStyleBackColor = true;
+            this.btnHD_Reload.Click += new System.EventHandler(this.btnHD_Reload_Click);
             // 
-            // button2
+            // bthHD_TimKiem
             // 
-            this.button2.Location = new System.Drawing.Point(790, 36);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Tìm kiếm";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bthHD_TimKiem.Location = new System.Drawing.Point(790, 36);
+            this.bthHD_TimKiem.Name = "bthHD_TimKiem";
+            this.bthHD_TimKiem.Size = new System.Drawing.Size(75, 23);
+            this.bthHD_TimKiem.TabIndex = 13;
+            this.bthHD_TimKiem.Text = "Tìm kiếm";
+            this.bthHD_TimKiem.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // txtHD_SoLuong
             // 
-            this.textBox7.Location = new System.Drawing.Point(892, 180);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 14;
+            this.txtHD_SoLuong.Location = new System.Drawing.Point(892, 94);
+            this.txtHD_SoLuong.Name = "txtHD_SoLuong";
+            this.txtHD_SoLuong.Size = new System.Drawing.Size(100, 22);
+            this.txtHD_SoLuong.TabIndex = 14;
             // 
             // groupBox1
             // 
@@ -250,14 +253,14 @@ namespace QLThuCung.Views
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết hợp hồng tìm kiếm";
             // 
-            // button6
+            // bthHD_chiTiet
             // 
-            this.button6.Location = new System.Drawing.Point(688, 328);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "Chi tiết";
-            this.button6.UseVisualStyleBackColor = true;
+            this.bthHD_chiTiet.Location = new System.Drawing.Point(688, 328);
+            this.bthHD_chiTiet.Name = "bthHD_chiTiet";
+            this.bthHD_chiTiet.Size = new System.Drawing.Size(75, 23);
+            this.bthHD_chiTiet.TabIndex = 18;
+            this.bthHD_chiTiet.Text = "Chi tiết";
+            this.bthHD_chiTiet.UseVisualStyleBackColor = true;
             // 
             // dgvChiTietHD
             // 
@@ -269,14 +272,14 @@ namespace QLThuCung.Views
             this.dgvChiTietHD.Size = new System.Drawing.Size(587, 110);
             this.dgvChiTietHD.TabIndex = 0;
             // 
-            // button7
+            // bthHD_Thoat
             // 
-            this.button7.Location = new System.Drawing.Point(817, 509);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Thoát";
-            this.button7.UseVisualStyleBackColor = true;
+            this.bthHD_Thoat.Location = new System.Drawing.Point(817, 509);
+            this.bthHD_Thoat.Name = "bthHD_Thoat";
+            this.bthHD_Thoat.Size = new System.Drawing.Size(75, 23);
+            this.bthHD_Thoat.TabIndex = 19;
+            this.bthHD_Thoat.Text = "Thoát";
+            this.bthHD_Thoat.UseVisualStyleBackColor = true;
             // 
             // HopDongDV
             // 
@@ -303,25 +306,25 @@ namespace QLThuCung.Views
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button bthHD_Thoat;
+        private System.Windows.Forms.Button bthHD_chiTiet;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvChiTietHD;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvHD;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtHD_SoLuong;
+        private System.Windows.Forms.Button bthHD_TimKiem;
+        private System.Windows.Forms.Button btnHD_Reload;
+        private System.Windows.Forms.Button btnLuuHD;
+        private System.Windows.Forms.Button btnHD_xoa;
+        private System.Windows.Forms.Button bthHD_Insert;
+        private System.Windows.Forms.ComboBox cbHD;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtHD_Price;
+        private System.Windows.Forms.TextBox txtHD_DateBuy;
+        private System.Windows.Forms.TextBox txtHD_IDCus;
+        private System.Windows.Forms.TextBox txtHD_IDEmp;
+        private System.Windows.Forms.TextBox txtHD_IDConser;
     }
 }
