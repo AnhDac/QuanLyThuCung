@@ -56,7 +56,7 @@ namespace QLThuCung.Views
         { 
                try
                 {
-                if (MessageBox.Show("Do you want delete this pet?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want update this pet?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string id = dgvHD.SelectedCells[0].OwningRow.Cells[0].Value.ToString().Trim();
                     Contract_Ser contract = db.Contract_Ser.Find(id);
@@ -88,7 +88,7 @@ namespace QLThuCung.Views
         {
             try
             {
-                if (MessageBox.Show("Do you want delete this pet?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want insert this pet?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Contract_Ser contract = new Contract_Ser();
 
