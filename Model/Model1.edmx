@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ThuCungModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CNPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Contract_Sell">
           <Key>
             <PropertyRef Name="ID_ConSell" />
@@ -120,6 +120,42 @@
           <Property Name="DateWork" Type="date" Nullable="false" />
           <Property Name="Shifts" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ID_Emp" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CNPM.dbo.view_Contract_ser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_Contract_ser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Emp" />
+            <PropertyRef Name="ID_Cus" />
+          </Key>
+          <Property Name="ID_ConSer" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Emp" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Cus" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DateBuy" Type="date" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CNPM.dbo.view_DetailContractser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_DetailContractser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Ser" />
+          </Key>
+          <Property Name="ID_ConSer" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Ser" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CNPM.dbo.view_Servic' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_Servic">
+          <Key>
+            <PropertyRef Name="ID_Ser" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID_Ser" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" />
         </EntityType>
         <Association Name="FK_IDConSer_DetailContractSer_IDConSer_ConSer">
           <End Role="Contract_Ser" Type="Self.Contract_Ser" Multiplicity="1" />
@@ -253,6 +289,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="usp_GetContractSellTheoThangVaNam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="month" Type="int" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_GetContractSerTheoThangVaNam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="month" Type="int" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_GetProfitContractSellTheoThangVaNam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="month" Type="int" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="total" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="usp_GetSumSalaryOfEmp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="total" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="usp_GetTotalMoneyTransactionContractSellTheoThangVaNam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="month" Type="int" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="total" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="usp_GetTotalMoneyTransactionContractSerTheoThangVaNam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="month" Type="int" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="total" Type="int" Mode="InOut" />
+        </Function>
         <Function Name="usp_MuaDichVu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idconser" Type="char" Mode="In" />
           <Parameter Name="idemp" Type="char" Mode="In" />
@@ -264,7 +326,7 @@
           <Parameter Name="idser3" Type="char" Mode="In" />
           <Parameter Name="idser4" Type="char" Mode="In" />
         </Function>
-        <EntityContainer Name="ThuCungModelStoreContainer">
+        <EntityContainer Name="CNPMModelStoreContainer">
           <EntitySet Name="Contract_Sell" EntityType="Self.Contract_Sell" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contract_Ser" EntityType="Self.Contract_Ser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -277,6 +339,29 @@
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WarrantyType" EntityType="Self.WarrantyType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Work" EntityType="Self.Work" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="view_Contract_ser" EntityType="Self.view_Contract_ser" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_Contract_ser].[ID_ConSer] AS [ID_ConSer], 
+    [view_Contract_ser].[ID_Emp] AS [ID_Emp], 
+    [view_Contract_ser].[ID_Cus] AS [ID_Cus], 
+    [view_Contract_ser].[DateBuy] AS [DateBuy], 
+    [view_Contract_ser].[Price] AS [Price]
+    FROM [dbo].[view_Contract_ser] AS [view_Contract_ser]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_DetailContractser" EntityType="Self.view_DetailContractser" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_DetailContractser].[ID_ConSer] AS [ID_ConSer], 
+    [view_DetailContractser].[ID_Ser] AS [ID_Ser], 
+    [view_DetailContractser].[Price] AS [Price]
+    FROM [dbo].[view_DetailContractser] AS [view_DetailContractser]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_Servic" EntityType="Self.view_Servic" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_Servic].[ID_Ser] AS [ID_Ser], 
+    [view_Servic].[Name] AS [Name], 
+    [view_Servic].[Price] AS [Price]
+    FROM [dbo].[view_Servic] AS [view_Servic]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_IDConSer_DetailContractSer_IDConSer_ConSer" Association="Self.FK_IDConSer_DetailContractSer_IDConSer_ConSer">
             <End Role="Contract_Ser" EntitySet="Contract_Ser" />
             <End Role="DetailContractSer" EntitySet="DetailContractSer" />
@@ -326,7 +411,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ThuCungModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="CNPMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Contract_Sell">
           <Key>
             <PropertyRef Name="ID_ConSell" />
@@ -465,6 +550,36 @@
           <Property Name="ID_Emp" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_IDEmp_Work_IDEmp_Emp" FromRole="Work" ToRole="Employee" />
         </EntityType>
+        <EntityType Name="view_Contract_ser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Emp" />
+            <PropertyRef Name="ID_Cus" />
+          </Key>
+          <Property Name="ID_ConSer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Emp" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Cus" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DateBuy" Type="DateTime" Precision="0" />
+          <Property Name="Price" Type="Int32" />
+        </EntityType>
+        <EntityType Name="view_DetailContractser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Ser" />
+          </Key>
+          <Property Name="ID_ConSer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Ser" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Int32" />
+        </EntityType>
+        <EntityType Name="view_Servic">
+          <Key>
+            <PropertyRef Name="ID_Ser" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID_Ser" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Int32" />
+        </EntityType>
         <Association Name="FK_IDCus_ConSell_IDCus_Custom">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
@@ -597,7 +712,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ThụCungEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ThuCungEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Contract_Sell" EntityType="Self.Contract_Sell" />
           <EntitySet Name="Contract_Ser" EntityType="Self.Contract_Ser" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
@@ -610,6 +725,9 @@
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="WarrantyTypes" EntityType="Self.WarrantyType" />
           <EntitySet Name="Works" EntityType="Self.Work" />
+          <EntitySet Name="view_Contract_ser" EntityType="Self.view_Contract_ser" />
+          <EntitySet Name="view_DetailContractser" EntityType="Self.view_DetailContractser" />
+          <EntitySet Name="view_Servic" EntityType="Self.view_Servic" />
           <AssociationSet Name="FK_IDCus_ConSell_IDCus_Custom" Association="Self.FK_IDCus_ConSell_IDCus_Custom">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Contract_Sell" EntitySet="Contract_Sell" />
@@ -654,6 +772,32 @@
             <End Role="Supplier" EntitySet="Suppliers" />
             <End Role="Pet" EntitySet="Pets" />
           </AssociationSet>
+          <FunctionImport Name="usp_GetContractSellTheoThangVaNam" ReturnType="Collection(CNPMModel.usp_GetContractSellTheoThangVaNam_Result)">
+            <Parameter Name="month" Mode="In" Type="Int32" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetContractSerTheoThangVaNam" ReturnType="Collection(CNPMModel.usp_GetContractSerTheoThangVaNam_Result)">
+            <Parameter Name="month" Mode="In" Type="Int32" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetProfitContractSellTheoThangVaNam">
+            <Parameter Name="month" Mode="In" Type="Int32" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="total" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetSumSalaryOfEmp">
+            <Parameter Name="total" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetTotalMoneyTransactionContractSellTheoThangVaNam">
+            <Parameter Name="month" Mode="In" Type="Int32" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="total" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetTotalMoneyTransactionContractSerTheoThangVaNam">
+            <Parameter Name="month" Mode="In" Type="Int32" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="total" Mode="InOut" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="usp_MuaDichVu">
             <Parameter Name="idconser" Mode="In" Type="String" />
             <Parameter Name="idemp" Mode="In" Type="String" />
@@ -666,14 +810,30 @@
             <Parameter Name="idser4" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="usp_GetContractSellTheoThangVaNam_Result">
+          <Property Type="String" Name="ID_ConSell" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ID_Emp" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ID_Cus" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ID_Pet" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CateInsurance" Nullable="false" MaxLength="10" />
+          <Property Type="DateTime" Name="DateSell" Nullable="true" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_GetContractSerTheoThangVaNam_Result">
+          <Property Type="String" Name="ID_ConSer" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ID_Emp" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ID_Cus" Nullable="false" MaxLength="10" />
+          <Property Type="DateTime" Name="DateBuy" Nullable="true" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ThuCungModelStoreContainer" CdmEntityContainer="ThụCungEntities">
+        <EntityContainerMapping StorageEntityContainer="CNPMModelStoreContainer" CdmEntityContainer="ThuCungEntities">
           <EntitySetMapping Name="Contract_Sell">
-            <EntityTypeMapping TypeName="ThuCungModel.Contract_Sell">
+            <EntityTypeMapping TypeName="CNPMModel.Contract_Sell">
               <MappingFragment StoreEntitySet="Contract_Sell">
                 <ScalarProperty Name="ID_ConSell" ColumnName="ID_ConSell" />
                 <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
@@ -686,7 +846,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Contract_Ser">
-            <EntityTypeMapping TypeName="ThuCungModel.Contract_Ser">
+            <EntityTypeMapping TypeName="CNPMModel.Contract_Ser">
               <MappingFragment StoreEntitySet="Contract_Ser">
                 <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
                 <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
@@ -697,7 +857,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="ThuCungModel.Customer">
+            <EntityTypeMapping TypeName="CNPMModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -707,7 +867,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DetailContractSers">
-            <EntityTypeMapping TypeName="ThuCungModel.DetailContractSer">
+            <EntityTypeMapping TypeName="CNPMModel.DetailContractSer">
               <MappingFragment StoreEntitySet="DetailContractSer">
                 <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
                 <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
@@ -716,7 +876,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="ThuCungModel.Employee">
+            <EntityTypeMapping TypeName="CNPMModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -729,7 +889,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pets">
-            <EntityTypeMapping TypeName="ThuCungModel.Pet">
+            <EntityTypeMapping TypeName="CNPMModel.Pet">
               <MappingFragment StoreEntitySet="Pet">
                 <ScalarProperty Name="ID_Pet" ColumnName="ID_Pet" />
                 <ScalarProperty Name="ID_Spec" ColumnName="ID_Spec" />
@@ -742,7 +902,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Servics">
-            <EntityTypeMapping TypeName="ThuCungModel.Servic">
+            <EntityTypeMapping TypeName="CNPMModel.Servic">
               <MappingFragment StoreEntitySet="Servic">
                 <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -751,7 +911,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Species">
-            <EntityTypeMapping TypeName="ThuCungModel.Species">
+            <EntityTypeMapping TypeName="CNPMModel.Species">
               <MappingFragment StoreEntitySet="Species">
                 <ScalarProperty Name="ID_Spec" ColumnName="ID_Spec" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -759,7 +919,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="ThuCungModel.Supplier">
+            <EntityTypeMapping TypeName="CNPMModel.Supplier">
               <MappingFragment StoreEntitySet="Supplier">
                 <ScalarProperty Name="ID_Sup" ColumnName="ID_Sup" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -769,7 +929,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="ThuCungModel.User">
+            <EntityTypeMapping TypeName="CNPMModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -780,7 +940,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="WarrantyTypes">
-            <EntityTypeMapping TypeName="ThuCungModel.WarrantyType">
+            <EntityTypeMapping TypeName="CNPMModel.WarrantyType">
               <MappingFragment StoreEntitySet="WarrantyType">
                 <ScalarProperty Name="ID_Warr" ColumnName="ID_Warr" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -789,7 +949,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Works">
-            <EntityTypeMapping TypeName="ThuCungModel.Work">
+            <EntityTypeMapping TypeName="CNPMModel.Work">
               <MappingFragment StoreEntitySet="Work">
                 <ScalarProperty Name="DateWork" ColumnName="DateWork" />
                 <ScalarProperty Name="Shifts" ColumnName="Shifts" />
@@ -797,7 +957,64 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="usp_MuaDichVu" FunctionName="ThuCungModel.Store.usp_MuaDichVu" />
+          <EntitySetMapping Name="view_Contract_ser">
+            <EntityTypeMapping TypeName="CNPMModel.view_Contract_ser">
+              <MappingFragment StoreEntitySet="view_Contract_ser">
+                <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
+                <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+                <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
+                <ScalarProperty Name="DateBuy" ColumnName="DateBuy" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_DetailContractser">
+            <EntityTypeMapping TypeName="CNPMModel.view_DetailContractser">
+              <MappingFragment StoreEntitySet="view_DetailContractser">
+                <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
+                <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_Servic">
+            <EntityTypeMapping TypeName="CNPMModel.view_Servic">
+              <MappingFragment StoreEntitySet="view_Servic">
+                <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetContractSellTheoThangVaNam" FunctionName="CNPMModel.Store.usp_GetContractSellTheoThangVaNam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CNPMModel.usp_GetContractSellTheoThangVaNam_Result">
+                <ScalarProperty Name="ID_ConSell" ColumnName="ID_ConSell" />
+                <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+                <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
+                <ScalarProperty Name="ID_Pet" ColumnName="ID_Pet" />
+                <ScalarProperty Name="CateInsurance" ColumnName="CateInsurance" />
+                <ScalarProperty Name="DateSell" ColumnName="DateSell" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetContractSerTheoThangVaNam" FunctionName="CNPMModel.Store.usp_GetContractSerTheoThangVaNam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CNPMModel.usp_GetContractSerTheoThangVaNam_Result">
+                <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
+                <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+                <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
+                <ScalarProperty Name="DateBuy" ColumnName="DateBuy" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetProfitContractSellTheoThangVaNam" FunctionName="CNPMModel.Store.usp_GetProfitContractSellTheoThangVaNam" />
+          <FunctionImportMapping FunctionImportName="usp_GetSumSalaryOfEmp" FunctionName="CNPMModel.Store.usp_GetSumSalaryOfEmp" />
+          <FunctionImportMapping FunctionImportName="usp_GetTotalMoneyTransactionContractSellTheoThangVaNam" FunctionName="CNPMModel.Store.usp_GetTotalMoneyTransactionContractSellTheoThangVaNam" />
+          <FunctionImportMapping FunctionImportName="usp_GetTotalMoneyTransactionContractSerTheoThangVaNam" FunctionName="CNPMModel.Store.usp_GetTotalMoneyTransactionContractSerTheoThangVaNam" />
+          <FunctionImportMapping FunctionImportName="usp_MuaDichVu" FunctionName="CNPMModel.Store.usp_MuaDichVu" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
