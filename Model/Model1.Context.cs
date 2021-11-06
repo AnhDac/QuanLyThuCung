@@ -154,9 +154,22 @@ namespace QLThuCung.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_MuaDichVu", idconserParameter, idempParameter, idcusParameter, datebuyParameter, priceParameter, idser1Parameter, idser2Parameter, idser3Parameter, idser4Parameter);
         }
     
-        public virtual ObjectResult<view_Contract_Result> view_Contract()
+        public virtual ObjectResult<view_Contract_Result> view_Contract(string iD_emp)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<view_Contract_Result>("view_Contract");
+            var iD_empParameter = iD_emp != null ?
+                new ObjectParameter("ID_emp", iD_emp) :
+                new ObjectParameter("ID_emp", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<view_Contract_Result>("view_Contract", iD_empParameter);
+        }
+    
+        public virtual ObjectResult<view_DetaiContracser_Result> view_DetaiContracser(string iD_Conser)
+        {
+            var iD_ConserParameter = iD_Conser != null ?
+                new ObjectParameter("ID_Conser", iD_Conser) :
+                new ObjectParameter("ID_Conser", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<view_DetaiContracser_Result>("view_DetaiContracser", iD_ConserParameter);
         }
     }
 }

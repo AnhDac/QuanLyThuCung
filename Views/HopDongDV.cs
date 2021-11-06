@@ -28,10 +28,15 @@ namespace QLThuCung.Views
         void LoadHopDongDV()
         {
             var result = from kq in db.Contract_Ser select new { IDConser = kq.ID_ConSer, IDEmp = kq.ID_Emp, IDCus = kq.ID_Cus, DateBuy = kq.DateBuy, Price = kq.Price };
+            var empl = db.Employees.ToList();
+            cbDV.DataSource = empl;
+            cbDV.DisplayMember = "ID_Emp";
+            cbDV.ValueMember = "ID_Emp";
             cbHD.DataSource = result.ToList();
             cbHD.DisplayMember = "ID_ConSer";
             cbHD.ValueMember = "IDConser";
             dgvHD.DataSource = result.ToList();
+            txtHD_SoLuong.Text = dgvHD.Rows.Count.ToString();
         }
         void binHopDongDV()
         {
@@ -132,7 +137,17 @@ namespace QLThuCung.Views
 
         private void bthHD_TimKiem_Click(object sender, EventArgs e)
         {
+            String tam = cbDV.Text.ToString().Trim();
+            var kq = db.view_Contract(tam);
+            dgvHD.DataSource = kq.ToList();
             txtHD_SoLuong.Text = dgvHD.Rows.Count.ToString();
+        }
+
+        private void bthHD_chiTiet_Click(object sender, EventArgs e)
+        {
+            String tam = cbHD.Text.ToString().Trim();
+            var kq = db.view_DetaiContracser(tam);
+            dgvChiTietHD.DataSource = kq.ToList();
         }
     }
 }

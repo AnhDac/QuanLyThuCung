@@ -326,7 +326,12 @@ warning 6002: The table/view 'CNPM.dbo.view_Servic' does not have a primary key 
           <Parameter Name="idser3" Type="char" Mode="In" />
           <Parameter Name="idser4" Type="char" Mode="In" />
         </Function>
-        <Function Name="view_Contract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="view_Contract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_emp" Type="char" Mode="In" />
+        </Function>
+        <Function Name="view_DetaiContracser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_Conser" Type="char" Mode="In" />
+        </Function>
         <EntityContainer Name="CNPMModelStoreContainer">
           <EntitySet Name="Contract_Sell" EntityType="Self.Contract_Sell" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contract_Ser" EntityType="Self.Contract_Ser" Schema="dbo" store:Type="Tables" />
@@ -810,7 +815,12 @@ warning 6002: The table/view 'CNPM.dbo.view_Servic' does not have a primary key 
             <Parameter Name="idser3" Mode="In" Type="String" />
             <Parameter Name="idser4" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="view_Contract" ReturnType="Collection(CNPMModel.view_Contract_Result)" />
+          <FunctionImport Name="view_Contract" ReturnType="Collection(CNPMModel.view_Contract_Result)">
+            <Parameter Name="ID_emp" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="view_DetaiContracser" ReturnType="Collection(CNPMModel.view_DetaiContracser_Result)">
+            <Parameter Name="ID_Conser" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="usp_GetContractSellTheoThangVaNam_Result">
           <Property Type="String" Name="ID_ConSell" Nullable="false" MaxLength="10" />
@@ -833,6 +843,11 @@ warning 6002: The table/view 'CNPM.dbo.view_Servic' does not have a primary key 
           <Property Type="String" Name="ID_Emp" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="ID_Cus" Nullable="false" MaxLength="10" />
           <Property Type="DateTime" Name="DateBuy" Nullable="true" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="view_DetaiContracser_Result">
+          <Property Type="String" Name="ID_ConSer" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ID_Ser" Nullable="false" MaxLength="10" />
           <Property Type="Int32" Name="Price" Nullable="true" />
         </ComplexType>
       </Schema>
@@ -1031,6 +1046,15 @@ warning 6002: The table/view 'CNPM.dbo.view_Servic' does not have a primary key 
                 <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
                 <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
                 <ScalarProperty Name="DateBuy" ColumnName="DateBuy" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="view_DetaiContracser" FunctionName="CNPMModel.Store.view_DetaiContracser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CNPMModel.view_DetaiContracser_Result">
+                <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
+                <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
               </ComplexTypeMapping>
             </ResultMapping>

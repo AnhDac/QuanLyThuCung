@@ -32,6 +32,8 @@ namespace QLThuCung.Views
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbDV = new System.Windows.Forms.ComboBox();
             this.bthHD_Thoat = new System.Windows.Forms.Button();
             this.bthHD_chiTiet = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -46,35 +48,18 @@ namespace QLThuCung.Views
             this.btnHD_xoa = new System.Windows.Forms.Button();
             this.bthHD_Insert = new System.Windows.Forms.Button();
             this.cbHD = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.txtHD_Price = new System.Windows.Forms.TextBox();
             this.txtHD_DateBuy = new System.Windows.Forms.TextBox();
             this.txtHD_IDCus = new System.Windows.Forms.TextBox();
             this.txtHD_IDEmp = new System.Windows.Forms.TextBox();
             this.txtHD_IDConser = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnDV_them = new System.Windows.Forms.Button();
-            this.btnDV_xoa = new System.Windows.Forms.Button();
-            this.btnDV_sua = new System.Windows.Forms.Button();
-            this.btnDV_Thoat = new System.Windows.Forms.Button();
-            this.txtDV_IDSer = new System.Windows.Forms.TextBox();
-            this.txtDV_Name = new System.Windows.Forms.TextBox();
-            this.txtDV_Price = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbDV = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHD)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -89,17 +74,6 @@ namespace QLThuCung.Views
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.txtDV_Price);
-            this.tabPage1.Controls.Add(this.txtDV_Name);
-            this.tabPage1.Controls.Add(this.txtDV_IDSer);
-            this.tabPage1.Controls.Add(this.btnDV_Thoat);
-            this.tabPage1.Controls.Add(this.btnDV_sua);
-            this.tabPage1.Controls.Add(this.btnDV_xoa);
-            this.tabPage1.Controls.Add(this.btnDV_them);
-            this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -110,21 +84,18 @@ namespace QLThuCung.Views
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.cbDV);
             this.tabPage2.Controls.Add(this.bthHD_Thoat);
-            this.tabPage2.Controls.Add(this.bthHD_chiTiet);
             this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.bthHD_TimKiem);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.txtHD_SoLuong);
-            this.tabPage2.Controls.Add(this.bthHD_TimKiem);
             this.tabPage2.Controls.Add(this.btnHD_Reload);
             this.tabPage2.Controls.Add(this.btnLuuHD);
             this.tabPage2.Controls.Add(this.btnHD_xoa);
             this.tabPage2.Controls.Add(this.bthHD_Insert);
-            this.tabPage2.Controls.Add(this.cbHD);
-            this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.txtHD_Price);
             this.tabPage2.Controls.Add(this.txtHD_DateBuy);
             this.tabPage2.Controls.Add(this.txtHD_IDCus);
@@ -138,6 +109,23 @@ namespace QLThuCung.Views
             this.tabPage2.Text = "Hợp đồng thú cưng";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(324, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Mã HD\r\n";
+            // 
+            // cbDV
+            // 
+            this.cbDV.FormattingEnabled = true;
+            this.cbDV.Location = new System.Drawing.Point(755, 32);
+            this.cbDV.Name = "cbDV";
+            this.cbDV.Size = new System.Drawing.Size(121, 24);
+            this.cbDV.TabIndex = 20;
+            // 
             // bthHD_Thoat
             // 
             this.bthHD_Thoat.Location = new System.Drawing.Point(817, 509);
@@ -149,16 +137,20 @@ namespace QLThuCung.Views
             // 
             // bthHD_chiTiet
             // 
-            this.bthHD_chiTiet.Location = new System.Drawing.Point(851, 61);
+            this.bthHD_chiTiet.Location = new System.Drawing.Point(361, 90);
             this.bthHD_chiTiet.Name = "bthHD_chiTiet";
             this.bthHD_chiTiet.Size = new System.Drawing.Size(141, 33);
             this.bthHD_chiTiet.TabIndex = 18;
             this.bthHD_chiTiet.Text = "Chi tiết hợp đồng\r\n";
             this.bthHD_chiTiet.UseVisualStyleBackColor = true;
+            this.bthHD_chiTiet.Click += new System.EventHandler(this.bthHD_chiTiet_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dgvChiTietHD);
+            this.groupBox2.Controls.Add(this.bthHD_chiTiet);
+            this.groupBox2.Controls.Add(this.cbHD);
             this.groupBox2.Location = new System.Drawing.Point(19, 349);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(606, 156);
@@ -173,13 +165,13 @@ namespace QLThuCung.Views
             this.dgvChiTietHD.Name = "dgvChiTietHD";
             this.dgvChiTietHD.RowHeadersWidth = 51;
             this.dgvChiTietHD.RowTemplate.Height = 24;
-            this.dgvChiTietHD.Size = new System.Drawing.Size(587, 110);
+            this.dgvChiTietHD.Size = new System.Drawing.Size(301, 110);
             this.dgvChiTietHD.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(828, 129);
+            this.label1.Location = new System.Drawing.Point(854, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 16;
@@ -208,14 +200,14 @@ namespace QLThuCung.Views
             // 
             // txtHD_SoLuong
             // 
-            this.txtHD_SoLuong.Location = new System.Drawing.Point(892, 198);
+            this.txtHD_SoLuong.Location = new System.Drawing.Point(873, 168);
             this.txtHD_SoLuong.Name = "txtHD_SoLuong";
             this.txtHD_SoLuong.Size = new System.Drawing.Size(100, 22);
             this.txtHD_SoLuong.TabIndex = 14;
             // 
             // bthHD_TimKiem
             // 
-            this.bthHD_TimKiem.Location = new System.Drawing.Point(853, 22);
+            this.bthHD_TimKiem.Location = new System.Drawing.Point(857, 86);
             this.bthHD_TimKiem.Name = "bthHD_TimKiem";
             this.bthHD_TimKiem.Size = new System.Drawing.Size(75, 23);
             this.bthHD_TimKiem.TabIndex = 13;
@@ -225,7 +217,7 @@ namespace QLThuCung.Views
             // 
             // btnHD_Reload
             // 
-            this.btnHD_Reload.Location = new System.Drawing.Point(882, 466);
+            this.btnHD_Reload.Location = new System.Drawing.Point(898, 424);
             this.btnHD_Reload.Name = "btnHD_Reload";
             this.btnHD_Reload.Size = new System.Drawing.Size(75, 23);
             this.btnHD_Reload.TabIndex = 12;
@@ -266,17 +258,10 @@ namespace QLThuCung.Views
             // cbHD
             // 
             this.cbHD.FormattingEnabled = true;
-            this.cbHD.Location = new System.Drawing.Point(708, 21);
+            this.cbHD.Location = new System.Drawing.Point(381, 43);
             this.cbHD.Name = "cbHD";
             this.cbHD.Size = new System.Drawing.Size(121, 24);
             this.cbHD.TabIndex = 7;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(882, 328);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 6;
             // 
             // txtHD_Price
             // 
@@ -313,126 +298,14 @@ namespace QLThuCung.Views
             this.txtHD_IDConser.Size = new System.Drawing.Size(131, 22);
             this.txtHD_IDConser.TabIndex = 1;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(18, 24);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(533, 269);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Danh sách dịch vụ";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(454, 185);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // btnDV_them
-            // 
-            this.btnDV_them.Location = new System.Drawing.Point(697, 258);
-            this.btnDV_them.Name = "btnDV_them";
-            this.btnDV_them.Size = new System.Drawing.Size(109, 48);
-            this.btnDV_them.TabIndex = 1;
-            this.btnDV_them.Text = "Thêm";
-            this.btnDV_them.UseVisualStyleBackColor = true;
-            // 
-            // btnDV_xoa
-            // 
-            this.btnDV_xoa.Location = new System.Drawing.Point(805, 335);
-            this.btnDV_xoa.Name = "btnDV_xoa";
-            this.btnDV_xoa.Size = new System.Drawing.Size(109, 48);
-            this.btnDV_xoa.TabIndex = 2;
-            this.btnDV_xoa.Text = "Xóa";
-            this.btnDV_xoa.UseVisualStyleBackColor = true;
-            // 
-            // btnDV_sua
-            // 
-            this.btnDV_sua.Location = new System.Drawing.Point(614, 335);
-            this.btnDV_sua.Name = "btnDV_sua";
-            this.btnDV_sua.Size = new System.Drawing.Size(109, 48);
-            this.btnDV_sua.TabIndex = 3;
-            this.btnDV_sua.Text = "sửa";
-            this.btnDV_sua.UseVisualStyleBackColor = true;
-            // 
-            // btnDV_Thoat
-            // 
-            this.btnDV_Thoat.Location = new System.Drawing.Point(697, 409);
-            this.btnDV_Thoat.Name = "btnDV_Thoat";
-            this.btnDV_Thoat.Size = new System.Drawing.Size(109, 48);
-            this.btnDV_Thoat.TabIndex = 4;
-            this.btnDV_Thoat.Text = "Thoát";
-            this.btnDV_Thoat.UseVisualStyleBackColor = true;
-            // 
-            // txtDV_IDSer
-            // 
-            this.txtDV_IDSer.Location = new System.Drawing.Point(193, 330);
-            this.txtDV_IDSer.Name = "txtDV_IDSer";
-            this.txtDV_IDSer.Size = new System.Drawing.Size(100, 22);
-            this.txtDV_IDSer.TabIndex = 5;
-            // 
-            // txtDV_Name
-            // 
-            this.txtDV_Name.Location = new System.Drawing.Point(193, 376);
-            this.txtDV_Name.Name = "txtDV_Name";
-            this.txtDV_Name.Size = new System.Drawing.Size(100, 22);
-            this.txtDV_Name.TabIndex = 6;
-            // 
-            // txtDV_Price
-            // 
-            this.txtDV_Price.Location = new System.Drawing.Point(193, 422);
-            this.txtDV_Price.Name = "txtDV_Price";
-            this.txtDV_Price.Size = new System.Drawing.Size(100, 22);
-            this.txtDV_Price.TabIndex = 7;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 335);
+            this.label2.Location = new System.Drawing.Point(638, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Mã dịch vụ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 379);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Tên dịch vụ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 427);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Giá tiền";
-            // 
-            // cbDV
-            // 
-            this.cbDV.FormattingEnabled = true;
-            this.cbDV.Location = new System.Drawing.Point(699, 70);
-            this.cbDV.Name = "cbDV";
-            this.cbDV.Size = new System.Drawing.Size(121, 24);
-            this.cbDV.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(651, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 17);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Mã HD\r\n";
+            this.label2.Size = new System.Drawing.Size(93, 17);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Mã nhân viên";
             // 
             // HopDongDV
             // 
@@ -444,16 +317,13 @@ namespace QLThuCung.Views
             this.Text = "HopDongDV";
             this.Load += new System.EventHandler(this.HopDongDV_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHD)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,25 +347,13 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Button btnHD_xoa;
         private System.Windows.Forms.Button bthHD_Insert;
         private System.Windows.Forms.ComboBox cbHD;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox txtHD_Price;
         private System.Windows.Forms.TextBox txtHD_DateBuy;
         private System.Windows.Forms.TextBox txtHD_IDCus;
         private System.Windows.Forms.TextBox txtHD_IDEmp;
         private System.Windows.Forms.TextBox txtHD_IDConser;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDV_Price;
-        private System.Windows.Forms.TextBox txtDV_Name;
-        private System.Windows.Forms.TextBox txtDV_IDSer;
-        private System.Windows.Forms.Button btnDV_Thoat;
-        private System.Windows.Forms.Button btnDV_sua;
-        private System.Windows.Forms.Button btnDV_xoa;
-        private System.Windows.Forms.Button btnDV_them;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbDV;
+        private System.Windows.Forms.Label label2;
     }
 }
