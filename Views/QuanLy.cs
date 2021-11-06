@@ -17,7 +17,7 @@ namespace QLThuCung.Views
         {
             InitializeComponent();
         }
-        ThụCungEntities db = new ThụCungEntities();
+        ThuCungEntities db = new ThuCungEntities();
         private void QuanLy_Load(object sender, EventArgs e)
         {
             panelLuuHuy.Hide();
@@ -129,7 +129,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThụCungEntities();
+                db = new ThuCungEntities();
                 LoadThuCung();
             }
         }
@@ -163,7 +163,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Update Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThụCungEntities();
+                db = new ThuCungEntities();
                 LoadThuCung();
             }
         }
@@ -181,7 +181,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Delete Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThụCungEntities();
+                db = new ThuCungEntities();
                 LoadThuCung();
             }
         }
@@ -205,8 +205,7 @@ namespace QLThuCung.Views
 
         private void btnHD_Click(object sender, EventArgs e)
         {
-            HD hd = new HD();
-            hd.ShowDialog();
+            
         }
         //======================End THU CUNG============================
     }
