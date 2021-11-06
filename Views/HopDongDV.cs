@@ -56,27 +56,28 @@ namespace QLThuCung.Views
         {
             binHopDongDV();
         }
-
+        
         private void btnLuuHD_Click(object sender, EventArgs e)
         { 
-                try
+               try
                 {
-                
-                string idpet = dgvHD.SelectedCells[0].OwningRow.Cells[0].Value.ToString().Trim();
-                Contract_Ser contract = db.Contract_Ser.Find(idpet);
-                contract.ID_ConSer = txtHD_IDConser.Text.ToString().Trim();
-                contract.ID_Emp = txtHD_IDEmp.Text.ToString().Trim();
-                contract.ID_Cus = txtHD_IDCus.Text.ToString().Trim();
-                contract.DateBuy = Convert.ToDateTime(txtHD_DateBuy.Text);
-                contract.Price = Convert.ToInt32(txtHD_Price.Text);
+                if (MessageBox.Show("Do you want delete this pet?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string id = dgvHD.SelectedCells[0].OwningRow.Cells[0].Value.ToString().Trim();
+                    Contract_Ser contract = db.Contract_Ser.Find(id);
+                    contract.ID_Emp = txtHD_IDEmp.Text.ToString().Trim();
+                    contract.ID_Cus = txtHD_IDCus.Text.ToString().Trim();
+                    contract.DateBuy = Convert.ToDateTime(txtHD_DateBuy.Text);
+                    contract.Price = Convert.ToInt32(txtHD_Price.Text);
                     db.SaveChanges();
 
-                    MessageBox.Show("Thêm Thành Công!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("update Thành Công!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadHopDongDV();
+                }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi không update được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     db = new ThuCungEntities();
                     LoadHopDongDV();
                 }
@@ -92,24 +93,48 @@ namespace QLThuCung.Views
         {
             try
             {
-                Contract_Ser contract = new Contract_Ser();
+                if (MessageBox.Show("Do you want delete this pet?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Contract_Ser contract = new Contract_Ser();
 
-                contract.ID_ConSer = txtHD_IDConser.Text.ToString().Trim();
-                contract.ID_Emp = txtHD_IDEmp.Text.ToString().Trim();
-                contract.ID_Cus = txtHD_IDCus.Text.ToString().Trim();
-                contract.DateBuy = Convert.ToDateTime(txtHD_DateBuy.Text);
-                contract.Price = Convert.ToInt32(txtHD_Price.Text);
+                    contract.ID_ConSer = txtHD_IDConser.Text.ToString().Trim();
+                    contract.ID_Emp = txtHD_IDEmp.Text.ToString().Trim();
+                    contract.ID_Cus = txtHD_IDCus.Text.ToString().Trim();
+                    contract.DateBuy = Convert.ToDateTime(txtHD_DateBuy.Text);
+                    contract.Price = Convert.ToInt32(txtHD_Price.Text);
 
 
-                db.Contract_Ser.Add(contract);
-                db.SaveChanges();
+                    db.Contract_Ser.Add(contract);
+                    db.SaveChanges();
 
-                MessageBox.Show("Thêm Thành Công!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadHopDongDV();
+                    MessageBox.Show("Thêm Thành Công!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadHopDongDV();
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThuCungEntities();
+                LoadHopDongDV();
+            }
+        }
+
+        private void btnHD_xoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Do you want delete this pet?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Contract_Ser Contrac = db.Contract_Ser.Where(p => p.ID_ConSer == txtHD_IDConser.Text.ToString()).SingleOrDefault();
+                    db.Contract_Ser.Remove(Contrac);
+                    db.SaveChanges();
+                    MessageBox.Show("Delete Successfull!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadHopDongDV();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Delete Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 db = new ThuCungEntities();
                 LoadHopDongDV();
             }
