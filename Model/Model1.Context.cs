@@ -153,5 +153,10 @@ namespace QLThuCung.Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_MuaDichVu", idconserParameter, idempParameter, idcusParameter, datebuyParameter, priceParameter, idser1Parameter, idser2Parameter, idser3Parameter, idser4Parameter);
         }
+    
+        public virtual ObjectResult<view_Contract_Result> view_Contract()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<view_Contract_Result>("view_Contract");
+        }
     }
 }
