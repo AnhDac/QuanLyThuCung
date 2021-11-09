@@ -106,6 +106,12 @@
     <Compile Include="Model\usp_GetContractSerTheoThangVaNam_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\view_Contract_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\view_DetaiContracser_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\WarrantyType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -17,7 +17,7 @@ namespace QLThuCung.Views
         {
             InitializeComponent();
         }
-        ThuCungEntities db = new ThuCungEntities();
+        ThuCung1Entities db = new ThuCung1Entities();
         private void QuanLy_Load(object sender, EventArgs e)
         {
             panelLuuHuy.Hide();
@@ -166,7 +166,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThuCungEntities();
+                db = new ThuCung1Entities();
                 LoadThuCung();
             }
         }
@@ -200,7 +200,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Update Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThuCungEntities();
+                db = new ThuCung1Entities();
                 LoadThuCung();
             }
         }
@@ -221,7 +221,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Delete Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThuCungEntities();
+                db = new ThuCung1Entities();
                 LoadThuCung();
             }
         }
@@ -306,7 +306,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Update Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThuCungEntities();
+                db = new ThuCung1Entities();
                 LoadKhachHang();
             }
         }
@@ -326,7 +326,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Delete Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThuCungEntities();
+                db = new ThuCung1Entities();
                 LoadKhachHang();
             }
         }
@@ -353,7 +353,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThuCungEntities();
+                db = new ThuCung1Entities();
                 LoadKhachHang();
             }
         }
@@ -465,7 +465,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Update Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThuCungEntities();
+                db = new ThuCung1Entities();
                 LoadNhanVien();
             }
         }
@@ -485,7 +485,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Delete Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThuCungEntities();
+                db = new ThuCung1Entities();
                 LoadNhanVien();
             }
         }
@@ -516,7 +516,7 @@ namespace QLThuCung.Views
             catch (Exception)
             {
                 MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db = new ThuCungEntities();
+                db = new ThuCung1Entities();
                 LoadNhanVien();
             }
         }

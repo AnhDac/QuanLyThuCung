@@ -13,7 +13,7 @@ namespace QLThuCung.Views
 {
     public partial class BaoCao : Form
     {
-        ThuCungEntities db = new ThuCungEntities();
+        ThuCung1Entities db = new ThuCung1Entities();
         public BaoCao()
         {
             InitializeComponent();
