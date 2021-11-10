@@ -261,12 +261,6 @@ namespace QLThuCung.Views
             LoadThuCung();
         }
 
-
-        private void btnHD_Click(object sender, EventArgs e)
-        {
-            HopDongDV hopDongDV = new HopDongDV();
-            hopDongDV.ShowDialog();
-        }
         //======================End THU CUNG============================
         #endregion
 
@@ -611,6 +605,15 @@ namespace QLThuCung.Views
         }
 
 
+        #endregion
+
+        #region TAB HOME
+
+        private void btnHDDV_Click(object sender, EventArgs e)
+        {
+            HopDongDV hopDongDV = new HopDongDV();
+            hopDongDV.ShowDialog();
+        }
         #endregion
     }
 }
