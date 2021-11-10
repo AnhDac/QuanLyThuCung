@@ -32,34 +32,46 @@ namespace QLThuCung.Views
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbDV = new System.Windows.Forms.ComboBox();
             this.bthHD_Thoat = new System.Windows.Forms.Button();
-            this.bthHD_chiTiet = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dgvChiTietHD = new System.Windows.Forms.DataGridView();
+            this.bthHD_chiTiet = new System.Windows.Forms.Button();
+            this.cbHD = new System.Windows.Forms.ComboBox();
+            this.bthHD_TimKiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.txtHD_SoLuong = new System.Windows.Forms.TextBox();
-            this.bthHD_TimKiem = new System.Windows.Forms.Button();
             this.btnHD_Reload = new System.Windows.Forms.Button();
             this.btnLuuHD = new System.Windows.Forms.Button();
             this.btnHD_xoa = new System.Windows.Forms.Button();
             this.bthHD_Insert = new System.Windows.Forms.Button();
-            this.cbHD = new System.Windows.Forms.ComboBox();
             this.txtHD_Price = new System.Windows.Forms.TextBox();
             this.txtHD_DateBuy = new System.Windows.Forms.TextBox();
             this.txtHD_IDCus = new System.Windows.Forms.TextBox();
             this.txtHD_IDEmp = new System.Windows.Forms.TextBox();
             this.txtHD_IDConser = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dvgDV = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtDV_name = new System.Windows.Forms.TextBox();
+            this.txtDV_price = new System.Windows.Forms.TextBox();
+            this.txtDV_IDSer = new System.Windows.Forms.TextBox();
+            this.btnDV_Them = new System.Windows.Forms.Button();
+            this.btnDV_sua = new System.Windows.Forms.Button();
+            this.btnDV_xoa = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnDV_timKiem = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHD)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDV)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,13 +86,24 @@ namespace QLThuCung.Views
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnDV_timKiem);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.btnDV_xoa);
+            this.tabPage1.Controls.Add(this.btnDV_sua);
+            this.tabPage1.Controls.Add(this.btnDV_Them);
+            this.tabPage1.Controls.Add(this.txtDV_IDSer);
+            this.tabPage1.Controls.Add(this.txtDV_price);
+            this.tabPage1.Controls.Add(this.txtDV_name);
+            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.dvgDV);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1011, 562);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Hóa đơn";
+            this.tabPage1.Text = "Dịch vụ chăm sóc";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
@@ -109,14 +132,14 @@ namespace QLThuCung.Views
             this.tabPage2.Text = "Hợp đồng thú cưng";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // label2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(324, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 17);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Mã HD\r\n";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(638, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 17);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Mã nhân viên";
             // 
             // cbDV
             // 
@@ -136,16 +159,6 @@ namespace QLThuCung.Views
             this.bthHD_Thoat.UseVisualStyleBackColor = true;
             this.bthHD_Thoat.Click += new System.EventHandler(this.bthHD_Thoat_Click);
             // 
-            // bthHD_chiTiet
-            // 
-            this.bthHD_chiTiet.Location = new System.Drawing.Point(361, 90);
-            this.bthHD_chiTiet.Name = "bthHD_chiTiet";
-            this.bthHD_chiTiet.Size = new System.Drawing.Size(141, 33);
-            this.bthHD_chiTiet.TabIndex = 18;
-            this.bthHD_chiTiet.Text = "Chi tiết hợp đồng\r\n";
-            this.bthHD_chiTiet.UseVisualStyleBackColor = true;
-            this.bthHD_chiTiet.Click += new System.EventHandler(this.bthHD_chiTiet_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label5);
@@ -159,6 +172,15 @@ namespace QLThuCung.Views
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết hợp hồng tìm kiếm";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(324, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Mã HD\r\n";
+            // 
             // dgvChiTietHD
             // 
             this.dgvChiTietHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -168,6 +190,34 @@ namespace QLThuCung.Views
             this.dgvChiTietHD.RowTemplate.Height = 24;
             this.dgvChiTietHD.Size = new System.Drawing.Size(301, 110);
             this.dgvChiTietHD.TabIndex = 0;
+            // 
+            // bthHD_chiTiet
+            // 
+            this.bthHD_chiTiet.Location = new System.Drawing.Point(361, 90);
+            this.bthHD_chiTiet.Name = "bthHD_chiTiet";
+            this.bthHD_chiTiet.Size = new System.Drawing.Size(141, 33);
+            this.bthHD_chiTiet.TabIndex = 18;
+            this.bthHD_chiTiet.Text = "Chi tiết hợp đồng\r\n";
+            this.bthHD_chiTiet.UseVisualStyleBackColor = true;
+            this.bthHD_chiTiet.Click += new System.EventHandler(this.bthHD_chiTiet_Click);
+            // 
+            // cbHD
+            // 
+            this.cbHD.FormattingEnabled = true;
+            this.cbHD.Location = new System.Drawing.Point(381, 43);
+            this.cbHD.Name = "cbHD";
+            this.cbHD.Size = new System.Drawing.Size(121, 24);
+            this.cbHD.TabIndex = 7;
+            // 
+            // bthHD_TimKiem
+            // 
+            this.bthHD_TimKiem.Location = new System.Drawing.Point(857, 86);
+            this.bthHD_TimKiem.Name = "bthHD_TimKiem";
+            this.bthHD_TimKiem.Size = new System.Drawing.Size(75, 23);
+            this.bthHD_TimKiem.TabIndex = 13;
+            this.bthHD_TimKiem.Text = "Tìm kiếm";
+            this.bthHD_TimKiem.UseVisualStyleBackColor = true;
+            this.bthHD_TimKiem.Click += new System.EventHandler(this.bthHD_TimKiem_Click);
             // 
             // label1
             // 
@@ -205,16 +255,6 @@ namespace QLThuCung.Views
             this.txtHD_SoLuong.Name = "txtHD_SoLuong";
             this.txtHD_SoLuong.Size = new System.Drawing.Size(100, 22);
             this.txtHD_SoLuong.TabIndex = 14;
-            // 
-            // bthHD_TimKiem
-            // 
-            this.bthHD_TimKiem.Location = new System.Drawing.Point(857, 86);
-            this.bthHD_TimKiem.Name = "bthHD_TimKiem";
-            this.bthHD_TimKiem.Size = new System.Drawing.Size(75, 23);
-            this.bthHD_TimKiem.TabIndex = 13;
-            this.bthHD_TimKiem.Text = "Tìm kiếm";
-            this.bthHD_TimKiem.UseVisualStyleBackColor = true;
-            this.bthHD_TimKiem.Click += new System.EventHandler(this.bthHD_TimKiem_Click);
             // 
             // btnHD_Reload
             // 
@@ -256,14 +296,6 @@ namespace QLThuCung.Views
             this.bthHD_Insert.UseVisualStyleBackColor = true;
             this.bthHD_Insert.Click += new System.EventHandler(this.bthHD_Insert_Click);
             // 
-            // cbHD
-            // 
-            this.cbHD.FormattingEnabled = true;
-            this.cbHD.Location = new System.Drawing.Point(381, 43);
-            this.cbHD.Name = "cbHD";
-            this.cbHD.Size = new System.Drawing.Size(121, 24);
-            this.cbHD.TabIndex = 7;
-            // 
             // txtHD_Price
             // 
             this.txtHD_Price.Location = new System.Drawing.Point(663, 313);
@@ -299,14 +331,95 @@ namespace QLThuCung.Views
             this.txtHD_IDConser.Size = new System.Drawing.Size(131, 22);
             this.txtHD_IDConser.TabIndex = 1;
             // 
-            // label2
+            // dvgDV
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(638, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 17);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Mã nhân viên";
+            this.dvgDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgDV.Location = new System.Drawing.Point(42, 139);
+            this.dvgDV.Name = "dvgDV";
+            this.dvgDV.RowHeadersWidth = 51;
+            this.dvgDV.RowTemplate.Height = 24;
+            this.dvgDV.Size = new System.Drawing.Size(349, 150);
+            this.dvgDV.TabIndex = 0;
+            this.dvgDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDV_CellClick);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(437, 83);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // txtDV_name
+            // 
+            this.txtDV_name.Location = new System.Drawing.Point(503, 204);
+            this.txtDV_name.Name = "txtDV_name";
+            this.txtDV_name.Size = new System.Drawing.Size(100, 22);
+            this.txtDV_name.TabIndex = 2;
+            // 
+            // txtDV_price
+            // 
+            this.txtDV_price.Location = new System.Drawing.Point(516, 289);
+            this.txtDV_price.Name = "txtDV_price";
+            this.txtDV_price.Size = new System.Drawing.Size(100, 22);
+            this.txtDV_price.TabIndex = 3;
+            // 
+            // txtDV_IDSer
+            // 
+            this.txtDV_IDSer.Location = new System.Drawing.Point(596, 139);
+            this.txtDV_IDSer.Name = "txtDV_IDSer";
+            this.txtDV_IDSer.Size = new System.Drawing.Size(100, 22);
+            this.txtDV_IDSer.TabIndex = 5;
+            // 
+            // btnDV_Them
+            // 
+            this.btnDV_Them.Location = new System.Drawing.Point(156, 381);
+            this.btnDV_Them.Name = "btnDV_Them";
+            this.btnDV_Them.Size = new System.Drawing.Size(75, 23);
+            this.btnDV_Them.TabIndex = 6;
+            this.btnDV_Them.Text = "Thêm";
+            this.btnDV_Them.UseVisualStyleBackColor = true;
+            this.btnDV_Them.Click += new System.EventHandler(this.btnDV_Them_Click);
+            // 
+            // btnDV_sua
+            // 
+            this.btnDV_sua.Location = new System.Drawing.Point(84, 456);
+            this.btnDV_sua.Name = "btnDV_sua";
+            this.btnDV_sua.Size = new System.Drawing.Size(75, 23);
+            this.btnDV_sua.TabIndex = 7;
+            this.btnDV_sua.Text = "Sửa";
+            this.btnDV_sua.UseVisualStyleBackColor = true;
+            this.btnDV_sua.Click += new System.EventHandler(this.btnDV_sua_Click);
+            // 
+            // btnDV_xoa
+            // 
+            this.btnDV_xoa.Location = new System.Drawing.Point(270, 455);
+            this.btnDV_xoa.Name = "btnDV_xoa";
+            this.btnDV_xoa.Size = new System.Drawing.Size(75, 23);
+            this.btnDV_xoa.TabIndex = 8;
+            this.btnDV_xoa.Text = "xóa";
+            this.btnDV_xoa.UseVisualStyleBackColor = true;
+            this.btnDV_xoa.Click += new System.EventHandler(this.btnDV_xoa_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(415, 490);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "reload";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnDV_timKiem
+            // 
+            this.btnDV_timKiem.Location = new System.Drawing.Point(605, 83);
+            this.btnDV_timKiem.Name = "btnDV_timKiem";
+            this.btnDV_timKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnDV_timKiem.TabIndex = 10;
+            this.btnDV_timKiem.Text = "timKiem";
+            this.btnDV_timKiem.UseVisualStyleBackColor = true;
+            this.btnDV_timKiem.Click += new System.EventHandler(this.btnDV_timKiem_Click);
             // 
             // HopDongDV
             // 
@@ -318,6 +431,8 @@ namespace QLThuCung.Views
             this.Text = "HopDongDV";
             this.Load += new System.EventHandler(this.HopDongDV_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -325,6 +440,7 @@ namespace QLThuCung.Views
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHD)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,5 +472,15 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbDV;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnDV_xoa;
+        private System.Windows.Forms.Button btnDV_sua;
+        private System.Windows.Forms.Button btnDV_Them;
+        private System.Windows.Forms.TextBox txtDV_IDSer;
+        private System.Windows.Forms.TextBox txtDV_price;
+        private System.Windows.Forms.TextBox txtDV_name;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dvgDV;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDV_timKiem;
     }
 }
