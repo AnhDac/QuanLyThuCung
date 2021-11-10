@@ -121,6 +121,42 @@
           <Property Name="Shifts" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ID_Emp" Type="char" MaxLength="10" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CNPM.dbo.view_Contract_ser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_Contract_ser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Emp" />
+            <PropertyRef Name="ID_Cus" />
+          </Key>
+          <Property Name="ID_ConSer" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Emp" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Cus" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DateBuy" Type="date" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CNPM.dbo.view_DetailContractser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_DetailContractser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Ser" />
+          </Key>
+          <Property Name="ID_ConSer" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="ID_Ser" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CNPM.dbo.view_Servic' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_Servic">
+          <Key>
+            <PropertyRef Name="ID_Ser" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID_Ser" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
         <Association Name="FK_IDConSer_DetailContractSer_IDConSer_ConSer">
           <End Role="Contract_Ser" Type="Self.Contract_Ser" Multiplicity="1" />
           <End Role="DetailContractSer" Type="Self.DetailContractSer" Multiplicity="*" />
@@ -303,6 +339,29 @@
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WarrantyType" EntityType="Self.WarrantyType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Work" EntityType="Self.Work" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="view_Contract_ser" EntityType="Self.view_Contract_ser" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_Contract_ser].[ID_ConSer] AS [ID_ConSer], 
+    [view_Contract_ser].[ID_Emp] AS [ID_Emp], 
+    [view_Contract_ser].[ID_Cus] AS [ID_Cus], 
+    [view_Contract_ser].[DateBuy] AS [DateBuy], 
+    [view_Contract_ser].[Price] AS [Price]
+    FROM [dbo].[view_Contract_ser] AS [view_Contract_ser]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_DetailContractser" EntityType="Self.view_DetailContractser" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_DetailContractser].[ID_ConSer] AS [ID_ConSer], 
+    [view_DetailContractser].[ID_Ser] AS [ID_Ser], 
+    [view_DetailContractser].[Price] AS [Price]
+    FROM [dbo].[view_DetailContractser] AS [view_DetailContractser]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_Servic" EntityType="Self.view_Servic" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_Servic].[ID_Ser] AS [ID_Ser], 
+    [view_Servic].[Name] AS [Name], 
+    [view_Servic].[Price] AS [Price]
+    FROM [dbo].[view_Servic] AS [view_Servic]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_IDConSer_DetailContractSer_IDConSer_ConSer" Association="Self.FK_IDConSer_DetailContractSer_IDConSer_ConSer">
             <End Role="Contract_Ser" EntitySet="Contract_Ser" />
             <End Role="DetailContractSer" EntitySet="DetailContractSer" />
@@ -491,6 +550,36 @@
           <Property Name="ID_Emp" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_IDEmp_Work_IDEmp_Emp" FromRole="Work" ToRole="Employee" />
         </EntityType>
+        <EntityType Name="view_Contract_ser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Emp" />
+            <PropertyRef Name="ID_Cus" />
+          </Key>
+          <Property Name="ID_ConSer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Emp" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Cus" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DateBuy" Type="DateTime" Precision="0" />
+          <Property Name="Price" Type="Int32" />
+        </EntityType>
+        <EntityType Name="view_DetailContractser">
+          <Key>
+            <PropertyRef Name="ID_ConSer" />
+            <PropertyRef Name="ID_Ser" />
+          </Key>
+          <Property Name="ID_ConSer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ID_Ser" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Int32" />
+        </EntityType>
+        <EntityType Name="view_Servic">
+          <Key>
+            <PropertyRef Name="ID_Ser" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID_Ser" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Int32" />
+        </EntityType>
         <Association Name="FK_IDCus_ConSell_IDCus_Custom">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Contract_Sell" Type="Self.Contract_Sell" Multiplicity="*" />
@@ -636,6 +725,9 @@
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="WarrantyTypes" EntityType="Self.WarrantyType" />
           <EntitySet Name="Works" EntityType="Self.Work" />
+          <EntitySet Name="view_Contract_ser" EntityType="Self.view_Contract_ser" />
+          <EntitySet Name="view_DetailContractser" EntityType="Self.view_DetailContractser" />
+          <EntitySet Name="view_Servic" EntityType="Self.view_Servic" />
           <AssociationSet Name="FK_IDCus_ConSell_IDCus_Custom" Association="Self.FK_IDCus_ConSell_IDCus_Custom">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Contract_Sell" EntitySet="Contract_Sell" />
@@ -716,6 +808,12 @@
             <Parameter Name="idser2" Mode="In" Type="String" />
             <Parameter Name="idser3" Mode="In" Type="String" />
             <Parameter Name="idser4" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="view_Contract" ReturnType="Collection(CNPMModel.view_Contract_Result)">
+            <Parameter Name="ID_emp" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="view_DetaiContracser" ReturnType="Collection(CNPMModel.view_DetaiContracser_Result)">
+            <Parameter Name="ID_Conser" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="usp_GetContractSellTheoThangVaNam_Result">
@@ -862,6 +960,35 @@
                 <ScalarProperty Name="DateWork" ColumnName="DateWork" />
                 <ScalarProperty Name="Shifts" ColumnName="Shifts" />
                 <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_Contract_ser">
+            <EntityTypeMapping TypeName="CNPMModel.view_Contract_ser">
+              <MappingFragment StoreEntitySet="view_Contract_ser">
+                <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
+                <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+                <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
+                <ScalarProperty Name="DateBuy" ColumnName="DateBuy" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_DetailContractser">
+            <EntityTypeMapping TypeName="CNPMModel.view_DetailContractser">
+              <MappingFragment StoreEntitySet="view_DetailContractser">
+                <ScalarProperty Name="ID_ConSer" ColumnName="ID_ConSer" />
+                <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_Servic">
+            <EntityTypeMapping TypeName="CNPMModel.view_Servic">
+              <MappingFragment StoreEntitySet="view_Servic">
+                <ScalarProperty Name="ID_Ser" ColumnName="ID_Ser" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -115,6 +115,7 @@ namespace QLThuCung.Views
             this.btnReloadTC = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabctrlMain.SuspendLayout();
+            this.tabHome.SuspendLayout();
             this.tabThuCung.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlDataBind.SuspendLayout();
@@ -154,6 +155,7 @@ namespace QLThuCung.Views
             // 
             // tabHome
             // 
+            this.tabHome.Controls.Add(this.btnHD);
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabHome.Name = "tabHome";
@@ -248,6 +250,7 @@ namespace QLThuCung.Views
             this.cbGioitinh.Name = "cbGioitinh";
             this.cbGioitinh.Size = new System.Drawing.Size(177, 28);
             this.cbGioitinh.TabIndex = 4;
+  //          this.cbGioitinh.SelectedIndexChanged += new System.EventHandler(this.cbGioitinh_SelectedIndexChanged);
             // 
             // tbGiaNhapThuCung
             // 
@@ -403,6 +406,7 @@ namespace QLThuCung.Views
             this.dgvThuCung.Size = new System.Drawing.Size(722, 723);
             this.dgvThuCung.TabIndex = 0;
             this.dgvThuCung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuCung_CellClick);
+//            this.dgvThuCung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuCung_CellContentClick);
             // 
             // tabKhachHang
             // 
@@ -1130,6 +1134,7 @@ namespace QLThuCung.Views
             this.Text = "QuanLy";
             this.Load += new System.EventHandler(this.QuanLy_Load);
             this.tabctrlMain.ResumeLayout(false);
+            this.tabHome.ResumeLayout(false);
             this.tabThuCung.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
