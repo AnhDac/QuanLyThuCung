@@ -30,7 +30,7 @@ namespace QLThuCung.Views
                 tabctrlMain.TabPages.Add(tabThuCung);
                 tabctrlMain.TabPages.Add(tabHome);
             }
-            else if(tam== "personnel")
+            else if(tam== "employee")
             {
                 tabctrlMain.TabPages.Remove(tabAdmin);
                 tabctrlMain.TabPages.Add(tabKhachHang);
