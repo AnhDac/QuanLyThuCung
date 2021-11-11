@@ -684,22 +684,17 @@ namespace QLThuCung.Views
         }
         private void LoadHome()
         {
-            List<Species> lstSpecies = db.Species.ToList();
-            foreach(Species a in lstSpecies)
+            List<Pet> lstPet = db.Pets.ToList();
+            foreach(Pet a in lstPet)
             {
                 Button btn = new Button();
-                btn.Text = a.ID_Spec + "\n" + a.Name;
+                btn.Text = a.ID_Pet;
                 btn.Width = 150;
                 btn.Height = 150;
                 btn.Click += (sender, args) =>
                 {
-                    List<Pet> lstPet = db.Pets.Where(s => s.ID_Spec == a.ID_Spec).ToList();
-                    //lstViewThuCung.Clear();
-                    //foreach(var x in lstPet)
-                    //{
-                    //    lstViewThuCung.Items.Add(x.ID_Pet);
-                    //}
-                    frmThuCung frm = new frmThuCung(lstPet);
+                    //List<Pet> lstPet = db.Pets.Where(s => s.ID_Spec == a.ID_Spec).ToList();
+                    frmThuCung frm = new frmThuCung(a);
                     frm.ShowDialog();
                 };
                 fpnlMain.Controls.Add(btn);

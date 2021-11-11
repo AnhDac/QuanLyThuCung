@@ -13,14 +13,22 @@ namespace QLThuCung
 {
     public partial class frmThuCung : Form
     {
+        ThuCungEntities db = new ThuCungEntities();
         public frmThuCung()
         {
             InitializeComponent();
         }
-        public frmThuCung(List<Pet> lst)
+        public frmThuCung(Pet pet)
         {
             InitializeComponent();
-            dgvListThuCung.DataSource = lst;
+
+            txtID.Text = pet.ID_Pet;
+            txtSpecies.Text = pet.ID_Spec;
+            txtNCC.Text = pet.Supplier.Name;
+            txtCanNang.Text = pet.Weight + "";
+            txtGia.Text = pet.PriceImport + "";
+            txtTuoi.Text = pet.Age + "";
+            txtGender.Text = pet.Sex;
         }
     }
 }
