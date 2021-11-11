@@ -35,6 +35,7 @@ namespace QLThuCung.Views
             panelLuuHuyKH.Hide();
             panelLuuHuyNV.Hide();
             pnlLuuHuyUser.Hide();
+            pnlLuuHuyProfile.Hide();
             PhanQuyenUser();
             LoadHome();
         }
@@ -160,6 +161,11 @@ namespace QLThuCung.Views
             else if (tabctrlMain.SelectedTab == tabProfile)
             {
                 getProfileUser();
+                tbPerrmissProfle.ReadOnly = true;
+                tbIDProfile.ReadOnly = true;
+                tbTenProfile.ReadOnly = true;
+                tbUsernameProfile.ReadOnly = true;
+                tbPasswordProfile.ReadOnly = true;
             }
         }
 
@@ -852,6 +858,49 @@ namespace QLThuCung.Views
             tbPasswordProfile.Text = result.Password.ToString();
             tbPerrmissProfle.Text = result.Permission.ToString();
         }
-        #endregion 
+        #endregion
+
+        private void btnSuaProfile_Click(object sender, EventArgs e)
+        {
+            btnSuaProfile.Enabled = false;        
+            pnlLuuHuyProfile.Show();
+            tbTenProfile.ReadOnly = false;
+            tbUsernameProfile.ReadOnly = false;
+            tbPasswordProfile.ReadOnly = false;
+        }
+
+        private void btnLuuProfie_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string iduser = this.iduser;
+                User user = db.Users.Find(iduser);
+                user.Name = tbTenProfile.Text.ToString().Trim();
+                user.Username = tbUsernameProfile.Text.ToString().Trim();
+                user.PassWord = tbPasswordProfile.Text.ToString().Trim();
+
+                db.SaveChanges();
+                MessageBox.Show("Update Successfull!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HandleBtnHuyProfile();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Update Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThuCungEntities();
+            }
+        }
+        void HandleBtnHuyProfile()
+        {
+            pnlLuuHuyProfile.Hide();
+            btnSuaProfile.Enabled = true;
+            tbTenProfile.ReadOnly = true;
+            tbUsernameProfile.ReadOnly = true;
+            tbPasswordProfile.ReadOnly = true;
+        }
+
+        private void btnHuyProfile_Click(object sender, EventArgs e)
+        {
+            HandleBtnHuyProfile();
+        }
     }
 }
