@@ -20,7 +20,7 @@ namespace QLThuCung.Views
         public QuanLy()
         {
             InitializeComponent();
-            iduser = "U001";//default guest
+            iduser = "";//default guest
         }
 
         public QuanLy(String iduser)
