@@ -23,6 +23,7 @@ namespace QLThuCung.Views
             panelLuuHuy.Hide();
             panelLuuHuyKH.Hide();
             panelLuuHuyNV.Hide();
+            pnlLuuHuyUser.Hide();
         }
 
         void ClearTextBox()
@@ -69,6 +70,20 @@ namespace QLThuCung.Views
                     }
                 }
             }
+            else if (pnlDataBindUser.Visible)
+            {
+                foreach (Control c in pnlDataBindUser.Controls)
+                {
+                    if (c is TextBox)
+                    {
+                        TextBox questionTextBox = c as TextBox;
+                        if (questionTextBox != null)
+                        {
+                            questionTextBox.Text = "";
+                        }
+                    }
+                }
+            }
 
         }
 
@@ -78,23 +93,26 @@ namespace QLThuCung.Views
             {
                 LoadThuCung();
                 cbbTimThuCung.SelectedItem = "Loại";
-                tabctrlMain.TabPages.Remove(tabAdmin);
-                tabctrlMain.TabPages.Add(tabAdmin);
+                //tabctrlMain.TabPages.Remove(tabAdmin);
+                //tabctrlMain.TabPages.Add(tabAdmin);
             }
             else if (tabctrlMain.SelectedTab == tabNhanVien)
             {
                 LoadNhanVien();
                 cbbTimNhanVien.SelectedItem = "Tên";
-                tabctrlMain.TabPages.Remove(tabAdmin);
-                tabctrlMain.TabPages.Add(tabAdmin);
+               
                 //db.usp_MuaDichVu("C101", "E001", "C001", DateTime.Today, 190000, "", "", "S003", "");
             }
             else if (tabctrlMain.SelectedTab == tabKhachHang)
             {
                 LoadKhachHang();
                 cbTimKhachHang.SelectedItem = "Tên";
-                tabctrlMain.TabPages.Remove(tabAdmin);
-                tabctrlMain.TabPages.Add(tabAdmin);
+              
+            }
+            else if (tabctrlMain.SelectedTab == tabUser)
+            {
+                LoadUser();
+                cbFindUser.SelectedItem = "Tên";
             }
         }
 
@@ -614,6 +632,149 @@ namespace QLThuCung.Views
             HopDongDV hopDongDV = new HopDongDV();
             hopDongDV.ShowDialog();
         }
+
         #endregion
+
+        #region TAB USER
+        //======================Start User============================
+        void DataBindUser()
+        {
+            tbIDUser.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
+            tbTenUser.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
+            tbUsernameUser.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
+            tbPasswordUser.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
+            cbPermissionUser.SelectedItem = dgvUser.CurrentRow.Cells[4].Value.ToString().Trim();
+        }
+
+        void LoadUser()
+        {
+            var result = from c in db.Users select new { IDUser = c.ID, Ten = c.Name, Username = c.Username, Password = c.PassWord, Permission = c.Permission };
+            dgvUser.DataSource = result.ToList();
+            DataBindUser();
+        }
+
+        private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataBindUser();
+        }
+
+
+        private void btnFindUser_Click(object sender, EventArgs e)
+        {
+            String loaitimkiem = cbFindUser.Text.ToString();
+            Boolean flag_error = false;
+            var ms = db.Users.Where(p => p.Name == tbFindUser.Text.ToString()).Select(c => new { IDUser = c.ID, Ten = c.Name, Username = c.Username, Password = c.PassWord, Permission = c.Permission }).ToList();
+            switch (loaitimkiem)
+            {
+                case "Username":
+                    ms = db.Users.Where(p => p.Username == tbFindUser.Text.ToString()).Select(c => new { IDUser = c.ID, Ten = c.Name, Username = c.Username, Password = c.PassWord, Permission = c.Permission }).ToList();
+                    break;
+            }
+            if (flag_error)
+            {
+                MessageBox.Show("Lỗi! Vui lòng kiểm tra dữ liệu nhập vào.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var result = from c in db.Users select new { IDUser = c.ID, Ten = c.Name, Username = c.Username, Password = c.PassWord, Permission = c.Permission };
+            }
+            else
+                dgvUser.DataSource = ms;
+        }
+
+        private void btnThemUser_Click(object sender, EventArgs e)
+        {
+            ClearTextBox();
+            btnSuaUser.Enabled = false;
+            btnXoaUser.Enabled = false;
+            pnlLuuHuyUser.Show();
+        }
+
+        private void btnHuyUser_Click(object sender, EventArgs e)
+        {
+            LoadUser();
+            pnlLuuHuyUser.Hide();
+            btnSuaUser.Enabled = true;
+            btnXoaUser.Enabled = true;
+        }
+
+        private void btnLuuUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                User user = new User();
+
+                user.ID = tbIDUser.Text.ToString().Trim();
+                user.Name = tbTenUser.Text.ToString().Trim();
+                user.Username = tbUsernameUser.Text.ToString().Trim();
+                user.PassWord = tbPasswordUser.Text.ToString().Trim();
+                user.Permission = cbPermissionUser.Text.ToString().Trim();
+
+                db.Users.Add(user);
+                db.SaveChanges();
+
+                MessageBox.Show("Thêm Thành Công!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadUser();
+                pnlLuuHuyUser.Hide();
+                btnSuaUser.Enabled = true;
+                btnXoaUser.Enabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThuCungEntities();
+                LoadUser();
+            }
+        }
+
+        private void btnXoaUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Do you want delete ?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    User user = db.Users.Where(p => p.ID == tbIDUser.Text.ToString()).SingleOrDefault();
+                    db.Users.Remove(user);
+                    db.SaveChanges();
+                    MessageBox.Show("Delete Successfull!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadUser();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Delete Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThuCungEntities();
+                LoadUser();
+            }
+        }
+
+        private void btnSuaUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string iduser = dgvUser.SelectedCells[0].OwningRow.Cells[0].Value.ToString().Trim();
+                User user = db.Users.Find(iduser);
+                user.Name = tbTenUser.Text.ToString().Trim();
+                user.Username = tbUsernameUser.Text.ToString().Trim();
+                user.PassWord = tbPasswordUser.Text.ToString().Trim();
+                user.Permission = cbPermissionUser.Text.ToString().Trim();
+
+                db.SaveChanges();
+                MessageBox.Show("Update Successfull!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadUser();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Update Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThuCungEntities();
+                LoadUser();
+            }
+        }
+
+        private void btnReloadUser_Click(object sender, EventArgs e)
+        {
+            LoadUser();
+        }
+
+        #endregion
+
+       
     }
 }
