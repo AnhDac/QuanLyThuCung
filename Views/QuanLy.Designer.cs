@@ -114,7 +114,6 @@ namespace QLThuCung.Views
             this.btnTimNhanVien = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabPage();
             this.btnReport = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabctrlMain.SuspendLayout();
             this.tabThuCung.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -163,6 +162,7 @@ namespace QLThuCung.Views
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
+            this.tabHome.Click += new System.EventHandler(this.tabHome_Click);
             // 
             // tabThuCung
             // 
@@ -1096,7 +1096,6 @@ namespace QLThuCung.Views
             // 
             // tabAdmin
             // 
-            this.tabAdmin.Controls.Add(this.textBox1);
             this.tabAdmin.Controls.Add(this.btnReport);
             this.tabAdmin.Location = new System.Drawing.Point(4, 22);
             this.tabAdmin.Margin = new System.Windows.Forms.Padding(4);
@@ -1118,13 +1117,6 @@ namespace QLThuCung.Views
             this.btnReport.Text = "Report";
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(336, 186);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 1;
             // 
             // QuanLy
             // 
@@ -1164,7 +1156,6 @@ namespace QLThuCung.Views
             this.pnlDataBindNV.ResumeLayout(false);
             this.pnlDataBindNV.PerformLayout();
             this.tabAdmin.ResumeLayout(false);
-            this.tabAdmin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1256,6 +1247,5 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Button btnSuaThuCung;
         private System.Windows.Forms.Button btnXoaThuCung;
         private System.Windows.Forms.Button btnThemThuCung;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

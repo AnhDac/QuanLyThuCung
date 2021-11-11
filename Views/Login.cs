@@ -13,15 +13,7 @@ namespace QLThuCung.Views
 {
     public partial class Login : Form
     {
-        public String kq;
-        public String setKQ()
-        {
-            return this.kq;
-        }
-        public void setKQ(String a)
-        {
-            this.kq = a;
-        }
+        
         public Login()
         {
             InitializeComponent();
@@ -41,10 +33,12 @@ namespace QLThuCung.Views
             String Username = txtTK.Text.ToString().Trim();
             var dn = (from kq in db.Users where kq.Username == Username && kq.PassWord == PassWord select kq).ToList();
             textBox1.Text = dn[0].Permission.ToString().Trim();
-            kq= dn[0].Permission.ToString().Trim();
-            if(kq=="quang")
-            {
+          String  tam= dn[0].Permission.ToString().Trim();
+            if(tam=="Member")
+            {   
+
                 QuanLy quanLy = new QuanLy();
+                quanLy.tam = tam;
                 quanLy.Show();
             }    
            
