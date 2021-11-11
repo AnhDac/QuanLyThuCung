@@ -37,11 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtMK = new System.Windows.Forms.TextBox();
             this.txtTK = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,15 +52,15 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtMK);
             this.panel1.Controls.Add(this.txtTK);
-            this.panel1.Location = new System.Drawing.Point(210, -16);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(381, 482);
+            this.panel1.Size = new System.Drawing.Size(381, 409);
             this.panel1.TabIndex = 3;
             // 
             // btThoat
             // 
             this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.Location = new System.Drawing.Point(236, 319);
+            this.btThoat.Location = new System.Drawing.Point(227, 311);
             this.btThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(119, 37);
@@ -74,7 +71,7 @@
             // btDN
             // 
             this.btDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDN.Location = new System.Drawing.Point(29, 319);
+            this.btDN.Location = new System.Drawing.Point(19, 324);
             this.btDN.Margin = new System.Windows.Forms.Padding(4);
             this.btDN.Name = "btDN";
             this.btDN.Size = new System.Drawing.Size(119, 37);
@@ -145,31 +142,11 @@
             this.txtTK.Size = new System.Drawing.Size(336, 40);
             this.txtTK.TabIndex = 2;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 472);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(463, 525);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 653);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(417, 445);
             this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.Text = "Login";
@@ -178,9 +155,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -195,7 +170,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMK;
         private System.Windows.Forms.TextBox txtTK;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

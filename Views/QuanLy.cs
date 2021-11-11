@@ -22,10 +22,27 @@ namespace QLThuCung.Views
         private void QuanLy_Load(object sender, EventArgs e)
         {
             
-            if(tam=="Member")
+            if (tam=="admin")
             {
-                btnReport.Enabled = false;
-            }    
+                tabctrlMain.Enabled = true;
+            }
+            else if(tam== "personnel")
+            {
+                tabAdmin.Enabled = false;
+                tabHome.Enabled = true;
+                tabThuCung.Enabled = true;
+                tabKhachHang.Enabled = true;
+                tabNhanVien.Enabled = true;
+            }
+            else if(tam== "customer")
+            {
+                tabAdmin.Enabled = false;
+                tabHome.Enabled = false;
+                tabThuCung.Enabled = true;
+                tabKhachHang.Enabled = true;
+                tabNhanVien.Enabled = true;
+            }
+            
             panelLuuHuy.Hide();
             panelLuuHuyKH.Hide();
             panelLuuHuyNV.Hide();

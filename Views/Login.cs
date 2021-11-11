@@ -24,30 +24,31 @@ namespace QLThuCung.Views
             
         }
         public static string User = "";
-       
 
+        
         private void btDN_Click_1(object sender, EventArgs e)
         {
-           
+            
             String PassWord = txtMK.Text.ToString().Trim();
             String Username = txtTK.Text.ToString().Trim();
             var dn = (from kq in db.Users where kq.Username == Username && kq.PassWord == PassWord select kq).ToList();
-            textBox1.Text = dn[0].Permission.ToString().Trim();
-          String  tam= dn[0].Permission.ToString().Trim();
-            if(tam=="Member")
-            {   
-
-                QuanLy quanLy = new QuanLy();
-                quanLy.tam = tam;
-                quanLy.Show();
-            }
             
+            String  tam= dn[0].Permission.ToString().Trim();
+            User = tam;
+            if ( User != "") {             
+                   QuanLy quanLy = new QuanLy();
+                   quanLy.tam = tam;
+                   quanLy.Show();
+                }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+            } 
 
+
+          }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
