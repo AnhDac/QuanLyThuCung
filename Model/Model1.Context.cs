@@ -15,10 +15,10 @@ namespace QLThuCung.Model
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class ThuCung1Entities : DbContext
+    public partial class ThuCungEntities : DbContext
     {
-        public ThuCung1Entities()
-            : base("name=ThuCung1Entities")
+        public ThuCungEntities()
+            : base("name=ThuCungEntities")
         {
         }
     

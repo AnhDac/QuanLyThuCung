@@ -13,7 +13,9 @@ namespace QLThuCung.Views
 {
     public partial class BaoCao : Form
     {
-        ThuCung1Entities db = new ThuCung1Entities();
+        ThuCungEntities db = new ThuCungEntities();
+        
+        
         public BaoCao()
         {
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace QLThuCung.Views
 
         private void BaoCao_Load(object sender, EventArgs e)
         {
+            
             LoadDataComboboxContractSell();
             LoadDataComboboxContractSer();
             ShowDataContractSell();

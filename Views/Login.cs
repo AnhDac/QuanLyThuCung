@@ -13,12 +13,20 @@ namespace QLThuCung.Views
 {
     public partial class Login : Form
     {
-      
+        public String kq;
+        public String setKQ()
+        {
+            return this.kq;
+        }
+        public void setKQ(String a)
+        {
+            this.kq = a;
+        }
         public Login()
         {
             InitializeComponent();
         }
-        ThuCung1Entities db = new ThuCung1Entities();
+        ThuCungEntities db = new ThuCungEntities();
         private void Login_Load(object sender, EventArgs e)
         {
             
@@ -32,19 +40,19 @@ namespace QLThuCung.Views
             String PassWord = txtMK.Text.ToString().Trim();
             String Username = txtTK.Text.ToString().Trim();
             var dn = (from kq in db.Users where kq.Username == Username && kq.PassWord == PassWord select kq).ToList();
-            foreach(var item in dn)
+            textBox1.Text = dn[0].Permission.ToString().Trim();
+            kq= dn[0].Permission.ToString().Trim();
+            if(kq=="quang")
             {
-               
-                if(item.ID !="")
-                {
- 
-                    QuanLy quan = new QuanLy();
-                    quan.Show();
-                    break;
-                }
-
-            }
+                QuanLy quanLy = new QuanLy();
+                quanLy.Show();
+            }    
            
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -17,7 +17,7 @@ namespace QLThuCung.Views
         {
             InitializeComponent();
         }
-        ThuCung1Entities db = new ThuCung1Entities();
+        ThuCungEntities db = new ThuCungEntities();
         private void QuanLy_Load(object sender, EventArgs e)
         {
             panelLuuHuy.Hide();

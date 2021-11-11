@@ -253,6 +253,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fuc_login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nchar">
+          <Parameter Name="User" Type="nvarchar" Mode="In" />
+          <Parameter Name="pass" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="usp_GetContractSellTheoThangVaNam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="month" Type="int" Mode="In" />
           <Parameter Name="year" Type="int" Mode="In" />
@@ -629,7 +633,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ThuCung1Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ThuCungEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Contract_Sell" EntityType="Self.Contract_Sell" />
           <EntitySet Name="Contract_Ser" EntityType="Self.Contract_Ser" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
@@ -763,7 +767,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CNPMModelStoreContainer" CdmEntityContainer="ThuCung1Entities">
+        <EntityContainerMapping StorageEntityContainer="CNPMModelStoreContainer" CdmEntityContainer="ThuCungEntities">
           <EntitySetMapping Name="Contract_Sell">
             <EntityTypeMapping TypeName="CNPMModel.Contract_Sell">
               <MappingFragment StoreEntitySet="Contract_Sell">
