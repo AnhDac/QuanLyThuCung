@@ -24,23 +24,27 @@ namespace QLThuCung.Views
             
             if (tam=="admin")
             {
-                tabctrlMain.Enabled = true;
+                tabctrlMain.TabPages.Add(tabAdmin);
+                tabctrlMain.TabPages.Add(tabKhachHang);
+                tabctrlMain.TabPages.Add(tabNhanVien);
+                tabctrlMain.TabPages.Add(tabThuCung);
+                tabctrlMain.TabPages.Add(tabHome);
             }
             else if(tam== "personnel")
             {
-                tabAdmin.Enabled = false;
-                tabHome.Enabled = true;
-                tabThuCung.Enabled = true;
-                tabKhachHang.Enabled = true;
-                tabNhanVien.Enabled = true;
+                tabctrlMain.TabPages.Remove(tabAdmin);
+                tabctrlMain.TabPages.Add(tabKhachHang);
+                tabctrlMain.TabPages.Add(tabNhanVien);
+                tabctrlMain.TabPages.Add(tabThuCung);
+                tabctrlMain.TabPages.Add(tabHome);
             }
             else if(tam== "customer")
             {
-                tabAdmin.Enabled = false;
-                tabHome.Enabled = false;
-                tabThuCung.Enabled = true;
-                tabKhachHang.Enabled = true;
-                tabNhanVien.Enabled = true;
+                tabctrlMain.TabPages.Remove(tabAdmin);
+                tabctrlMain.TabPages.Remove(tabKhachHang);
+                tabctrlMain.TabPages.Remove(tabNhanVien);
+                tabctrlMain.TabPages.Add(tabThuCung);
+                tabctrlMain.TabPages.Add(tabHome);
             }
             
             panelLuuHuy.Hide();
