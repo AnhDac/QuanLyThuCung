@@ -13,17 +13,58 @@ namespace QLThuCung.Views
 {
     public partial class QuanLy : Form
     {
+        private String iduser;
+
+        ThuCungEntities db = new ThuCungEntities();
+
         public QuanLy()
         {
             InitializeComponent();
+            iduser = "U001";//default guest
         }
-        ThuCungEntities db = new ThuCungEntities();
+
+        public QuanLy(String iduser)
+        {
+            InitializeComponent();
+            this.iduser = iduser;//default guest
+        }
+       
         private void QuanLy_Load(object sender, EventArgs e)
         {
             panelLuuHuy.Hide();
             panelLuuHuyKH.Hide();
             panelLuuHuyNV.Hide();
             pnlLuuHuyUser.Hide();
+            PhanQuyenUser();
+        }
+        void PhanQuyenUser()
+        {
+            string permiss = "";
+            var result = db.Users.Where(p => p.ID == iduser).Select(c => new { IDUser = c.ID, Ten = c.Name, Username = c.Username, Password = c.PassWord, Permission = c.Permission }).ToList().SingleOrDefault();
+            if(result !=null)
+                permiss = result.Permission.ToString();
+
+            switch (permiss){
+                case ""://guest
+                    tabctrlMain.TabPages.Remove(tabThuCung);
+                    tabctrlMain.TabPages.Remove(tabKhachHang);
+                    tabctrlMain.TabPages.Remove(tabNhanVien);
+                    tabctrlMain.TabPages.Remove(tabUser);
+                    tabctrlMain.TabPages.Remove(tabProfile);
+                    break;
+                case "customer":
+                    tabctrlMain.TabPages.Remove(tabThuCung);
+                    tabctrlMain.TabPages.Remove(tabKhachHang);
+                    tabctrlMain.TabPages.Remove(tabNhanVien);
+                    tabctrlMain.TabPages.Remove(tabUser);
+                    break;
+                case "employee":
+                    tabctrlMain.TabPages.Remove(tabNhanVien);
+                    tabctrlMain.TabPages.Remove(tabUser);
+                    break;
+            }
+             
+
         }
 
         void ClearTextBox()
@@ -114,6 +155,10 @@ namespace QLThuCung.Views
                 LoadUser();
                 cbFindUser.SelectedItem = "Tên";
             }
+            else if (tabctrlMain.SelectedTab == tabProfile)
+            {
+                getProfileUser();
+            }
         }
 
         #region TAB THU CUNG
@@ -135,13 +180,6 @@ namespace QLThuCung.Views
         {
             var result = from c in db.Pets select new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age };
             dgvThuCung.DataSource = result.ToList();
-
-            //using (ThuCungEntities spec = new ThuCungEntities())
-            //{ 
-            //    cbLoaiThuCung.DataSource = spec.Species.ToList();
-            //    cbLoaiThuCung.ValueMember = "ID_Spec";
-            //    cbLoaiThuCung.DisplayMember = "Name";
-            //}
             DataBindThuCung();
         }
 
@@ -773,9 +811,20 @@ namespace QLThuCung.Views
             LoadUser();
         }
 
-
         #endregion
 
-      
+        #region TAB PROFILE
+
+        void getProfileUser()
+        {
+            var result = db.Users.Where(p => p.ID == iduser).Select(c => new { IDUser = c.ID, Ten = c.Name, Username = c.Username, Password = c.PassWord, Permission = c.Permission }).ToList().SingleOrDefault();
+            tbIDProfile.Text = result.IDUser.ToString();
+            tbTenProfile.Text = result.Ten.ToString();
+            tbUsernameProfile.Text = result.Username.ToString();
+            tbPasswordProfile.Text = result.Password.ToString();
+            tbPerrmissProfle.Text = result.Permission.ToString();
+        }
+
+        #endregion
     }
 }

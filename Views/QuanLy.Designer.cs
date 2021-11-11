@@ -54,22 +54,17 @@ namespace QLThuCung.Views
             this.label31 = new System.Windows.Forms.Label();
             this.btnFindUser = new System.Windows.Forms.Button();
             this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.tabAdmin = new System.Windows.Forms.TabPage();
+            this.tabProfile = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbPasswordProfile = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbUsernameProfile = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbTenProfile = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbIDProfile = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
@@ -155,13 +150,15 @@ namespace QLThuCung.Views
             this.tabHome = new System.Windows.Forms.TabPage();
             this.btnHDDV = new System.Windows.Forms.Button();
             this.tabctrlMain = new System.Windows.Forms.TabControl();
+            this.tbPerrmissProfle = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabUser.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel10.SuspendLayout();
             this.pnlLuuHuyUser.SuspendLayout();
             this.pnlDataBindUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
-            this.tabAdmin.SuspendLayout();
+            this.tabProfile.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -449,165 +446,117 @@ namespace QLThuCung.Views
             this.dgvUser.TabIndex = 0;
             this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
             // 
-            // tabAdmin
+            // tabProfile
             // 
-            this.tabAdmin.Controls.Add(this.panel5);
-            this.tabAdmin.Controls.Add(this.btnReport);
-            this.tabAdmin.Location = new System.Drawing.Point(4, 22);
-            this.tabAdmin.Name = "tabAdmin";
-            this.tabAdmin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdmin.Size = new System.Drawing.Size(961, 595);
-            this.tabAdmin.TabIndex = 4;
-            this.tabAdmin.Text = "Admin";
-            this.tabAdmin.UseVisualStyleBackColor = true;
+            this.tabProfile.Controls.Add(this.panel5);
+            this.tabProfile.Controls.Add(this.btnReport);
+            this.tabProfile.Location = new System.Drawing.Point(4, 22);
+            this.tabProfile.Name = "tabProfile";
+            this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProfile.Size = new System.Drawing.Size(961, 595);
+            this.tabProfile.TabIndex = 4;
+            this.tabProfile.Text = "Profile";
+            this.tabProfile.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.dateTimePicker1);
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Controls.Add(this.label19);
-            this.panel5.Controls.Add(this.textBox2);
-            this.panel5.Controls.Add(this.label20);
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.label21);
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Controls.Add(this.label22);
-            this.panel5.Controls.Add(this.textBox5);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Controls.Add(this.textBox6);
-            this.panel5.Controls.Add(this.label24);
-            this.panel5.Location = new System.Drawing.Point(245, 86);
+            this.panel5.Controls.Add(this.tbPerrmissProfle);
+            this.panel5.Controls.Add(this.label18);
+            this.panel5.Controls.Add(this.tbPasswordProfile);
+            this.panel5.Controls.Add(this.label19);
+            this.panel5.Controls.Add(this.tbUsernameProfile);
+            this.panel5.Controls.Add(this.label20);
+            this.panel5.Controls.Add(this.tbTenProfile);
+            this.panel5.Controls.Add(this.label21);
+            this.panel5.Controls.Add(this.tbIDProfile);
+            this.panel5.Controls.Add(this.label22);
+            this.panel5.Location = new System.Drawing.Point(208, 56);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(424, 324);
             this.panel5.TabIndex = 10;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 258);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(228, 23);
-            this.dateTimePicker1.TabIndex = 9;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(14, 258);
+            this.label18.Location = new System.Drawing.Point(62, 288);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(118, 17);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "Ngày Vào Làm:";
+            this.label18.Size = new System.Drawing.Size(84, 17);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Permision:";
             // 
-            // textBox1
+            // tbPasswordProfile
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(146, 216);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 23);
-            this.textBox1.TabIndex = 6;
+            this.tbPasswordProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPasswordProfile.Location = new System.Drawing.Point(197, 232);
+            this.tbPasswordProfile.Name = "tbPasswordProfile";
+            this.tbPasswordProfile.Size = new System.Drawing.Size(134, 23);
+            this.tbPasswordProfile.TabIndex = 9;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(14, 216);
+            this.label19.Location = new System.Drawing.Point(61, 232);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(95, 17);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "Tiền Lương:";
+            this.label19.Size = new System.Drawing.Size(82, 17);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "Password:";
             // 
-            // textBox2
+            // tbUsernameProfile
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(146, 174);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 23);
-            this.textBox2.TabIndex = 7;
+            this.tbUsernameProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsernameProfile.Location = new System.Drawing.Point(197, 188);
+            this.tbUsernameProfile.Name = "tbUsernameProfile";
+            this.tbUsernameProfile.Size = new System.Drawing.Size(134, 23);
+            this.tbUsernameProfile.TabIndex = 10;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(14, 176);
+            this.label20.Location = new System.Drawing.Point(60, 188);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(65, 17);
-            this.label20.TabIndex = 5;
-            this.label20.Text = "Địa Chỉ:";
+            this.label20.Size = new System.Drawing.Size(86, 17);
+            this.label20.TabIndex = 7;
+            this.label20.Text = "Username:";
             // 
-            // textBox3
+            // tbTenProfile
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(146, 135);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 23);
-            this.textBox3.TabIndex = 1;
+            this.tbTenProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenProfile.Location = new System.Drawing.Point(197, 148);
+            this.tbTenProfile.Name = "tbTenProfile";
+            this.tbTenProfile.Size = new System.Drawing.Size(132, 23);
+            this.tbTenProfile.TabIndex = 13;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(14, 135);
+            this.label21.Location = new System.Drawing.Point(60, 146);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(45, 17);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Tuổi:";
+            this.label21.Size = new System.Drawing.Size(41, 17);
+            this.label21.TabIndex = 12;
+            this.label21.Text = "Tên:";
             // 
-            // textBox4
+            // tbIDProfile
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(146, 93);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(195, 23);
-            this.textBox4.TabIndex = 1;
+            this.tbIDProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIDProfile.Location = new System.Drawing.Point(197, 110);
+            this.tbIDProfile.Name = "tbIDProfile";
+            this.tbIDProfile.Size = new System.Drawing.Size(132, 23);
+            this.tbIDProfile.TabIndex = 11;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(14, 94);
+            this.label22.Location = new System.Drawing.Point(60, 110);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(44, 17);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "SĐT:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(146, 51);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(195, 23);
-            this.textBox5.TabIndex = 3;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(14, 51);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(121, 17);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Tên Nhân Viên:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(147, 15);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(194, 23);
-            this.textBox6.TabIndex = 1;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(14, 15);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(28, 17);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "ID:";
+            this.label22.Size = new System.Drawing.Size(28, 17);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "ID:";
             // 
             // btnReport
             // 
@@ -1502,7 +1451,7 @@ namespace QLThuCung.Views
             this.tabctrlMain.Controls.Add(this.tabThuCung);
             this.tabctrlMain.Controls.Add(this.tabKhachHang);
             this.tabctrlMain.Controls.Add(this.tabNhanVien);
-            this.tabctrlMain.Controls.Add(this.tabAdmin);
+            this.tabctrlMain.Controls.Add(this.tabProfile);
             this.tabctrlMain.Controls.Add(this.tabUser);
             this.tabctrlMain.ItemSize = new System.Drawing.Size(42, 18);
             this.tabctrlMain.Location = new System.Drawing.Point(12, 12);
@@ -1511,6 +1460,24 @@ namespace QLThuCung.Views
             this.tabctrlMain.Size = new System.Drawing.Size(969, 621);
             this.tabctrlMain.TabIndex = 0;
             this.tabctrlMain.Click += new System.EventHandler(this.tabctrlMain_Click);
+            // 
+            // tbPerrmissProfle
+            // 
+            this.tbPerrmissProfle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPerrmissProfle.Location = new System.Drawing.Point(197, 282);
+            this.tbPerrmissProfle.Name = "tbPerrmissProfle";
+            this.tbPerrmissProfle.Size = new System.Drawing.Size(134, 23);
+            this.tbPerrmissProfle.TabIndex = 14;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(93, 17);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(172, 17);
+            this.label23.TabIndex = 15;
+            this.label23.Text = "Thông Tin Người Dùng";
             // 
             // QuanLy
             // 
@@ -1531,7 +1498,7 @@ namespace QLThuCung.Views
             this.pnlDataBindUser.ResumeLayout(false);
             this.pnlDataBindUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
-            this.tabAdmin.ResumeLayout(false);
+            this.tabProfile.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tabNhanVien.ResumeLayout(false);
@@ -1587,22 +1554,8 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Button btnFindUser;
         private System.Windows.Forms.DataGridView dgvUser;
-        private System.Windows.Forms.TabPage tabAdmin;
+        private System.Windows.Forms.TabPage tabProfile;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.TabPage tabNhanVien;
         private System.Windows.Forms.DataGridView dgvNhanVien;
@@ -1692,5 +1645,16 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Panel pnlLuuHuyUser;
         private System.Windows.Forms.Button btnLuuUser;
         private System.Windows.Forms.Button btnHuyUser;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox tbPasswordProfile;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox tbUsernameProfile;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox tbTenProfile;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox tbIDProfile;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox tbPerrmissProfle;
     }
 }
