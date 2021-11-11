@@ -40,8 +40,8 @@ namespace QLThuCung.Views
                 QuanLy quanLy = new QuanLy();
                 quanLy.tam = tam;
                 quanLy.Show();
-            }    
-           
+            }
+            
 
         }
 
