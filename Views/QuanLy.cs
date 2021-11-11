@@ -28,7 +28,7 @@ namespace QLThuCung.Views
             InitializeComponent();
             this.iduser = iduser;//default guest
         }
-       
+
         private void QuanLy_Load(object sender, EventArgs e)
         {
             panelLuuHuy.Hide();
@@ -41,10 +41,11 @@ namespace QLThuCung.Views
         {
             string permiss = "";
             var result = db.Users.Where(p => p.ID == iduser).Select(c => new { IDUser = c.ID, Ten = c.Name, Username = c.Username, Password = c.PassWord, Permission = c.Permission }).ToList().SingleOrDefault();
-            if(result !=null)
+            if (result != null)
                 permiss = result.Permission.ToString();
 
-            switch (permiss){
+            switch (permiss)
+            {
                 case ""://guest
                     tabctrlMain.TabPages.Remove(tabThuCung);
                     tabctrlMain.TabPages.Remove(tabKhachHang);
@@ -63,7 +64,7 @@ namespace QLThuCung.Views
                     tabctrlMain.TabPages.Remove(tabUser);
                     break;
             }
-             
+
 
         }
 
@@ -141,14 +142,14 @@ namespace QLThuCung.Views
             {
                 LoadNhanVien();
                 cbbTimNhanVien.SelectedItem = "Tên";
-               
+
                 //db.usp_MuaDichVu("C101", "E001", "C001", DateTime.Today, 190000, "", "", "S003", "");
             }
             else if (tabctrlMain.SelectedTab == tabKhachHang)
             {
                 LoadKhachHang();
                 cbTimKhachHang.SelectedItem = "Tên";
-              
+
             }
             else if (tabctrlMain.SelectedTab == tabUser)
             {
@@ -293,13 +294,15 @@ namespace QLThuCung.Views
                     ms = db.Pets.Where(p => p.Sex == tbTimThuCung.Text.ToString()).Select(c => new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age }).ToList();
                     break;
                 case "Tuổi":
-                    try{
+                    try
+                    {
                         int age = Convert.ToInt32(tbTimThuCung.Text.ToString());
                         ms = db.Pets.Where(p => p.Age == age).Select(c => new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age }).ToList();
                         break;
-                    }catch(Exception )
+                    }
+                    catch (Exception)
                     {
-                        flag_error=true;
+                        flag_error = true;
                         break;
                     }
             }
@@ -308,7 +311,8 @@ namespace QLThuCung.Views
                 MessageBox.Show("Lỗi! Vui lòng kiểm tra dữ liệu nhập vào.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 var result = from c in db.Pets select new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age };
                 dgvThuCung.DataSource = result.ToList();
-            }else
+            }
+            else
                 dgvThuCung.DataSource = ms;
         }
 
@@ -475,7 +479,7 @@ namespace QLThuCung.Views
         void DataBindNhanVien()
         {
             txtMaNhanVien.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
-            txtTenNhanVien.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();   
+            txtTenNhanVien.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
             txtSDTNhanVien.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
             txtTuoiNhanVien.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
             txtDiaChiNhanVien.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
