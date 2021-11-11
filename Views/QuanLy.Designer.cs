@@ -55,6 +55,10 @@ namespace QLThuCung.Views
             this.btnFindUser = new System.Windows.Forms.Button();
             this.dgvUser = new System.Windows.Forms.DataGridView();
             this.tabProfile = new System.Windows.Forms.TabPage();
+            this.pnlLuuHuyProfile = new System.Windows.Forms.Panel();
+            this.btnLuuProfie = new System.Windows.Forms.Button();
+            this.btnHuyProfile = new System.Windows.Forms.Button();
+            this.btnSuaProfile = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.tbPerrmissProfle = new System.Windows.Forms.TextBox();
@@ -153,10 +157,22 @@ namespace QLThuCung.Views
             this.fpnlMain = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHDDV = new System.Windows.Forms.Button();
             this.tabctrlMain = new System.Windows.Forms.TabControl();
-            this.btnSuaProfile = new System.Windows.Forms.Button();
-            this.pnlLuuHuyProfile = new System.Windows.Forms.Panel();
-            this.btnLuuProfie = new System.Windows.Forms.Button();
-            this.btnHuyProfile = new System.Windows.Forms.Button();
+            this.pnlChiTietThuCung = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtGenderChiTietThuCung = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtCanNangChiTietThuCung = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtNCCChiTietThuCung = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtTuoiChiTietThuCung = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtLoaiChiTietThuCung = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtIDChiTietThuCung = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.btnBackHome = new System.Windows.Forms.Button();
             this.tabUser.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -164,6 +180,7 @@ namespace QLThuCung.Views
             this.pnlDataBindUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.tabProfile.SuspendLayout();
+            this.pnlLuuHuyProfile.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -185,7 +202,8 @@ namespace QLThuCung.Views
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuCung)).BeginInit();
             this.tabHome.SuspendLayout();
             this.tabctrlMain.SuspendLayout();
-            this.pnlLuuHuyProfile.SuspendLayout();
+            this.pnlChiTietThuCung.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabUser
@@ -194,7 +212,7 @@ namespace QLThuCung.Views
             this.tabUser.Controls.Add(this.dgvUser);
             this.tabUser.Location = new System.Drawing.Point(4, 22);
             this.tabUser.Name = "tabUser";
-            this.tabUser.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabUser.Padding = new System.Windows.Forms.Padding(3);
             this.tabUser.Size = new System.Drawing.Size(961, 595);
             this.tabUser.TabIndex = 6;
             this.tabUser.Text = "Người Dùng";
@@ -460,11 +478,53 @@ namespace QLThuCung.Views
             this.tabProfile.Controls.Add(this.btnReport);
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
             this.tabProfile.Size = new System.Drawing.Size(961, 595);
             this.tabProfile.TabIndex = 4;
             this.tabProfile.Text = "Profile";
             this.tabProfile.UseVisualStyleBackColor = true;
+            // 
+            // pnlLuuHuyProfile
+            // 
+            this.pnlLuuHuyProfile.Controls.Add(this.btnLuuProfie);
+            this.pnlLuuHuyProfile.Controls.Add(this.btnHuyProfile);
+            this.pnlLuuHuyProfile.Location = new System.Drawing.Point(470, 390);
+            this.pnlLuuHuyProfile.Name = "pnlLuuHuyProfile";
+            this.pnlLuuHuyProfile.Size = new System.Drawing.Size(215, 61);
+            this.pnlLuuHuyProfile.TabIndex = 26;
+            // 
+            // btnLuuProfie
+            // 
+            this.btnLuuProfie.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuProfie.Location = new System.Drawing.Point(16, 13);
+            this.btnLuuProfie.Name = "btnLuuProfie";
+            this.btnLuuProfie.Size = new System.Drawing.Size(80, 30);
+            this.btnLuuProfie.TabIndex = 20;
+            this.btnLuuProfie.Text = "Lưu";
+            this.btnLuuProfie.UseVisualStyleBackColor = true;
+            this.btnLuuProfie.Click += new System.EventHandler(this.btnLuuProfie_Click);
+            // 
+            // btnHuyProfile
+            // 
+            this.btnHuyProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyProfile.Location = new System.Drawing.Point(118, 13);
+            this.btnHuyProfile.Name = "btnHuyProfile";
+            this.btnHuyProfile.Size = new System.Drawing.Size(80, 30);
+            this.btnHuyProfile.TabIndex = 19;
+            this.btnHuyProfile.Text = "Hủy";
+            this.btnHuyProfile.UseVisualStyleBackColor = true;
+            this.btnHuyProfile.Click += new System.EventHandler(this.btnHuyProfile_Click);
+            // 
+            // btnSuaProfile
+            // 
+            this.btnSuaProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaProfile.Location = new System.Drawing.Point(488, 403);
+            this.btnSuaProfile.Name = "btnSuaProfile";
+            this.btnSuaProfile.Size = new System.Drawing.Size(80, 30);
+            this.btnSuaProfile.TabIndex = 25;
+            this.btnSuaProfile.Text = "Sửa";
+            this.btnSuaProfile.UseVisualStyleBackColor = true;
+            this.btnSuaProfile.Click += new System.EventHandler(this.btnSuaProfile_Click);
             // 
             // panel5
             // 
@@ -601,7 +661,7 @@ namespace QLThuCung.Views
             this.tabNhanVien.Controls.Add(this.panel7);
             this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
             this.tabNhanVien.Name = "tabNhanVien";
-            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
             this.tabNhanVien.Size = new System.Drawing.Size(961, 595);
             this.tabNhanVien.TabIndex = 3;
             this.tabNhanVien.Text = "Nhân Viên";
@@ -611,7 +671,7 @@ namespace QLThuCung.Views
             // 
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Location = new System.Drawing.Point(5, 6);
-            this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
@@ -649,7 +709,7 @@ namespace QLThuCung.Views
             this.panelLuuHuyNV.Controls.Add(this.btnHuyNhanVien);
             this.panelLuuHuyNV.Controls.Add(this.btnLuuNhanVien);
             this.panelLuuHuyNV.Location = new System.Drawing.Point(151, 396);
-            this.panelLuuHuyNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLuuHuyNV.Margin = new System.Windows.Forms.Padding(2);
             this.panelLuuHuyNV.Name = "panelLuuHuyNV";
             this.panelLuuHuyNV.Size = new System.Drawing.Size(210, 60);
             this.panelLuuHuyNV.TabIndex = 23;
@@ -766,7 +826,7 @@ namespace QLThuCung.Views
             // 
             this.dtpNgayVaoLam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayVaoLam.Location = new System.Drawing.Point(146, 258);
-            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
             this.dtpNgayVaoLam.Size = new System.Drawing.Size(228, 23);
             this.dtpNgayVaoLam.TabIndex = 9;
@@ -906,7 +966,7 @@ namespace QLThuCung.Views
             this.tabKhachHang.Controls.Add(this.dgvKhachHang);
             this.tabKhachHang.Location = new System.Drawing.Point(4, 22);
             this.tabKhachHang.Name = "tabKhachHang";
-            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
             this.tabKhachHang.Size = new System.Drawing.Size(961, 595);
             this.tabKhachHang.TabIndex = 2;
             this.tabKhachHang.Text = "Khách Hàng";
@@ -942,7 +1002,7 @@ namespace QLThuCung.Views
             this.panelLuuHuyKH.Controls.Add(this.btnHuyKhachHang);
             this.panelLuuHuyKH.Controls.Add(this.btnLuuKhachHang);
             this.panelLuuHuyKH.Location = new System.Drawing.Point(142, 360);
-            this.panelLuuHuyKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLuuHuyKH.Margin = new System.Windows.Forms.Padding(2);
             this.panelLuuHuyKH.Name = "panelLuuHuyKH";
             this.panelLuuHuyKH.Size = new System.Drawing.Size(210, 60);
             this.panelLuuHuyKH.TabIndex = 23;
@@ -1136,7 +1196,7 @@ namespace QLThuCung.Views
             this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Location = new System.Drawing.Point(5, 6);
-            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
@@ -1150,7 +1210,7 @@ namespace QLThuCung.Views
             this.tabThuCung.Controls.Add(this.dgvThuCung);
             this.tabThuCung.Location = new System.Drawing.Point(4, 22);
             this.tabThuCung.Name = "tabThuCung";
-            this.tabThuCung.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabThuCung.Padding = new System.Windows.Forms.Padding(3);
             this.tabThuCung.Size = new System.Drawing.Size(961, 595);
             this.tabThuCung.TabIndex = 1;
             this.tabThuCung.Text = "ThuCung";
@@ -1451,11 +1511,12 @@ namespace QLThuCung.Views
             // 
             // tabHome
             // 
+            this.tabHome.Controls.Add(this.pnlChiTietThuCung);
             this.tabHome.Controls.Add(this.fpnlMain);
             this.tabHome.Controls.Add(this.btnHDDV);
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Name = "tabHome";
-            this.tabHome.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabHome.Padding = new System.Windows.Forms.Padding(3);
             this.tabHome.Size = new System.Drawing.Size(961, 595);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
@@ -1463,17 +1524,18 @@ namespace QLThuCung.Views
             // 
             // fpnlMain
             // 
+            this.fpnlMain.AutoScroll = true;
             this.fpnlMain.Location = new System.Drawing.Point(5, 6);
-            this.fpnlMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fpnlMain.Margin = new System.Windows.Forms.Padding(2);
             this.fpnlMain.Name = "fpnlMain";
-            this.fpnlMain.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fpnlMain.Padding = new System.Windows.Forms.Padding(2);
             this.fpnlMain.Size = new System.Drawing.Size(552, 588);
             this.fpnlMain.TabIndex = 7;
             // 
             // btnHDDV
             // 
             this.btnHDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHDDV.Location = new System.Drawing.Point(569, 6);
+            this.btnHDDV.Location = new System.Drawing.Point(825, 17);
             this.btnHDDV.Name = "btnHDDV";
             this.btnHDDV.Size = new System.Drawing.Size(111, 48);
             this.btnHDDV.TabIndex = 0;
@@ -1497,53 +1559,169 @@ namespace QLThuCung.Views
             this.tabctrlMain.TabIndex = 0;
             this.tabctrlMain.Click += new System.EventHandler(this.tabctrlMain_Click);
             // 
-            // btnSuaProfile
+            // pnlChiTietThuCung
             // 
-            this.btnSuaProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaProfile.Location = new System.Drawing.Point(488, 403);
-            this.btnSuaProfile.Name = "btnSuaProfile";
-            this.btnSuaProfile.Size = new System.Drawing.Size(80, 30);
-            this.btnSuaProfile.TabIndex = 25;
-            this.btnSuaProfile.Text = "Sửa";
-            this.btnSuaProfile.UseVisualStyleBackColor = true;
-            this.btnSuaProfile.Click += new System.EventHandler(this.btnSuaProfile_Click);
+            this.pnlChiTietThuCung.Controls.Add(this.btnBackHome);
+            this.pnlChiTietThuCung.Controls.Add(this.panel9);
+            this.pnlChiTietThuCung.Controls.Add(this.label35);
+            this.pnlChiTietThuCung.Location = new System.Drawing.Point(6, 3);
+            this.pnlChiTietThuCung.Name = "pnlChiTietThuCung";
+            this.pnlChiTietThuCung.Size = new System.Drawing.Size(519, 596);
+            this.pnlChiTietThuCung.TabIndex = 14;
             // 
-            // pnlLuuHuyProfile
+            // panel9
             // 
-            this.pnlLuuHuyProfile.Controls.Add(this.btnLuuProfie);
-            this.pnlLuuHuyProfile.Controls.Add(this.btnHuyProfile);
-            this.pnlLuuHuyProfile.Location = new System.Drawing.Point(470, 390);
-            this.pnlLuuHuyProfile.Name = "pnlLuuHuyProfile";
-            this.pnlLuuHuyProfile.Size = new System.Drawing.Size(215, 61);
-            this.pnlLuuHuyProfile.TabIndex = 26;
+            this.panel9.Controls.Add(this.txtGenderChiTietThuCung);
+            this.panel9.Controls.Add(this.label24);
+            this.panel9.Controls.Add(this.txtCanNangChiTietThuCung);
+            this.panel9.Controls.Add(this.label25);
+            this.panel9.Controls.Add(this.txtNCCChiTietThuCung);
+            this.panel9.Controls.Add(this.label29);
+            this.panel9.Controls.Add(this.txtTuoiChiTietThuCung);
+            this.panel9.Controls.Add(this.label32);
+            this.panel9.Controls.Add(this.txtLoaiChiTietThuCung);
+            this.panel9.Controls.Add(this.label33);
+            this.panel9.Controls.Add(this.txtIDChiTietThuCung);
+            this.panel9.Controls.Add(this.label34);
+            this.panel9.Location = new System.Drawing.Point(103, 117);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(301, 306);
+            this.panel9.TabIndex = 11;
             // 
-            // btnLuuProfie
+            // txtGenderChiTietThuCung
             // 
-            this.btnLuuProfie.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuProfie.Location = new System.Drawing.Point(16, 13);
-            this.btnLuuProfie.Name = "btnLuuProfie";
-            this.btnLuuProfie.Size = new System.Drawing.Size(80, 30);
-            this.btnLuuProfie.TabIndex = 20;
-            this.btnLuuProfie.Text = "Lưu";
-            this.btnLuuProfie.UseVisualStyleBackColor = true;
-            this.btnLuuProfie.Click += new System.EventHandler(this.btnLuuProfie_Click);
+            this.txtGenderChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGenderChiTietThuCung.Location = new System.Drawing.Point(134, 247);
+            this.txtGenderChiTietThuCung.Name = "txtGenderChiTietThuCung";
+            this.txtGenderChiTietThuCung.Size = new System.Drawing.Size(96, 23);
+            this.txtGenderChiTietThuCung.TabIndex = 4;
             // 
-            // btnHuyProfile
+            // label24
             // 
-            this.btnHuyProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyProfile.Location = new System.Drawing.Point(118, 13);
-            this.btnHuyProfile.Name = "btnHuyProfile";
-            this.btnHuyProfile.Size = new System.Drawing.Size(80, 30);
-            this.btnHuyProfile.TabIndex = 19;
-            this.btnHuyProfile.Text = "Hủy";
-            this.btnHuyProfile.UseVisualStyleBackColor = true;
-            this.btnHuyProfile.Click += new System.EventHandler(this.btnHuyProfile_Click);
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(19, 247);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(85, 20);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Giới Tính:";
+            // 
+            // txtCanNangChiTietThuCung
+            // 
+            this.txtCanNangChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCanNangChiTietThuCung.Location = new System.Drawing.Point(135, 197);
+            this.txtCanNangChiTietThuCung.Name = "txtCanNangChiTietThuCung";
+            this.txtCanNangChiTietThuCung.Size = new System.Drawing.Size(95, 23);
+            this.txtCanNangChiTietThuCung.TabIndex = 1;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(11, 196);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(93, 20);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Cân Nặng:";
+            // 
+            // txtNCCChiTietThuCung
+            // 
+            this.txtNCCChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNCCChiTietThuCung.Location = new System.Drawing.Point(134, 104);
+            this.txtNCCChiTietThuCung.Name = "txtNCCChiTietThuCung";
+            this.txtNCCChiTietThuCung.Size = new System.Drawing.Size(134, 23);
+            this.txtNCCChiTietThuCung.TabIndex = 1;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(50, 104);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(50, 20);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "NCC:";
+            // 
+            // txtTuoiChiTietThuCung
+            // 
+            this.txtTuoiChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuoiChiTietThuCung.Location = new System.Drawing.Point(136, 148);
+            this.txtTuoiChiTietThuCung.Name = "txtTuoiChiTietThuCung";
+            this.txtTuoiChiTietThuCung.Size = new System.Drawing.Size(94, 23);
+            this.txtTuoiChiTietThuCung.TabIndex = 1;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(54, 147);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(48, 20);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Tuổi:";
+            // 
+            // txtLoaiChiTietThuCung
+            // 
+            this.txtLoaiChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoaiChiTietThuCung.Location = new System.Drawing.Point(136, 56);
+            this.txtLoaiChiTietThuCung.Name = "txtLoaiChiTietThuCung";
+            this.txtLoaiChiTietThuCung.Size = new System.Drawing.Size(132, 23);
+            this.txtLoaiChiTietThuCung.TabIndex = 3;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(59, 56);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(53, 20);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "Loại: ";
+            // 
+            // txtIDChiTietThuCung
+            // 
+            this.txtIDChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDChiTietThuCung.Location = new System.Drawing.Point(136, 18);
+            this.txtIDChiTietThuCung.Name = "txtIDChiTietThuCung";
+            this.txtIDChiTietThuCung.Size = new System.Drawing.Size(132, 23);
+            this.txtIDChiTietThuCung.TabIndex = 1;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(75, 18);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(33, 20);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "ID:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(122, 70);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(170, 20);
+            this.label35.TabIndex = 12;
+            this.label35.Text = "Thông Tin Thú Cưng";
+            // 
+            // btnBackHome
+            // 
+            this.btnBackHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackHome.Location = new System.Drawing.Point(382, 443);
+            this.btnBackHome.Name = "btnBackHome";
+            this.btnBackHome.Size = new System.Drawing.Size(93, 32);
+            this.btnBackHome.TabIndex = 13;
+            this.btnBackHome.Text = "Trở Lại";
+            this.btnBackHome.UseVisualStyleBackColor = true;
+            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 636);
+            this.ClientSize = new System.Drawing.Size(998, 652);
             this.Controls.Add(this.tabctrlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "QuanLy";
@@ -1559,6 +1737,7 @@ namespace QLThuCung.Views
             this.pnlDataBindUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.tabProfile.ResumeLayout(false);
+            this.pnlLuuHuyProfile.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tabNhanVien.ResumeLayout(false);
@@ -1587,7 +1766,10 @@ namespace QLThuCung.Views
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuCung)).EndInit();
             this.tabHome.ResumeLayout(false);
             this.tabctrlMain.ResumeLayout(false);
-            this.pnlLuuHuyProfile.ResumeLayout(false);
+            this.pnlChiTietThuCung.ResumeLayout(false);
+            this.pnlChiTietThuCung.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1722,5 +1904,21 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Panel pnlLuuHuyProfile;
         private System.Windows.Forms.Button btnLuuProfie;
         private System.Windows.Forms.Button btnHuyProfile;
+        private System.Windows.Forms.Panel pnlChiTietThuCung;
+        private System.Windows.Forms.Button btnBackHome;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox txtGenderChiTietThuCung;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtCanNangChiTietThuCung;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtNCCChiTietThuCung;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txtTuoiChiTietThuCung;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtLoaiChiTietThuCung;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtIDChiTietThuCung;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
     }
 }

@@ -36,6 +36,7 @@ namespace QLThuCung.Views
             panelLuuHuyNV.Hide();
             pnlLuuHuyUser.Hide();
             pnlLuuHuyProfile.Hide();
+            pnlChiTietThuCung.Hide();
             PhanQuyenUser();
             LoadHome();
         }
@@ -684,26 +685,41 @@ namespace QLThuCung.Views
         }
         private void LoadHome()
         {
-            List<Species> lstSpecies = db.Species.ToList();
-            foreach(Species a in lstSpecies)
-            {
-                Button btn = new Button();
-                btn.Text = a.ID_Spec + "\n" + a.Name;
-                btn.Width = 150;
-                btn.Height = 150;
-                btn.Click += (sender, args) =>
+            //List<Species> lstSpecies = db.Species.ToList();
+            //  foreach(Species a in lstSpecies)
+            //{
+            int count = 0;
+                List<Pet> lstPet = db.Pets.ToList();
+                foreach (Pet pet in lstPet)
                 {
-                    List<Pet> lstPet = db.Pets.Where(s => s.ID_Spec == a.ID_Spec).ToList();
-                    //lstViewThuCung.Clear();
-                    //foreach(var x in lstPet)
-                    //{
-                    //    lstViewThuCung.Items.Add(x.ID_Pet);
-                    //}
-                    frmThuCung frm = new frmThuCung(lstPet);
-                    frm.ShowDialog();
-                };
-                fpnlMain.Controls.Add(btn);
-            }
+                    count++;
+                    Button btn = new Button();
+                    btn.Text = "Thú Cưng "+count;
+                    btn.Width = 150;
+                    btn.Height = 150;
+                    btn.Click += (sender, args) =>
+                    {
+
+                        txtIDChiTietThuCung.Text = pet.ID_Pet;
+                        txtLoaiChiTietThuCung.Text = pet.ID_Spec;
+                        txtNCCChiTietThuCung.Text = pet.Supplier.Name;
+                        txtCanNangChiTietThuCung.Text = pet.Weight + "";
+                        txtTuoiChiTietThuCung.Text = pet.Age + "";
+                        txtGenderChiTietThuCung.Text = pet.Sex;
+
+                       // fpnlMain.Hide();
+                        pnlChiTietThuCung.Show();
+                        //ChiTietThuCung frm = new ChiTietThuCung(a);
+                        //frm.ShowDialog();
+                    };
+                    fpnlMain.Controls.Add(btn);
+              //  }
+             }
+        }
+        private void btnBackHome_Click(object sender, EventArgs e)
+        {
+           // fpnlMain.Show();
+            pnlChiTietThuCung.Hide();
         }
         #endregion
 
@@ -858,11 +874,10 @@ namespace QLThuCung.Views
             tbPasswordProfile.Text = result.Password.ToString();
             tbPerrmissProfle.Text = result.Permission.ToString();
         }
-        #endregion
 
         private void btnSuaProfile_Click(object sender, EventArgs e)
         {
-            btnSuaProfile.Enabled = false;        
+            btnSuaProfile.Enabled = false;
             pnlLuuHuyProfile.Show();
             tbTenProfile.ReadOnly = false;
             tbUsernameProfile.ReadOnly = false;
@@ -902,5 +917,10 @@ namespace QLThuCung.Views
         {
             HandleBtnHuyProfile();
         }
+
+
+        #endregion
+
+
     }
 }

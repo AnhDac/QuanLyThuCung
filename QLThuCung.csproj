@@ -65,12 +65,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmThuCung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThuCung.Designer.cs">
-      <DependentUpon>frmThuCung.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\Contract_Sell.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -142,12 +136,6 @@
     <Compile Include="Views\BaoCao.Designer.cs">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChiTietThuCung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ChiTietThuCung.Designer.cs">
-      <DependentUpon>ChiTietThuCung.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,9 +154,6 @@
     <Compile Include="Views\QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmThuCung.resx">
-      <DependentUpon>frmThuCung.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -181,9 +166,6 @@
     </Compile>
     <EmbeddedResource Include="Views\BaoCao.resx">
       <DependentUpon>BaoCao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ChiTietThuCung.resx">
-      <DependentUpon>ChiTietThuCung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
