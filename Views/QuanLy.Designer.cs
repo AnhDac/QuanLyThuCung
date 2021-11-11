@@ -150,9 +150,9 @@ namespace QLThuCung.Views
             this.btnTim = new System.Windows.Forms.Button();
             this.dgvThuCung = new System.Windows.Forms.DataGridView();
             this.tabHome = new System.Windows.Forms.TabPage();
-            this.pnlShowThuCung = new System.Windows.Forms.Panel();
             this.btnHDDV = new System.Windows.Forms.Button();
             this.tabctrlMain = new System.Windows.Forms.TabControl();
+            this.fpnlMain = new System.Windows.Forms.FlowLayoutPanel();
             this.tabUser.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -1559,7 +1559,7 @@ namespace QLThuCung.Views
             // 
             // tabHome
             // 
-            this.tabHome.Controls.Add(this.pnlShowThuCung);
+            this.tabHome.Controls.Add(this.fpnlMain);
             this.tabHome.Controls.Add(this.btnHDDV);
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Margin = new System.Windows.Forms.Padding(4);
@@ -1570,17 +1570,10 @@ namespace QLThuCung.Views
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
             // 
-            // pnlShowThuCung
-            // 
-            this.pnlShowThuCung.Location = new System.Drawing.Point(7, 10);
-            this.pnlShowThuCung.Name = "pnlShowThuCung";
-            this.pnlShowThuCung.Size = new System.Drawing.Size(728, 724);
-            this.pnlShowThuCung.TabIndex = 1;
-            // 
             // btnHDDV
             // 
             this.btnHDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHDDV.Location = new System.Drawing.Point(1098, 34);
+            this.btnHDDV.Location = new System.Drawing.Point(759, 8);
             this.btnHDDV.Margin = new System.Windows.Forms.Padding(4);
             this.btnHDDV.Name = "btnHDDV";
             this.btnHDDV.Size = new System.Drawing.Size(148, 59);
@@ -1605,6 +1598,14 @@ namespace QLThuCung.Views
             this.tabctrlMain.Size = new System.Drawing.Size(1292, 764);
             this.tabctrlMain.TabIndex = 0;
             this.tabctrlMain.Click += new System.EventHandler(this.tabctrlMain_Click);
+            // 
+            // fpnlMain
+            // 
+            this.fpnlMain.Location = new System.Drawing.Point(7, 7);
+            this.fpnlMain.Name = "fpnlMain";
+            this.fpnlMain.Padding = new System.Windows.Forms.Padding(3);
+            this.fpnlMain.Size = new System.Drawing.Size(736, 724);
+            this.fpnlMain.TabIndex = 7;
             // 
             // QuanLy
             // 
@@ -1784,6 +1785,6 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox tbPerrmissProfle;
-        private System.Windows.Forms.Panel pnlShowThuCung;
+        private System.Windows.Forms.FlowLayoutPanel fpnlMain;
     }
 }

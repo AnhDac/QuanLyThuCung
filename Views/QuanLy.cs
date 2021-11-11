@@ -36,6 +36,7 @@ namespace QLThuCung.Views
             panelLuuHuyNV.Hide();
             pnlLuuHuyUser.Hide();
             PhanQuyenUser();
+            LoadHome();
         }
         void PhanQuyenUser()
         {
@@ -182,6 +183,7 @@ namespace QLThuCung.Views
             var result = from c in db.Pets select new { IDPet = c.ID_Pet, Loai = c.ID_Spec, GioiTinh = c.Sex, PriceImport = c.PriceImport, NCC = c.ID_Sup, CanNang = c.Weight, Tuoi = c.Age };
             dgvThuCung.DataSource = result.ToList();
             DataBindThuCung();
+
         }
 
         private void dgvThuCung_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -674,7 +676,29 @@ namespace QLThuCung.Views
             HopDongDV hopDongDV = new HopDongDV();
             hopDongDV.ShowDialog();
         }
-
+        private void LoadHome()
+        {
+            List<Species> lstSpecies = db.Species.ToList();
+            foreach(Species a in lstSpecies)
+            {
+                Button btn = new Button();
+                btn.Text = a.ID_Spec + "\n" + a.Name;
+                btn.Width = 150;
+                btn.Height = 150;
+                btn.Click += (sender, args) =>
+                {
+                    List<Pet> lstPet = db.Pets.Where(s => s.ID_Spec == a.ID_Spec).ToList();
+                    //lstViewThuCung.Clear();
+                    //foreach(var x in lstPet)
+                    //{
+                    //    lstViewThuCung.Items.Add(x.ID_Pet);
+                    //}
+                    frmThuCung frm = new frmThuCung(lstPet);
+                    frm.ShowDialog();
+                };
+                fpnlMain.Controls.Add(btn);
+            }
+        }
         #endregion
 
         #region TAB USER
@@ -828,7 +852,6 @@ namespace QLThuCung.Views
             tbPasswordProfile.Text = result.Password.ToString();
             tbPerrmissProfle.Text = result.Permission.ToString();
         }
-
-        #endregion
+        #endregion 
     }
 }
