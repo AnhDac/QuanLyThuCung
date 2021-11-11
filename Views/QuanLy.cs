@@ -773,8 +773,9 @@ namespace QLThuCung.Views
             LoadUser();
         }
 
+
         #endregion
 
-       
+      
     }
 }

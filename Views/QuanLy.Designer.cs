@@ -32,12 +32,12 @@ namespace QLThuCung.Views
             this.tabUser = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnReloadUser = new System.Windows.Forms.Button();
-            this.pnlLuuHuyUser = new System.Windows.Forms.Panel();
-            this.btnLuuUser = new System.Windows.Forms.Button();
-            this.btnHuyUser = new System.Windows.Forms.Button();
             this.tbFindUser = new System.Windows.Forms.TextBox();
             this.cbFindUser = new System.Windows.Forms.ComboBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.pnlLuuHuyUser = new System.Windows.Forms.Panel();
+            this.btnLuuUser = new System.Windows.Forms.Button();
+            this.btnHuyUser = new System.Windows.Forms.Button();
             this.btnSuaUser = new System.Windows.Forms.Button();
             this.btnXoaUser = new System.Windows.Forms.Button();
             this.btnThemUser = new System.Windows.Forms.Button();
@@ -157,8 +157,8 @@ namespace QLThuCung.Views
             this.tabctrlMain = new System.Windows.Forms.TabControl();
             this.tabUser.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.pnlLuuHuyUser.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.pnlLuuHuyUser.SuspendLayout();
             this.pnlDataBindUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.tabAdmin.SuspendLayout();
@@ -200,7 +200,6 @@ namespace QLThuCung.Views
             // panel6
             // 
             this.panel6.Controls.Add(this.btnReloadUser);
-            this.panel6.Controls.Add(this.pnlLuuHuyUser);
             this.panel6.Controls.Add(this.tbFindUser);
             this.panel6.Controls.Add(this.cbFindUser);
             this.panel6.Controls.Add(this.panel10);
@@ -221,37 +220,6 @@ namespace QLThuCung.Views
             this.btnReloadUser.Text = "Tải Lại";
             this.btnReloadUser.UseVisualStyleBackColor = true;
             this.btnReloadUser.Click += new System.EventHandler(this.btnReloadUser_Click);
-            // 
-            // pnlLuuHuyUser
-            // 
-            this.pnlLuuHuyUser.Controls.Add(this.btnLuuUser);
-            this.pnlLuuHuyUser.Controls.Add(this.btnHuyUser);
-            this.pnlLuuHuyUser.Location = new System.Drawing.Point(54, 470);
-            this.pnlLuuHuyUser.Name = "pnlLuuHuyUser";
-            this.pnlLuuHuyUser.Size = new System.Drawing.Size(215, 61);
-            this.pnlLuuHuyUser.TabIndex = 22;
-            // 
-            // btnLuuUser
-            // 
-            this.btnLuuUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuUser.Location = new System.Drawing.Point(16, 13);
-            this.btnLuuUser.Name = "btnLuuUser";
-            this.btnLuuUser.Size = new System.Drawing.Size(80, 30);
-            this.btnLuuUser.TabIndex = 20;
-            this.btnLuuUser.Text = "Lưu";
-            this.btnLuuUser.UseVisualStyleBackColor = true;
-            this.btnLuuUser.Click += new System.EventHandler(this.btnLuuUser_Click);
-            // 
-            // btnHuyUser
-            // 
-            this.btnHuyUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyUser.Location = new System.Drawing.Point(118, 13);
-            this.btnHuyUser.Name = "btnHuyUser";
-            this.btnHuyUser.Size = new System.Drawing.Size(80, 30);
-            this.btnHuyUser.TabIndex = 19;
-            this.btnHuyUser.Text = "Hủy";
-            this.btnHuyUser.UseVisualStyleBackColor = true;
-            this.btnHuyUser.Click += new System.EventHandler(this.btnHuyUser_Click);
             // 
             // tbFindUser
             // 
@@ -275,6 +243,7 @@ namespace QLThuCung.Views
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.pnlLuuHuyUser);
             this.panel10.Controls.Add(this.btnSuaUser);
             this.panel10.Controls.Add(this.btnXoaUser);
             this.panel10.Controls.Add(this.btnThemUser);
@@ -282,6 +251,37 @@ namespace QLThuCung.Views
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(398, 61);
             this.panel10.TabIndex = 15;
+            // 
+            // pnlLuuHuyUser
+            // 
+            this.pnlLuuHuyUser.Controls.Add(this.btnLuuUser);
+            this.pnlLuuHuyUser.Controls.Add(this.btnHuyUser);
+            this.pnlLuuHuyUser.Location = new System.Drawing.Point(136, 0);
+            this.pnlLuuHuyUser.Name = "pnlLuuHuyUser";
+            this.pnlLuuHuyUser.Size = new System.Drawing.Size(215, 61);
+            this.pnlLuuHuyUser.TabIndex = 23;
+            // 
+            // btnLuuUser
+            // 
+            this.btnLuuUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuUser.Location = new System.Drawing.Point(16, 13);
+            this.btnLuuUser.Name = "btnLuuUser";
+            this.btnLuuUser.Size = new System.Drawing.Size(80, 30);
+            this.btnLuuUser.TabIndex = 20;
+            this.btnLuuUser.Text = "Lưu";
+            this.btnLuuUser.UseVisualStyleBackColor = true;
+            this.btnLuuUser.Click += new System.EventHandler(this.btnLuuUser_Click);
+            // 
+            // btnHuyUser
+            // 
+            this.btnHuyUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyUser.Location = new System.Drawing.Point(118, 13);
+            this.btnHuyUser.Name = "btnHuyUser";
+            this.btnHuyUser.Size = new System.Drawing.Size(80, 30);
+            this.btnHuyUser.TabIndex = 19;
+            this.btnHuyUser.Text = "Hủy";
+            this.btnHuyUser.UseVisualStyleBackColor = true;
+            this.btnHuyUser.Click += new System.EventHandler(this.btnHuyUser_Click);
             // 
             // btnSuaUser
             // 
@@ -1526,8 +1526,8 @@ namespace QLThuCung.Views
             this.tabUser.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.pnlLuuHuyUser.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
+            this.pnlLuuHuyUser.ResumeLayout(false);
             this.pnlDataBindUser.ResumeLayout(false);
             this.pnlDataBindUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
@@ -1569,9 +1569,6 @@ namespace QLThuCung.Views
         private System.Windows.Forms.TabPage tabUser;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnReloadUser;
-        private System.Windows.Forms.Panel pnlLuuHuyUser;
-        private System.Windows.Forms.Button btnLuuUser;
-        private System.Windows.Forms.Button btnHuyUser;
         private System.Windows.Forms.TextBox tbFindUser;
         private System.Windows.Forms.ComboBox cbFindUser;
         private System.Windows.Forms.Panel panel10;
@@ -1692,5 +1689,8 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Button btnHDDV;
         private System.Windows.Forms.TabControl tabctrlMain;
         private System.Windows.Forms.ComboBox cbPermissionUser;
+        private System.Windows.Forms.Panel pnlLuuHuyUser;
+        private System.Windows.Forms.Button btnLuuUser;
+        private System.Windows.Forms.Button btnHuyUser;
     }
 }
