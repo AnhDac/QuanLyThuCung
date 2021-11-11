@@ -154,10 +154,8 @@ namespace QLThuCung.Views
             this.btnTim = new System.Windows.Forms.Button();
             this.dgvThuCung = new System.Windows.Forms.DataGridView();
             this.tabHome = new System.Windows.Forms.TabPage();
-            this.fpnlMain = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnHDDV = new System.Windows.Forms.Button();
-            this.tabctrlMain = new System.Windows.Forms.TabControl();
             this.pnlChiTietThuCung = new System.Windows.Forms.Panel();
+            this.btnBackHome = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtGenderChiTietThuCung = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -172,7 +170,9 @@ namespace QLThuCung.Views
             this.txtIDChiTietThuCung = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.btnBackHome = new System.Windows.Forms.Button();
+            this.fpnlMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnHDDV = new System.Windows.Forms.Button();
+            this.tabctrlMain = new System.Windows.Forms.TabControl();
             this.tabUser.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -201,19 +201,20 @@ namespace QLThuCung.Views
             this.pnlDataBind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuCung)).BeginInit();
             this.tabHome.SuspendLayout();
-            this.tabctrlMain.SuspendLayout();
             this.pnlChiTietThuCung.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.tabctrlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabUser
             // 
             this.tabUser.Controls.Add(this.panel6);
             this.tabUser.Controls.Add(this.dgvUser);
+            this.tabUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabUser.Location = new System.Drawing.Point(4, 22);
             this.tabUser.Name = "tabUser";
             this.tabUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUser.Size = new System.Drawing.Size(961, 595);
+            this.tabUser.Size = new System.Drawing.Size(990, 626);
             this.tabUser.TabIndex = 6;
             this.tabUser.Text = "Người Dùng";
             this.tabUser.UseVisualStyleBackColor = true;
@@ -363,7 +364,7 @@ namespace QLThuCung.Views
             "customer"});
             this.cbPermissionUser.Location = new System.Drawing.Point(119, 184);
             this.cbPermissionUser.Name = "cbPermissionUser";
-            this.cbPermissionUser.Size = new System.Drawing.Size(121, 21);
+            this.cbPermissionUser.Size = new System.Drawing.Size(121, 24);
             this.cbPermissionUser.TabIndex = 4;
             // 
             // label26
@@ -479,7 +480,7 @@ namespace QLThuCung.Views
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
             this.tabProfile.Name = "tabProfile";
             this.tabProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfile.Size = new System.Drawing.Size(961, 595);
+            this.tabProfile.Size = new System.Drawing.Size(990, 626);
             this.tabProfile.TabIndex = 4;
             this.tabProfile.Text = "Profile";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -557,7 +558,7 @@ namespace QLThuCung.Views
             // tbPerrmissProfle
             // 
             this.tbPerrmissProfle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPerrmissProfle.Location = new System.Drawing.Point(197, 282);
+            this.tbPerrmissProfle.Location = new System.Drawing.Point(197, 276);
             this.tbPerrmissProfle.Name = "tbPerrmissProfle";
             this.tbPerrmissProfle.Size = new System.Drawing.Size(134, 23);
             this.tbPerrmissProfle.TabIndex = 14;
@@ -566,7 +567,7 @@ namespace QLThuCung.Views
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(62, 288);
+            this.label18.Location = new System.Drawing.Point(59, 282);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(84, 17);
             this.label18.TabIndex = 5;
@@ -662,14 +663,17 @@ namespace QLThuCung.Views
             this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhanVien.Size = new System.Drawing.Size(961, 595);
+            this.tabNhanVien.Size = new System.Drawing.Size(990, 626);
             this.tabNhanVien.TabIndex = 3;
             this.tabNhanVien.Text = "Nhân Viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
             // 
             // dgvNhanVien
             // 
+            this.dgvNhanVien.AllowUserToResizeColumns = false;
+            this.dgvNhanVien.AllowUserToResizeRows = false;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien.GridColor = System.Drawing.Color.Chocolate;
             this.dgvNhanVien.Location = new System.Drawing.Point(5, 6);
             this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.dgvNhanVien.Name = "dgvNhanVien";
@@ -967,7 +971,7 @@ namespace QLThuCung.Views
             this.tabKhachHang.Location = new System.Drawing.Point(4, 22);
             this.tabKhachHang.Name = "tabKhachHang";
             this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhachHang.Size = new System.Drawing.Size(961, 595);
+            this.tabKhachHang.Size = new System.Drawing.Size(990, 626);
             this.tabKhachHang.TabIndex = 2;
             this.tabKhachHang.Text = "Khách Hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
@@ -1211,7 +1215,7 @@ namespace QLThuCung.Views
             this.tabThuCung.Location = new System.Drawing.Point(4, 22);
             this.tabThuCung.Name = "tabThuCung";
             this.tabThuCung.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThuCung.Size = new System.Drawing.Size(961, 595);
+            this.tabThuCung.Size = new System.Drawing.Size(990, 626);
             this.tabThuCung.TabIndex = 1;
             this.tabThuCung.Text = "ThuCung";
             this.tabThuCung.UseVisualStyleBackColor = true;
@@ -1517,47 +1521,10 @@ namespace QLThuCung.Views
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Name = "tabHome";
             this.tabHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHome.Size = new System.Drawing.Size(961, 595);
+            this.tabHome.Size = new System.Drawing.Size(990, 626);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
-            // 
-            // fpnlMain
-            // 
-            this.fpnlMain.AutoScroll = true;
-            this.fpnlMain.Location = new System.Drawing.Point(5, 6);
-            this.fpnlMain.Margin = new System.Windows.Forms.Padding(2);
-            this.fpnlMain.Name = "fpnlMain";
-            this.fpnlMain.Padding = new System.Windows.Forms.Padding(2);
-            this.fpnlMain.Size = new System.Drawing.Size(552, 588);
-            this.fpnlMain.TabIndex = 7;
-            // 
-            // btnHDDV
-            // 
-            this.btnHDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHDDV.Location = new System.Drawing.Point(825, 17);
-            this.btnHDDV.Name = "btnHDDV";
-            this.btnHDDV.Size = new System.Drawing.Size(111, 48);
-            this.btnHDDV.TabIndex = 0;
-            this.btnHDDV.Text = "HD DV";
-            this.btnHDDV.UseVisualStyleBackColor = true;
-            this.btnHDDV.Click += new System.EventHandler(this.btnHDDV_Click);
-            // 
-            // tabctrlMain
-            // 
-            this.tabctrlMain.Controls.Add(this.tabHome);
-            this.tabctrlMain.Controls.Add(this.tabThuCung);
-            this.tabctrlMain.Controls.Add(this.tabKhachHang);
-            this.tabctrlMain.Controls.Add(this.tabNhanVien);
-            this.tabctrlMain.Controls.Add(this.tabProfile);
-            this.tabctrlMain.Controls.Add(this.tabUser);
-            this.tabctrlMain.ItemSize = new System.Drawing.Size(42, 18);
-            this.tabctrlMain.Location = new System.Drawing.Point(12, 12);
-            this.tabctrlMain.Name = "tabctrlMain";
-            this.tabctrlMain.SelectedIndex = 0;
-            this.tabctrlMain.Size = new System.Drawing.Size(969, 621);
-            this.tabctrlMain.TabIndex = 0;
-            this.tabctrlMain.Click += new System.EventHandler(this.tabctrlMain_Click);
             // 
             // pnlChiTietThuCung
             // 
@@ -1568,6 +1535,17 @@ namespace QLThuCung.Views
             this.pnlChiTietThuCung.Name = "pnlChiTietThuCung";
             this.pnlChiTietThuCung.Size = new System.Drawing.Size(519, 596);
             this.pnlChiTietThuCung.TabIndex = 14;
+            // 
+            // btnBackHome
+            // 
+            this.btnBackHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackHome.Location = new System.Drawing.Point(382, 443);
+            this.btnBackHome.Name = "btnBackHome";
+            this.btnBackHome.Size = new System.Drawing.Size(93, 32);
+            this.btnBackHome.TabIndex = 13;
+            this.btnBackHome.Text = "Trở Lại";
+            this.btnBackHome.UseVisualStyleBackColor = true;
+            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
             // panel9
             // 
@@ -1706,16 +1684,45 @@ namespace QLThuCung.Views
             this.label35.TabIndex = 12;
             this.label35.Text = "Thông Tin Thú Cưng";
             // 
-            // btnBackHome
+            // fpnlMain
             // 
-            this.btnBackHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackHome.Location = new System.Drawing.Point(382, 443);
-            this.btnBackHome.Name = "btnBackHome";
-            this.btnBackHome.Size = new System.Drawing.Size(93, 32);
-            this.btnBackHome.TabIndex = 13;
-            this.btnBackHome.Text = "Trở Lại";
-            this.btnBackHome.UseVisualStyleBackColor = true;
-            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
+            this.fpnlMain.AutoScroll = true;
+            this.fpnlMain.Location = new System.Drawing.Point(5, 6);
+            this.fpnlMain.Margin = new System.Windows.Forms.Padding(2);
+            this.fpnlMain.Name = "fpnlMain";
+            this.fpnlMain.Padding = new System.Windows.Forms.Padding(2);
+            this.fpnlMain.Size = new System.Drawing.Size(552, 588);
+            this.fpnlMain.TabIndex = 7;
+            // 
+            // btnHDDV
+            // 
+            this.btnHDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDDV.Location = new System.Drawing.Point(825, 17);
+            this.btnHDDV.Name = "btnHDDV";
+            this.btnHDDV.Size = new System.Drawing.Size(111, 48);
+            this.btnHDDV.TabIndex = 0;
+            this.btnHDDV.Text = "HD DV";
+            this.btnHDDV.UseVisualStyleBackColor = true;
+            this.btnHDDV.Click += new System.EventHandler(this.btnHDDV_Click);
+            // 
+            // tabctrlMain
+            // 
+            this.tabctrlMain.Controls.Add(this.tabHome);
+            this.tabctrlMain.Controls.Add(this.tabThuCung);
+            this.tabctrlMain.Controls.Add(this.tabKhachHang);
+            this.tabctrlMain.Controls.Add(this.tabNhanVien);
+            this.tabctrlMain.Controls.Add(this.tabProfile);
+            this.tabctrlMain.Controls.Add(this.tabUser);
+            this.tabctrlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabctrlMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabctrlMain.ItemSize = new System.Drawing.Size(42, 18);
+            this.tabctrlMain.Location = new System.Drawing.Point(0, 0);
+            this.tabctrlMain.Name = "tabctrlMain";
+            this.tabctrlMain.Padding = new System.Drawing.Point(8, 3);
+            this.tabctrlMain.SelectedIndex = 0;
+            this.tabctrlMain.Size = new System.Drawing.Size(998, 652);
+            this.tabctrlMain.TabIndex = 0;
+            this.tabctrlMain.Click += new System.EventHandler(this.tabctrlMain_Click);
             // 
             // QuanLy
             // 
@@ -1765,11 +1772,11 @@ namespace QLThuCung.Views
             this.pnlDataBind.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuCung)).EndInit();
             this.tabHome.ResumeLayout(false);
-            this.tabctrlMain.ResumeLayout(false);
             this.pnlChiTietThuCung.ResumeLayout(false);
             this.pnlChiTietThuCung.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.tabctrlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
