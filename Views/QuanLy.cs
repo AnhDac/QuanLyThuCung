@@ -40,11 +40,11 @@ namespace QLThuCung.Views
         }
         void PhanQuyenUser()
         {
+            
             string permiss = "";
             var result = db.Users.Where(p => p.ID == iduser).Select(c => new { IDUser = c.ID, Ten = c.Name, Username = c.Username, Password = c.PassWord, Permission = c.Permission }).ToList().SingleOrDefault();
             if (result != null)
-                permiss = result.Permission.ToString();
-
+                permiss = result.Permission.ToString().Trim();
             switch (permiss)
             {
                 case ""://guest
