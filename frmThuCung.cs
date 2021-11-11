@@ -26,9 +26,13 @@ namespace QLThuCung
             txtSpecies.Text = pet.ID_Spec;
             txtNCC.Text = pet.Supplier.Name;
             txtCanNang.Text = pet.Weight + "";
-            txtGia.Text = pet.PriceImport + "";
             txtTuoi.Text = pet.Age + "";
             txtGender.Text = pet.Sex;
+        }
+
+        private void frmThuCung_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
