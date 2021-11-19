@@ -14,21 +14,14 @@ namespace QLThuCung.Model
     
     public partial class Contract_Ser
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Contract_Ser()
-        {
-            this.DetailContractSers = new HashSet<DetailContractSer>();
-        }
-    
         public string ID_ConSer { get; set; }
         public string ID_Emp { get; set; }
         public string ID_Cus { get; set; }
         public Nullable<System.DateTime> DateBuy { get; set; }
-        public Nullable<int> Price { get; set; }
+        public string ID_Ser { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetailContractSer> DetailContractSers { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
+        public virtual Servic Servic { get; set; }
     }
 }

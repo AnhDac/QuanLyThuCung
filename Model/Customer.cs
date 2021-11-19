@@ -24,7 +24,7 @@ namespace QLThuCung.Model
         public string ID_Cus { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
-        public int Age { get; set; }
+        public Nullable<int> Age { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contract_Sell> Contract_Sell { get; set; }

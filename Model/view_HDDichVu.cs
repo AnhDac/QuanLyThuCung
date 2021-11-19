@@ -12,13 +12,14 @@ namespace QLThuCung.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class DetailContractSer
+    public partial class view_HDDichVu
     {
         public string ID_ConSer { get; set; }
+        public string ID_Emp { get; set; }
+        public string ID_Cus { get; set; }
+        public Nullable<System.DateTime> DateBuy { get; set; }
         public string ID_Ser { get; set; }
+        public string Name { get; set; }
         public Nullable<int> Price { get; set; }
-    
-        public virtual Contract_Ser Contract_Ser { get; set; }
-        public virtual Servic Servic { get; set; }
     }
 }

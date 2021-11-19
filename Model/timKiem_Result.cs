@@ -11,12 +11,14 @@ namespace QLThuCung.Model
 {
     using System;
     
-    public partial class view_Contract_Result
+    public partial class timKiem_Result
     {
         public string ID_ConSer { get; set; }
         public string ID_Emp { get; set; }
         public string ID_Cus { get; set; }
         public Nullable<System.DateTime> DateBuy { get; set; }
         public string ID_Ser { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> Price { get; set; }
     }
 }

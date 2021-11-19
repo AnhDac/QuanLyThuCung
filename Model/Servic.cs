@@ -17,7 +17,7 @@ namespace QLThuCung.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Servic()
         {
-            this.DetailContractSers = new HashSet<DetailContractSer>();
+            this.Contract_Ser = new HashSet<Contract_Ser>();
         }
     
         public string ID_Ser { get; set; }
@@ -25,6 +25,6 @@ namespace QLThuCung.Model
         public Nullable<int> Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetailContractSer> DetailContractSers { get; set; }
+        public virtual ICollection<Contract_Ser> Contract_Ser { get; set; }
     }
 }

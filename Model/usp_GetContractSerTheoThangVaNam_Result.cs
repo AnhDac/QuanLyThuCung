@@ -17,6 +17,6 @@ namespace QLThuCung.Model
         public string ID_Emp { get; set; }
         public string ID_Cus { get; set; }
         public Nullable<System.DateTime> DateBuy { get; set; }
-        public Nullable<int> Price { get; set; }
+        public string ID_Ser { get; set; }
     }
 }

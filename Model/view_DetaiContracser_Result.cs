@@ -13,8 +13,10 @@ namespace QLThuCung.Model
     
     public partial class view_DetaiContracser_Result
     {
-        public string ID_ConSer { get; set; }
-        public string ID_Ser { get; set; }
-        public Nullable<int> Price { get; set; }
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Username { get; set; }
+        public string PassWord { get; set; }
+        public string Permission { get; set; }
     }
 }

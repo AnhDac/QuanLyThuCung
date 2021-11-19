@@ -30,7 +30,6 @@ namespace QLThuCung.Model
         public virtual DbSet<Contract_Sell> Contract_Sell { get; set; }
         public virtual DbSet<Contract_Ser> Contract_Ser { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<DetailContractSer> DetailContractSers { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Pet> Pets { get; set; }
         public virtual DbSet<Servic> Servics { get; set; }
@@ -39,6 +38,28 @@ namespace QLThuCung.Model
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<WarrantyType> WarrantyTypes { get; set; }
         public virtual DbSet<Work> Works { get; set; }
+        public virtual DbSet<view_HDDichVu> view_HDDichVu { get; set; }
+    
+        public virtual ObjectResult<timKiem_Result> timKiem(Nullable<int> year, Nullable<int> month, Nullable<int> day, string iD_cus)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(int));
+    
+            var dayParameter = day.HasValue ?
+                new ObjectParameter("day", day) :
+                new ObjectParameter("day", typeof(int));
+    
+            var iD_cusParameter = iD_cus != null ?
+                new ObjectParameter("ID_cus", iD_cus) :
+                new ObjectParameter("ID_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<timKiem_Result>("timKiem", yearParameter, monthParameter, dayParameter, iD_cusParameter);
+        }
     
         public virtual ObjectResult<usp_GetContractSellTheoThangVaNam_Result> usp_GetContractSellTheoThangVaNam(Nullable<int> month, Nullable<int> year)
         {
@@ -108,47 +129,6 @@ namespace QLThuCung.Model
                 new ObjectParameter("year", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_GetTotalMoneyTransactionContractSerTheoThangVaNam", monthParameter, yearParameter, total);
-        }
-    
-        public virtual int usp_MuaDichVu(string idconser, string idemp, string idcus, Nullable<System.DateTime> datebuy, Nullable<int> price, string idser1, string idser2, string idser3, string idser4)
-        {
-            var idconserParameter = idconser != null ?
-                new ObjectParameter("idconser", idconser) :
-                new ObjectParameter("idconser", typeof(string));
-    
-            var idempParameter = idemp != null ?
-                new ObjectParameter("idemp", idemp) :
-                new ObjectParameter("idemp", typeof(string));
-    
-            var idcusParameter = idcus != null ?
-                new ObjectParameter("idcus", idcus) :
-                new ObjectParameter("idcus", typeof(string));
-    
-            var datebuyParameter = datebuy.HasValue ?
-                new ObjectParameter("datebuy", datebuy) :
-                new ObjectParameter("datebuy", typeof(System.DateTime));
-    
-            var priceParameter = price.HasValue ?
-                new ObjectParameter("price", price) :
-                new ObjectParameter("price", typeof(int));
-    
-            var idser1Parameter = idser1 != null ?
-                new ObjectParameter("idser1", idser1) :
-                new ObjectParameter("idser1", typeof(string));
-    
-            var idser2Parameter = idser2 != null ?
-                new ObjectParameter("idser2", idser2) :
-                new ObjectParameter("idser2", typeof(string));
-    
-            var idser3Parameter = idser3 != null ?
-                new ObjectParameter("idser3", idser3) :
-                new ObjectParameter("idser3", typeof(string));
-    
-            var idser4Parameter = idser4 != null ?
-                new ObjectParameter("idser4", idser4) :
-                new ObjectParameter("idser4", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_MuaDichVu", idconserParameter, idempParameter, idcusParameter, datebuyParameter, priceParameter, idser1Parameter, idser2Parameter, idser3Parameter, idser4Parameter);
         }
     
         public virtual ObjectResult<view_Contract_Result> view_Contract(string iD_emp)
