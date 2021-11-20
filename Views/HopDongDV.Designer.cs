@@ -42,6 +42,7 @@ namespace QLThuCung.Views
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dvgDV = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dateSell_BuyDate = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,6 +76,7 @@ namespace QLThuCung.Views
             this.txtHD_IDEmp = new System.Windows.Forms.TextBox();
             this.txtHD_IDConser = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dateSell_DateSell = new System.Windows.Forms.DateTimePicker();
             this.btnHDThuCung_reload = new System.Windows.Forms.Button();
             this.btnSell_Sua = new System.Windows.Forms.Button();
             this.btnSell_Them = new System.Windows.Forms.Button();
@@ -86,8 +88,6 @@ namespace QLThuCung.Views
             this.txtSell_IDCus = new System.Windows.Forms.TextBox();
             this.txtSell_IDEmp = new System.Windows.Forms.TextBox();
             this.txtSell_Price = new System.Windows.Forms.TextBox();
-            this.dateSell_BuyDate = new System.Windows.Forms.DateTimePicker();
-            this.dateSell_DateSell = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDV)).BeginInit();
@@ -109,6 +109,7 @@ namespace QLThuCung.Views
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1019, 591);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPage1
             // 
@@ -253,6 +254,13 @@ namespace QLThuCung.Views
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hợp đồng dịch vụ";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dateSell_BuyDate
+            // 
+            this.dateSell_BuyDate.Location = new System.Drawing.Point(765, 150);
+            this.dateSell_BuyDate.Name = "dateSell_BuyDate";
+            this.dateSell_BuyDate.Size = new System.Drawing.Size(200, 22);
+            this.dateSell_BuyDate.TabIndex = 35;
             // 
             // label13
             // 
@@ -564,6 +572,13 @@ namespace QLThuCung.Views
             this.tabPage3.Text = "Hợp đồng Thú Cưng";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // dateSell_DateSell
+            // 
+            this.dateSell_DateSell.Location = new System.Drawing.Point(785, 368);
+            this.dateSell_DateSell.Name = "dateSell_DateSell";
+            this.dateSell_DateSell.Size = new System.Drawing.Size(200, 22);
+            this.dateSell_DateSell.TabIndex = 16;
+            // 
             // btnHDThuCung_reload
             // 
             this.btnHDThuCung_reload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -666,20 +681,6 @@ namespace QLThuCung.Views
             this.txtSell_Price.Name = "txtSell_Price";
             this.txtSell_Price.Size = new System.Drawing.Size(163, 27);
             this.txtSell_Price.TabIndex = 3;
-            // 
-            // dateSell_BuyDate
-            // 
-            this.dateSell_BuyDate.Location = new System.Drawing.Point(765, 150);
-            this.dateSell_BuyDate.Name = "dateSell_BuyDate";
-            this.dateSell_BuyDate.Size = new System.Drawing.Size(200, 22);
-            this.dateSell_BuyDate.TabIndex = 35;
-            // 
-            // dateSell_DateSell
-            // 
-            this.dateSell_DateSell.Location = new System.Drawing.Point(785, 368);
-            this.dateSell_DateSell.Name = "dateSell_DateSell";
-            this.dateSell_DateSell.Size = new System.Drawing.Size(200, 22);
-            this.dateSell_DateSell.TabIndex = 16;
             // 
             // HopDongDV
             // 

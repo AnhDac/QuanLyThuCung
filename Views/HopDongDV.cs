@@ -20,9 +20,9 @@ namespace QLThuCung.Views
 
         private void HopDongDV_Load(object sender, EventArgs e)
         {
-            LoadHopDongThuCung();
+          //  LoadHopDongThuCung();
             LoadDVChamSoc();
-            LoadHopDongDV();
+           // LoadHopDongDV();
             
         }
         //----hợp đồng dịch vụ--\\\\\
@@ -52,6 +52,7 @@ namespace QLThuCung.Views
            
             dgvHD.DataSource = result.ToList();
             txtHD_SoLuong.Text = dgvHD.Rows.Count.ToString();
+            binHopDongDV();
             
         }
         void binHopDongDV()
@@ -310,7 +311,8 @@ namespace QLThuCung.Views
         {
             var result = from kq in db.Contract_Sell select new { ID_ConSell = kq.ID_ConSell, ID_Emp = kq.ID_Emp, ID_Cus = kq.ID_Cus, ID_Pet = kq.ID_Pet, CateInsurance = kq.CateInsurance, DateSell = kq.DateSell, Price = kq.Price };
             dataGridView1.DataSource = result.ToList();
-
+            binHopDongThuCung();
+           
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -401,5 +403,17 @@ namespace QLThuCung.Views
             LoadHopDongDV();
         }
 
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            if(tabControl1.SelectedTab==tabPage2)
+            {
+                LoadHopDongDV();
+            }
+            if(tabControl1.SelectedTab==tabPage3)
+            {
+
+                LoadHopDongThuCung();
+             }
+        }
     }
 }
