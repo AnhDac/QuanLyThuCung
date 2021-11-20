@@ -23,23 +23,7 @@ namespace QLThuCung.Views
             LoadHopDongThuCung();
             LoadDVChamSoc();
             LoadHopDongDV();
-        }
-        //----------hợp đồng bán  thú cưng-----\\\
-        void LoadHopDongThuCung()
-        {
-            var result = from kq in db.Contract_Sell select new { ID_ConSell= kq.ID_ConSell, ID_Emp = kq.ID_Emp, ID_Cus = kq.ID_Cus, ID_Pet = kq.ID_Pet, CateInsurance = kq.CateInsurance, DateSell = kq.DateSell, Price = kq.Price};
-            dataGridView1.DataSource = result.ToList();
-           
-        }
-        void binHopDongThuCung()
-        {
-            txtSell_IDCon.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim();
-            txtSell_IDEmp.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString().Trim();
-            txtSell_IDCus.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString().Trim();
-            txtSell_IDPet.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString().Trim();
-            txtSell_Caltel.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString().Trim();
-            txtSell_DateSell.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString().Trim();
-            txtSell_Price.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString().Trim();
+            
         }
         //----hợp đồng dịch vụ--\\\\\
         void LoadHopDongDV()
@@ -72,10 +56,10 @@ namespace QLThuCung.Views
         }
         void binHopDongDV()
         {
-           txtHD_IDConser.Text = dgvHD.CurrentRow.Cells[0].Value.ToString().Trim();
+            txtHD_IDConser.Text = dgvHD.CurrentRow.Cells[0].Value.ToString().Trim();
             txtHD_IDEmp.Text = dgvHD.CurrentRow.Cells[1].Value.ToString().Trim();
             txtHD_IDCus.Text = dgvHD.CurrentRow.Cells[2].Value.ToString().Trim();
-            txtHD_DateBuy.Text = dgvHD.CurrentRow.Cells[3].Value.ToString().Trim();
+            dateSell_BuyDate.Text = dgvHD.CurrentRow.Cells[3].Value.ToString().Trim();
             txtHD_ser.Text= dgvHD.CurrentRow.Cells[4].Value.ToString().Trim();
             txtHD_Name.Text= dgvHD.CurrentRow.Cells[5].Value.ToString().Trim();
             txtHD_Price.Text= dgvHD.CurrentRow.Cells[6].Value.ToString().Trim();
@@ -98,7 +82,7 @@ namespace QLThuCung.Views
                     Contract_Ser contract = db.Contract_Ser.Find(id);
                     contract.ID_Emp = txtHD_IDEmp.Text.ToString().Trim();
                     contract.ID_Cus = txtHD_IDCus.Text.ToString().Trim();
-                    contract.DateBuy = Convert.ToDateTime(txtHD_DateBuy.Text);
+                    contract.DateBuy = Convert.ToDateTime(dateSell_BuyDate.Text);
                     
                     db.SaveChanges();
 
@@ -125,14 +109,15 @@ namespace QLThuCung.Views
         {
             try
             {
-                if (MessageBox.Show("Do you want insert this serive?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want insert this Contract_Ser?", "Delete Contract_Ser", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Contract_Ser contract = new Contract_Ser();
 
                     contract.ID_ConSer = txtHD_IDConser.Text.ToString().Trim();
                     contract.ID_Emp = txtHD_IDEmp.Text.ToString().Trim();
                     contract.ID_Cus = txtHD_IDCus.Text.ToString().Trim();
-                    contract.DateBuy = Convert.ToDateTime(txtHD_DateBuy.Text);
+                    contract.DateBuy = Convert.ToDateTime(dateSell_BuyDate.Text);
+                    contract.ID_Ser = txtDV_IDSer.Text.ToString().Trim();
                     db.Contract_Ser.Add(contract);
                     db.SaveChanges();
 
@@ -159,6 +144,7 @@ namespace QLThuCung.Views
                     db.SaveChanges();
                     MessageBox.Show("Delete Successfull!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadHopDongDV();
+                   
                 }
             }
             catch (Exception)
@@ -308,14 +294,28 @@ namespace QLThuCung.Views
             }
         }
 
-      
+        // Hợp đồng thú cưng thêm xóa sửa reload 
+        //----------hợp đồng bán  thú cưng-----\\\
+        void binHopDongThuCung()
+        {
+            txtSell_IDCon.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim();
+            txtSell_IDEmp.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString().Trim();
+            txtSell_IDCus.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString().Trim();
+            txtSell_IDPet.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString().Trim();
+            txtSell_Caltel.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString().Trim();
+            dateSell_DateSell.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString().Trim();
+            txtSell_Price.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString().Trim();
+        }
+        void LoadHopDongThuCung()
+        {
+            var result = from kq in db.Contract_Sell select new { ID_ConSell = kq.ID_ConSell, ID_Emp = kq.ID_Emp, ID_Cus = kq.ID_Cus, ID_Pet = kq.ID_Pet, CateInsurance = kq.CateInsurance, DateSell = kq.DateSell, Price = kq.Price };
+            dataGridView1.DataSource = result.ToList();
 
-
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             binHopDongThuCung();
         }
-        // Hợp đồng thú cưng thêm xóa sửa reload 
         private void btnSell_Sua_Click(object sender, EventArgs e)
         {
             try
@@ -329,7 +329,7 @@ namespace QLThuCung.Views
                     contract_Sell1.ID_Cus = txtSell_IDCus.Text.ToString().Trim();
                     contract_Sell1.ID_Pet = txtSell_IDPet.Text.ToString().Trim();
                     contract_Sell1.CateInsurance = txtSell_Caltel.Text.ToString().Trim();
-                    contract_Sell1.DateSell = Convert.ToDateTime( txtSell_DateSell.Text);
+                    contract_Sell1.DateSell = Convert.ToDateTime(dateSell_DateSell.Text);
                     contract_Sell1.Price = Convert.ToInt32(txtSell_Price.Text);
                     db.SaveChanges();
 
@@ -379,7 +379,7 @@ namespace QLThuCung.Views
                     contract_sell.ID_Cus = txtSell_IDCus.Text.ToString().Trim();
                     contract_sell.ID_Pet = txtSell_IDPet.Text.ToString().Trim();
                     contract_sell.CateInsurance = txtSell_Caltel.Text.ToString().Trim();
-                    contract_sell.DateSell = Convert.ToDateTime(txtSell_DateSell.Text);
+                    contract_sell.DateSell = Convert.ToDateTime(dateSell_DateSell.Text);
                     contract_sell.Price = Convert.ToInt32(txtSell_Price.Text);
                     db.Contract_Sell.Add(contract_sell);
                     db.SaveChanges();
@@ -400,5 +400,6 @@ namespace QLThuCung.Views
         {
             LoadHopDongDV();
         }
+
     }
 }

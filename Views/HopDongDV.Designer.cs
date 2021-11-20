@@ -46,7 +46,6 @@ namespace QLThuCung.Views
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,23 +71,23 @@ namespace QLThuCung.Views
             this.btnHD_xoa = new System.Windows.Forms.Button();
             this.bthHD_Insert = new System.Windows.Forms.Button();
             this.txtHD_Price = new System.Windows.Forms.TextBox();
-            this.txtHD_DateBuy = new System.Windows.Forms.TextBox();
             this.txtHD_IDCus = new System.Windows.Forms.TextBox();
             this.txtHD_IDEmp = new System.Windows.Forms.TextBox();
             this.txtHD_IDConser = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnHDThuCung_reload = new System.Windows.Forms.Button();
             this.btnSell_Sua = new System.Windows.Forms.Button();
             this.btnSell_Them = new System.Windows.Forms.Button();
             this.btnSell_xoa = new System.Windows.Forms.Button();
             this.txtSell_IDCon = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtSell_DateSell = new System.Windows.Forms.TextBox();
             this.txtSell_Caltel = new System.Windows.Forms.TextBox();
             this.txtSell_IDPet = new System.Windows.Forms.TextBox();
             this.txtSell_IDCus = new System.Windows.Forms.TextBox();
             this.txtSell_IDEmp = new System.Windows.Forms.TextBox();
             this.txtSell_Price = new System.Windows.Forms.TextBox();
-            this.btnHDThuCung_reload = new System.Windows.Forms.Button();
+            this.dateSell_BuyDate = new System.Windows.Forms.DateTimePicker();
+            this.dateSell_DateSell = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDV)).BeginInit();
@@ -224,11 +223,11 @@ namespace QLThuCung.Views
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dateSell_BuyDate);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label6);
@@ -244,7 +243,6 @@ namespace QLThuCung.Views
             this.tabPage2.Controls.Add(this.btnHD_xoa);
             this.tabPage2.Controls.Add(this.bthHD_Insert);
             this.tabPage2.Controls.Add(this.txtHD_Price);
-            this.tabPage2.Controls.Add(this.txtHD_DateBuy);
             this.tabPage2.Controls.Add(this.txtHD_IDCus);
             this.tabPage2.Controls.Add(this.txtHD_IDEmp);
             this.tabPage2.Controls.Add(this.txtHD_IDConser);
@@ -292,19 +290,10 @@ namespace QLThuCung.Views
             this.label9.TabIndex = 31;
             this.label9.Text = "mã KH";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(696, 152);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 17);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "ngày mua";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(724, 152);
+            this.label8.Location = new System.Drawing.Point(659, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 17);
             this.label8.TabIndex = 30;
@@ -532,13 +521,6 @@ namespace QLThuCung.Views
             this.txtHD_Price.Size = new System.Drawing.Size(131, 22);
             this.txtHD_Price.TabIndex = 5;
             // 
-            // txtHD_DateBuy
-            // 
-            this.txtHD_DateBuy.Location = new System.Drawing.Point(834, 152);
-            this.txtHD_DateBuy.Name = "txtHD_DateBuy";
-            this.txtHD_DateBuy.Size = new System.Drawing.Size(131, 22);
-            this.txtHD_DateBuy.TabIndex = 4;
-            // 
             // txtHD_IDCus
             // 
             this.txtHD_IDCus.Location = new System.Drawing.Point(834, 105);
@@ -562,13 +544,13 @@ namespace QLThuCung.Views
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dateSell_DateSell);
             this.tabPage3.Controls.Add(this.btnHDThuCung_reload);
             this.tabPage3.Controls.Add(this.btnSell_Sua);
             this.tabPage3.Controls.Add(this.btnSell_Them);
             this.tabPage3.Controls.Add(this.btnSell_xoa);
             this.tabPage3.Controls.Add(this.txtSell_IDCon);
             this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Controls.Add(this.txtSell_DateSell);
             this.tabPage3.Controls.Add(this.txtSell_Caltel);
             this.tabPage3.Controls.Add(this.txtSell_IDPet);
             this.tabPage3.Controls.Add(this.txtSell_IDCus);
@@ -581,6 +563,17 @@ namespace QLThuCung.Views
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Hợp đồng Thú Cưng";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnHDThuCung_reload
+            // 
+            this.btnHDThuCung_reload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDThuCung_reload.Location = new System.Drawing.Point(475, 438);
+            this.btnHDThuCung_reload.Name = "btnHDThuCung_reload";
+            this.btnHDThuCung_reload.Size = new System.Drawing.Size(110, 44);
+            this.btnHDThuCung_reload.TabIndex = 15;
+            this.btnHDThuCung_reload.Text = "Reload";
+            this.btnHDThuCung_reload.UseVisualStyleBackColor = true;
+            this.btnHDThuCung_reload.Click += new System.EventHandler(this.btnHDThuCung_reload_Click);
             // 
             // btnSell_Sua
             // 
@@ -634,14 +627,6 @@ namespace QLThuCung.Views
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // txtSell_DateSell
-            // 
-            this.txtSell_DateSell.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSell_DateSell.Location = new System.Drawing.Point(809, 363);
-            this.txtSell_DateSell.Name = "txtSell_DateSell";
-            this.txtSell_DateSell.Size = new System.Drawing.Size(163, 27);
-            this.txtSell_DateSell.TabIndex = 8;
-            // 
             // txtSell_Caltel
             // 
             this.txtSell_Caltel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -682,16 +667,19 @@ namespace QLThuCung.Views
             this.txtSell_Price.Size = new System.Drawing.Size(163, 27);
             this.txtSell_Price.TabIndex = 3;
             // 
-            // btnHDThuCung_reload
+            // dateSell_BuyDate
             // 
-            this.btnHDThuCung_reload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHDThuCung_reload.Location = new System.Drawing.Point(475, 438);
-            this.btnHDThuCung_reload.Name = "btnHDThuCung_reload";
-            this.btnHDThuCung_reload.Size = new System.Drawing.Size(110, 44);
-            this.btnHDThuCung_reload.TabIndex = 15;
-            this.btnHDThuCung_reload.Text = "Reload";
-            this.btnHDThuCung_reload.UseVisualStyleBackColor = true;
-            this.btnHDThuCung_reload.Click += new System.EventHandler(this.btnHDThuCung_reload_Click);
+            this.dateSell_BuyDate.Location = new System.Drawing.Point(765, 150);
+            this.dateSell_BuyDate.Name = "dateSell_BuyDate";
+            this.dateSell_BuyDate.Size = new System.Drawing.Size(200, 22);
+            this.dateSell_BuyDate.TabIndex = 35;
+            // 
+            // dateSell_DateSell
+            // 
+            this.dateSell_DateSell.Location = new System.Drawing.Point(785, 368);
+            this.dateSell_DateSell.Name = "dateSell_DateSell";
+            this.dateSell_DateSell.Size = new System.Drawing.Size(200, 22);
+            this.dateSell_DateSell.TabIndex = 16;
             // 
             // HopDongDV
             // 
@@ -735,7 +723,6 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Button btnHD_xoa;
         private System.Windows.Forms.Button bthHD_Insert;
         private System.Windows.Forms.TextBox txtHD_Price;
-        private System.Windows.Forms.TextBox txtHD_DateBuy;
         private System.Windows.Forms.TextBox txtHD_IDCus;
         private System.Windows.Forms.TextBox txtHD_IDEmp;
         private System.Windows.Forms.TextBox txtHD_IDConser;
@@ -752,7 +739,6 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDV_timKiem;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox txtSell_DateSell;
         private System.Windows.Forms.TextBox txtSell_Caltel;
         private System.Windows.Forms.TextBox txtSell_IDPet;
         private System.Windows.Forms.TextBox txtSell_IDCus;
@@ -772,7 +758,6 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -781,5 +766,7 @@ namespace QLThuCung.Views
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnHDThuCung_reload;
+        private System.Windows.Forms.DateTimePicker dateSell_BuyDate;
+        private System.Windows.Forms.DateTimePicker dateSell_DateSell;
     }
 }
