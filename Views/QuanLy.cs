@@ -37,6 +37,7 @@ namespace QLThuCung.Views
             pnlLuuHuyUser.Hide();
             pnlLuuHuyProfile.Hide();
             pnlChiTietThuCung.Hide();
+            panelLuuHuyL.Hide();
             PhanQuyenUser();
             LoadHome();
         }
@@ -919,8 +920,117 @@ namespace QLThuCung.Views
         }
 
 
+
+
+
+
+
+
         #endregion
 
+        #region TAB LOAI THU CUNG
+        void DataBindLoaiTC()
+        {
+            txtIDLTC.Text = dgvLoaiTC.CurrentRow.Cells[0].Value.ToString();
+            txtTLTC.Text = dgvLoaiTC.CurrentRow.Cells[1].Value.ToString();
+        }
+        void LoadLoaiTC()
+        {
+            var result = from c in db.Species select new { ID_Spec = c.ID_Spec, Name = c.Name};
+            dgvLoaiTC.DataSource = result.ToList();
+            DataBindLoaiTC();
+        }
+        private void dgvLoaiTC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataBindLoaiTC();
+        }
+        private void btThemL_Click(object sender, EventArgs e)
+        {
+            ClearTextBox();
+            btLuuL.Enabled = false;
+            btXoaL.Enabled = false;
+            panelLuuHuyL.Show();
+        }
+        private void btnSuaL_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string idspe = dgvLoaiTC.SelectedCells[0].OwningRow.Cells[0].Value.ToString().Trim();
+                Species spe = db.Species.Find(idspe);
+                spe.Name = txtTenNhanVien.Text.ToString().Trim();
 
+                db.SaveChanges();
+                MessageBox.Show("Update Successfull!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadLoaiTC();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Update Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThuCungEntities();
+                LoadLoaiTC();
+            }
+        }
+        private void btnXoaL_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Do you want delete this species?", "Delete species", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Species spe = db.Species.Where(p => p.ID_Spe == txtIDLTC.Text.ToString()).SingleOrDefault();
+                    db.Species.Remove(spe);
+                    db.SaveChanges();
+                    MessageBox.Show("Delete Successfull!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadLoaiTC();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Delete Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThuCungEntities();
+                LoadLoaiTC();
+            }
+        }
+        private void btnLuuL_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Species spe = new Species();
+
+                spe.ID_Spec = txtIDLTC.Text.ToString().Trim();
+                spe.Name = txtTLTC.Text.ToString().Trim();
+                
+
+                db.Species.Add(spe);
+                db.SaveChanges();
+
+                MessageBox.Show("Thêm Thành Công!", "Thong Bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadLoaiTC();
+
+                panelLuuHuyL.Hide();
+                btSuaL.Enabled = true;
+                btXoaL.Enabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Không Thêm Được!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                db = new ThuCungEntities();
+                LoadLoaiTC();
+            }
+        }
+
+
+        private void btnHuyL_Click(object sender, EventArgs e)
+        {
+            LoadLoaiTC();
+            panelLuuHuyL.Hide();
+            btSuaL.Enabled = true;
+            btXoaL.Enabled = true;
+        }
+        private void btnReloadL_Click(object sender, EventArgs e)
+        {
+            LoadLoaiTC();
+        }
+
+        #endregion
     }
 }

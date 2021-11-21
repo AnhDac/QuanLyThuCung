@@ -33,14 +33,6 @@ namespace QLThuCung.Views
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnReloadUser = new System.Windows.Forms.Button();
             this.tbFindUser = new System.Windows.Forms.TextBox();
-            this.cbFindUser = new System.Windows.Forms.ComboBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.pnlLuuHuyUser = new System.Windows.Forms.Panel();
-            this.btnLuuUser = new System.Windows.Forms.Button();
-            this.btnHuyUser = new System.Windows.Forms.Button();
-            this.btnSuaUser = new System.Windows.Forms.Button();
-            this.btnXoaUser = new System.Windows.Forms.Button();
-            this.btnThemUser = new System.Windows.Forms.Button();
             this.pnlDataBindUser = new System.Windows.Forms.Panel();
             this.cbPermissionUser = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -52,6 +44,14 @@ namespace QLThuCung.Views
             this.label30 = new System.Windows.Forms.Label();
             this.tbIDUser = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.cbFindUser = new System.Windows.Forms.ComboBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.pnlLuuHuyUser = new System.Windows.Forms.Panel();
+            this.btnLuuUser = new System.Windows.Forms.Button();
+            this.btnHuyUser = new System.Windows.Forms.Button();
+            this.btnSuaUser = new System.Windows.Forms.Button();
+            this.btnXoaUser = new System.Windows.Forms.Button();
+            this.btnThemUser = new System.Windows.Forms.Button();
             this.btnFindUser = new System.Windows.Forms.Button();
             this.dgvUser = new System.Windows.Forms.DataGridView();
             this.tabProfile = new System.Windows.Forms.TabPage();
@@ -173,11 +173,26 @@ namespace QLThuCung.Views
             this.fpnlMain = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHDDV = new System.Windows.Forms.Button();
             this.tabctrlMain = new System.Windows.Forms.TabControl();
+            this.tb = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.txtTLTC = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtIDLTC = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.dgvLoaiTC = new System.Windows.Forms.DataGridView();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panelLuuHuyL = new System.Windows.Forms.Panel();
+            this.btLuuL = new System.Windows.Forms.Button();
+            this.btHuyL = new System.Windows.Forms.Button();
+            this.btSuaL = new System.Windows.Forms.Button();
+            this.btXoaL = new System.Windows.Forms.Button();
+            this.btThemL = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabUser.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.pnlDataBindUser.SuspendLayout();
             this.panel10.SuspendLayout();
             this.pnlLuuHuyUser.SuspendLayout();
-            this.pnlDataBindUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.tabProfile.SuspendLayout();
             this.pnlLuuHuyProfile.SuspendLayout();
@@ -204,6 +219,11 @@ namespace QLThuCung.Views
             this.pnlChiTietThuCung.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tabctrlMain.SuspendLayout();
+            this.tb.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiTC)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panelLuuHuyL.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabUser
@@ -212,24 +232,25 @@ namespace QLThuCung.Views
             this.tabUser.Controls.Add(this.dgvUser);
             this.tabUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabUser.Location = new System.Drawing.Point(4, 22);
-            this.tabUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabUser.Margin = new System.Windows.Forms.Padding(4);
             this.tabUser.Name = "tabUser";
-            this.tabUser.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabUser.Size = new System.Drawing.Size(1323, 776);
+            this.tabUser.Padding = new System.Windows.Forms.Padding(4);
+            this.tabUser.Size = new System.Drawing.Size(1287, 742);
             this.tabUser.TabIndex = 6;
             this.tabUser.Text = "Người Dùng";
             this.tabUser.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.pnlLuuHuyUser);
             this.panel6.Controls.Add(this.btnReloadUser);
             this.panel6.Controls.Add(this.tbFindUser);
+            this.panel6.Controls.Add(this.pnlDataBindUser);
             this.panel6.Controls.Add(this.cbFindUser);
             this.panel6.Controls.Add(this.panel10);
-            this.panel6.Controls.Add(this.pnlDataBindUser);
             this.panel6.Controls.Add(this.btnFindUser);
             this.panel6.Location = new System.Drawing.Point(739, 7);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(539, 722);
             this.panel6.TabIndex = 1;
@@ -238,7 +259,7 @@ namespace QLThuCung.Views
             // 
             this.btnReloadUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReloadUser.Location = new System.Drawing.Point(399, 554);
-            this.btnReloadUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReloadUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnReloadUser.Name = "btnReloadUser";
             this.btnReloadUser.Size = new System.Drawing.Size(129, 57);
             this.btnReloadUser.TabIndex = 23;
@@ -250,105 +271,10 @@ namespace QLThuCung.Views
             // 
             this.tbFindUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFindUser.Location = new System.Drawing.Point(199, 39);
-            this.tbFindUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbFindUser.Margin = new System.Windows.Forms.Padding(4);
             this.tbFindUser.Name = "tbFindUser";
             this.tbFindUser.Size = new System.Drawing.Size(181, 28);
             this.tbFindUser.TabIndex = 17;
-            // 
-            // cbFindUser
-            // 
-            this.cbFindUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFindUser.FormattingEnabled = true;
-            this.cbFindUser.Items.AddRange(new object[] {
-            "Tên",
-            "Username"});
-            this.cbFindUser.Location = new System.Drawing.Point(29, 39);
-            this.cbFindUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbFindUser.Name = "cbFindUser";
-            this.cbFindUser.Size = new System.Drawing.Size(135, 30);
-            this.cbFindUser.TabIndex = 16;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.pnlLuuHuyUser);
-            this.panel10.Controls.Add(this.btnSuaUser);
-            this.panel10.Controls.Add(this.btnXoaUser);
-            this.panel10.Controls.Add(this.btnThemUser);
-            this.panel10.Location = new System.Drawing.Point(5, 457);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(531, 75);
-            this.panel10.TabIndex = 15;
-            // 
-            // pnlLuuHuyUser
-            // 
-            this.pnlLuuHuyUser.Controls.Add(this.btnLuuUser);
-            this.pnlLuuHuyUser.Controls.Add(this.btnHuyUser);
-            this.pnlLuuHuyUser.Location = new System.Drawing.Point(181, 0);
-            this.pnlLuuHuyUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlLuuHuyUser.Name = "pnlLuuHuyUser";
-            this.pnlLuuHuyUser.Size = new System.Drawing.Size(287, 75);
-            this.pnlLuuHuyUser.TabIndex = 23;
-            // 
-            // btnLuuUser
-            // 
-            this.btnLuuUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuUser.Location = new System.Drawing.Point(21, 16);
-            this.btnLuuUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnLuuUser.Name = "btnLuuUser";
-            this.btnLuuUser.Size = new System.Drawing.Size(107, 37);
-            this.btnLuuUser.TabIndex = 20;
-            this.btnLuuUser.Text = "Lưu";
-            this.btnLuuUser.UseVisualStyleBackColor = true;
-            this.btnLuuUser.Click += new System.EventHandler(this.btnLuuUser_Click);
-            // 
-            // btnHuyUser
-            // 
-            this.btnHuyUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyUser.Location = new System.Drawing.Point(157, 16);
-            this.btnHuyUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnHuyUser.Name = "btnHuyUser";
-            this.btnHuyUser.Size = new System.Drawing.Size(107, 37);
-            this.btnHuyUser.TabIndex = 19;
-            this.btnHuyUser.Text = "Hủy";
-            this.btnHuyUser.UseVisualStyleBackColor = true;
-            this.btnHuyUser.Click += new System.EventHandler(this.btnHuyUser_Click);
-            // 
-            // btnSuaUser
-            // 
-            this.btnSuaUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaUser.Location = new System.Drawing.Point(203, 16);
-            this.btnSuaUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSuaUser.Name = "btnSuaUser";
-            this.btnSuaUser.Size = new System.Drawing.Size(107, 37);
-            this.btnSuaUser.TabIndex = 21;
-            this.btnSuaUser.Text = "Sửa";
-            this.btnSuaUser.UseVisualStyleBackColor = true;
-            this.btnSuaUser.Click += new System.EventHandler(this.btnSuaUser_Click);
-            // 
-            // btnXoaUser
-            // 
-            this.btnXoaUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaUser.Location = new System.Drawing.Point(339, 16);
-            this.btnXoaUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnXoaUser.Name = "btnXoaUser";
-            this.btnXoaUser.Size = new System.Drawing.Size(107, 37);
-            this.btnXoaUser.TabIndex = 18;
-            this.btnXoaUser.Text = "Xóa";
-            this.btnXoaUser.UseVisualStyleBackColor = true;
-            this.btnXoaUser.Click += new System.EventHandler(this.btnXoaUser_Click);
-            // 
-            // btnThemUser
-            // 
-            this.btnThemUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemUser.Location = new System.Drawing.Point(67, 16);
-            this.btnThemUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnThemUser.Name = "btnThemUser";
-            this.btnThemUser.Size = new System.Drawing.Size(107, 37);
-            this.btnThemUser.TabIndex = 16;
-            this.btnThemUser.Text = "Thêm";
-            this.btnThemUser.UseVisualStyleBackColor = true;
-            this.btnThemUser.Click += new System.EventHandler(this.btnThemUser_Click);
             // 
             // pnlDataBindUser
             // 
@@ -362,8 +288,8 @@ namespace QLThuCung.Views
             this.pnlDataBindUser.Controls.Add(this.label30);
             this.pnlDataBindUser.Controls.Add(this.tbIDUser);
             this.pnlDataBindUser.Controls.Add(this.label31);
-            this.pnlDataBindUser.Location = new System.Drawing.Point(5, 106);
-            this.pnlDataBindUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDataBindUser.Location = new System.Drawing.Point(8, 97);
+            this.pnlDataBindUser.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDataBindUser.Name = "pnlDataBindUser";
             this.pnlDataBindUser.Size = new System.Drawing.Size(531, 343);
             this.pnlDataBindUser.TabIndex = 9;
@@ -376,7 +302,7 @@ namespace QLThuCung.Views
             "employee",
             "customer"});
             this.cbPermissionUser.Location = new System.Drawing.Point(159, 226);
-            this.cbPermissionUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPermissionUser.Margin = new System.Windows.Forms.Padding(4);
             this.cbPermissionUser.Name = "cbPermissionUser";
             this.cbPermissionUser.Size = new System.Drawing.Size(160, 28);
             this.cbPermissionUser.TabIndex = 4;
@@ -396,7 +322,7 @@ namespace QLThuCung.Views
             // 
             this.tbPasswordUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPasswordUser.Location = new System.Drawing.Point(141, 155);
-            this.tbPasswordUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPasswordUser.Margin = new System.Windows.Forms.Padding(4);
             this.tbPasswordUser.Name = "tbPasswordUser";
             this.tbPasswordUser.Size = new System.Drawing.Size(177, 26);
             this.tbPasswordUser.TabIndex = 1;
@@ -416,7 +342,7 @@ namespace QLThuCung.Views
             // 
             this.tbUsernameUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsernameUser.Location = new System.Drawing.Point(141, 101);
-            this.tbUsernameUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUsernameUser.Margin = new System.Windows.Forms.Padding(4);
             this.tbUsernameUser.Name = "tbUsernameUser";
             this.tbUsernameUser.Size = new System.Drawing.Size(177, 26);
             this.tbUsernameUser.TabIndex = 1;
@@ -436,7 +362,7 @@ namespace QLThuCung.Views
             // 
             this.tbTenUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenUser.Location = new System.Drawing.Point(141, 52);
-            this.tbTenUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTenUser.Margin = new System.Windows.Forms.Padding(4);
             this.tbTenUser.Name = "tbTenUser";
             this.tbTenUser.Size = new System.Drawing.Size(175, 26);
             this.tbTenUser.TabIndex = 3;
@@ -456,7 +382,7 @@ namespace QLThuCung.Views
             // 
             this.tbIDUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDUser.Location = new System.Drawing.Point(141, 5);
-            this.tbIDUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbIDUser.Margin = new System.Windows.Forms.Padding(4);
             this.tbIDUser.Name = "tbIDUser";
             this.tbIDUser.Size = new System.Drawing.Size(175, 26);
             this.tbIDUser.TabIndex = 1;
@@ -472,11 +398,105 @@ namespace QLThuCung.Views
             this.label31.TabIndex = 0;
             this.label31.Text = "ID:";
             // 
+            // cbFindUser
+            // 
+            this.cbFindUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFindUser.FormattingEnabled = true;
+            this.cbFindUser.Items.AddRange(new object[] {
+            "Tên",
+            "Username"});
+            this.cbFindUser.Location = new System.Drawing.Point(29, 39);
+            this.cbFindUser.Margin = new System.Windows.Forms.Padding(4);
+            this.cbFindUser.Name = "cbFindUser";
+            this.cbFindUser.Size = new System.Drawing.Size(135, 30);
+            this.cbFindUser.TabIndex = 16;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.btnSuaUser);
+            this.panel10.Controls.Add(this.btnXoaUser);
+            this.panel10.Controls.Add(this.btnThemUser);
+            this.panel10.Location = new System.Drawing.Point(4, 460);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(531, 75);
+            this.panel10.TabIndex = 15;
+            // 
+            // pnlLuuHuyUser
+            // 
+            this.pnlLuuHuyUser.Controls.Add(this.btnLuuUser);
+            this.pnlLuuHuyUser.Controls.Add(this.btnHuyUser);
+            this.pnlLuuHuyUser.Location = new System.Drawing.Point(186, 460);
+            this.pnlLuuHuyUser.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlLuuHuyUser.Name = "pnlLuuHuyUser";
+            this.pnlLuuHuyUser.Size = new System.Drawing.Size(287, 75);
+            this.pnlLuuHuyUser.TabIndex = 23;
+            // 
+            // btnLuuUser
+            // 
+            this.btnLuuUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuUser.Location = new System.Drawing.Point(21, 16);
+            this.btnLuuUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuuUser.Name = "btnLuuUser";
+            this.btnLuuUser.Size = new System.Drawing.Size(107, 37);
+            this.btnLuuUser.TabIndex = 20;
+            this.btnLuuUser.Text = "Lưu";
+            this.btnLuuUser.UseVisualStyleBackColor = true;
+            this.btnLuuUser.Click += new System.EventHandler(this.btnLuuUser_Click);
+            // 
+            // btnHuyUser
+            // 
+            this.btnHuyUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyUser.Location = new System.Drawing.Point(157, 16);
+            this.btnHuyUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHuyUser.Name = "btnHuyUser";
+            this.btnHuyUser.Size = new System.Drawing.Size(107, 37);
+            this.btnHuyUser.TabIndex = 19;
+            this.btnHuyUser.Text = "Hủy";
+            this.btnHuyUser.UseVisualStyleBackColor = true;
+            this.btnHuyUser.Click += new System.EventHandler(this.btnHuyUser_Click);
+            // 
+            // btnSuaUser
+            // 
+            this.btnSuaUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaUser.Location = new System.Drawing.Point(203, 16);
+            this.btnSuaUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSuaUser.Name = "btnSuaUser";
+            this.btnSuaUser.Size = new System.Drawing.Size(107, 37);
+            this.btnSuaUser.TabIndex = 21;
+            this.btnSuaUser.Text = "Sửa";
+            this.btnSuaUser.UseVisualStyleBackColor = true;
+            this.btnSuaUser.Click += new System.EventHandler(this.btnSuaUser_Click);
+            // 
+            // btnXoaUser
+            // 
+            this.btnXoaUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaUser.Location = new System.Drawing.Point(339, 16);
+            this.btnXoaUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoaUser.Name = "btnXoaUser";
+            this.btnXoaUser.Size = new System.Drawing.Size(107, 37);
+            this.btnXoaUser.TabIndex = 18;
+            this.btnXoaUser.Text = "Xóa";
+            this.btnXoaUser.UseVisualStyleBackColor = true;
+            this.btnXoaUser.Click += new System.EventHandler(this.btnXoaUser_Click);
+            // 
+            // btnThemUser
+            // 
+            this.btnThemUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemUser.Location = new System.Drawing.Point(67, 16);
+            this.btnThemUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThemUser.Name = "btnThemUser";
+            this.btnThemUser.Size = new System.Drawing.Size(107, 37);
+            this.btnThemUser.TabIndex = 16;
+            this.btnThemUser.Text = "Thêm";
+            this.btnThemUser.UseVisualStyleBackColor = true;
+            this.btnThemUser.Click += new System.EventHandler(this.btnThemUser_Click);
+            // 
             // btnFindUser
             // 
             this.btnFindUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFindUser.Location = new System.Drawing.Point(399, 26);
-            this.btnFindUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFindUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindUser.Name = "btnFindUser";
             this.btnFindUser.Size = new System.Drawing.Size(119, 53);
             this.btnFindUser.TabIndex = 0;
@@ -489,7 +509,7 @@ namespace QLThuCung.Views
             this.dgvUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUser.Location = new System.Drawing.Point(8, 7);
-            this.dgvUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvUser.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.RowHeadersWidth = 51;
             this.dgvUser.Size = new System.Drawing.Size(632, 722);
@@ -503,10 +523,10 @@ namespace QLThuCung.Views
             this.tabProfile.Controls.Add(this.panel5);
             this.tabProfile.Controls.Add(this.btnReport);
             this.tabProfile.Location = new System.Drawing.Point(4, 22);
-            this.tabProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabProfile.Margin = new System.Windows.Forms.Padding(4);
             this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabProfile.Size = new System.Drawing.Size(1323, 776);
+            this.tabProfile.Padding = new System.Windows.Forms.Padding(4);
+            this.tabProfile.Size = new System.Drawing.Size(1287, 742);
             this.tabProfile.TabIndex = 4;
             this.tabProfile.Text = "Profile";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -516,7 +536,7 @@ namespace QLThuCung.Views
             this.pnlLuuHuyProfile.Controls.Add(this.btnLuuProfie);
             this.pnlLuuHuyProfile.Controls.Add(this.btnHuyProfile);
             this.pnlLuuHuyProfile.Location = new System.Drawing.Point(633, 480);
-            this.pnlLuuHuyProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlLuuHuyProfile.Margin = new System.Windows.Forms.Padding(4);
             this.pnlLuuHuyProfile.Name = "pnlLuuHuyProfile";
             this.pnlLuuHuyProfile.Size = new System.Drawing.Size(287, 75);
             this.pnlLuuHuyProfile.TabIndex = 26;
@@ -525,7 +545,7 @@ namespace QLThuCung.Views
             // 
             this.btnLuuProfie.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuProfie.Location = new System.Drawing.Point(21, 16);
-            this.btnLuuProfie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuuProfie.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuProfie.Name = "btnLuuProfie";
             this.btnLuuProfie.Size = new System.Drawing.Size(107, 37);
             this.btnLuuProfie.TabIndex = 20;
@@ -537,7 +557,7 @@ namespace QLThuCung.Views
             // 
             this.btnHuyProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyProfile.Location = new System.Drawing.Point(157, 16);
-            this.btnHuyProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyProfile.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyProfile.Name = "btnHuyProfile";
             this.btnHuyProfile.Size = new System.Drawing.Size(107, 37);
             this.btnHuyProfile.TabIndex = 19;
@@ -549,7 +569,7 @@ namespace QLThuCung.Views
             // 
             this.btnSuaProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaProfile.Location = new System.Drawing.Point(651, 496);
-            this.btnSuaProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSuaProfile.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaProfile.Name = "btnSuaProfile";
             this.btnSuaProfile.Size = new System.Drawing.Size(107, 37);
             this.btnSuaProfile.TabIndex = 25;
@@ -571,7 +591,7 @@ namespace QLThuCung.Views
             this.panel5.Controls.Add(this.tbIDProfile);
             this.panel5.Controls.Add(this.label22);
             this.panel5.Location = new System.Drawing.Point(277, 69);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(565, 399);
             this.panel5.TabIndex = 10;
@@ -591,7 +611,7 @@ namespace QLThuCung.Views
             // 
             this.tbPerrmissProfle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPerrmissProfle.Location = new System.Drawing.Point(263, 340);
-            this.tbPerrmissProfle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPerrmissProfle.Margin = new System.Windows.Forms.Padding(4);
             this.tbPerrmissProfle.Name = "tbPerrmissProfle";
             this.tbPerrmissProfle.Size = new System.Drawing.Size(177, 26);
             this.tbPerrmissProfle.TabIndex = 14;
@@ -611,7 +631,7 @@ namespace QLThuCung.Views
             // 
             this.tbPasswordProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPasswordProfile.Location = new System.Drawing.Point(263, 286);
-            this.tbPasswordProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPasswordProfile.Margin = new System.Windows.Forms.Padding(4);
             this.tbPasswordProfile.Name = "tbPasswordProfile";
             this.tbPasswordProfile.Size = new System.Drawing.Size(177, 26);
             this.tbPasswordProfile.TabIndex = 9;
@@ -631,7 +651,7 @@ namespace QLThuCung.Views
             // 
             this.tbUsernameProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsernameProfile.Location = new System.Drawing.Point(263, 231);
-            this.tbUsernameProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUsernameProfile.Margin = new System.Windows.Forms.Padding(4);
             this.tbUsernameProfile.Name = "tbUsernameProfile";
             this.tbUsernameProfile.Size = new System.Drawing.Size(177, 26);
             this.tbUsernameProfile.TabIndex = 10;
@@ -651,7 +671,7 @@ namespace QLThuCung.Views
             // 
             this.tbTenProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenProfile.Location = new System.Drawing.Point(263, 182);
-            this.tbTenProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTenProfile.Margin = new System.Windows.Forms.Padding(4);
             this.tbTenProfile.Name = "tbTenProfile";
             this.tbTenProfile.Size = new System.Drawing.Size(175, 26);
             this.tbTenProfile.TabIndex = 13;
@@ -671,7 +691,7 @@ namespace QLThuCung.Views
             // 
             this.tbIDProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDProfile.Location = new System.Drawing.Point(263, 135);
-            this.tbIDProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbIDProfile.Margin = new System.Windows.Forms.Padding(4);
             this.tbIDProfile.Name = "tbIDProfile";
             this.tbIDProfile.Size = new System.Drawing.Size(175, 26);
             this.tbIDProfile.TabIndex = 11;
@@ -691,7 +711,7 @@ namespace QLThuCung.Views
             // 
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Location = new System.Drawing.Point(1043, 480);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(137, 50);
             this.btnReport.TabIndex = 0;
@@ -704,10 +724,10 @@ namespace QLThuCung.Views
             this.tabNhanVien.Controls.Add(this.dgvNhanVien);
             this.tabNhanVien.Controls.Add(this.panel7);
             this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
-            this.tabNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.tabNhanVien.Name = "tabNhanVien";
-            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabNhanVien.Size = new System.Drawing.Size(1323, 776);
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(4);
+            this.tabNhanVien.Size = new System.Drawing.Size(1287, 742);
             this.tabNhanVien.TabIndex = 3;
             this.tabNhanVien.Text = "Nhân Viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
@@ -725,19 +745,17 @@ namespace QLThuCung.Views
             this.dgvNhanVien.RowTemplate.Height = 24;
             this.dgvNhanVien.Size = new System.Drawing.Size(723, 724);
             this.dgvNhanVien.TabIndex = 4;
-            this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.btnReloadNV);
-            this.panel7.Controls.Add(this.panelLuuHuyNV);
             this.panel7.Controls.Add(this.tbTimNhanVien);
             this.panel7.Controls.Add(this.cbbTimNhanVien);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.pnlDataBindNV);
             this.panel7.Controls.Add(this.btnTimNhanVien);
             this.panel7.Location = new System.Drawing.Point(737, 7);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(539, 722);
             this.panel7.TabIndex = 3;
@@ -746,19 +764,19 @@ namespace QLThuCung.Views
             // 
             this.btnReloadNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReloadNV.Location = new System.Drawing.Point(389, 585);
-            this.btnReloadNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReloadNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnReloadNV.Name = "btnReloadNV";
             this.btnReloadNV.Size = new System.Drawing.Size(128, 57);
             this.btnReloadNV.TabIndex = 24;
             this.btnReloadNV.Text = "Tải Lại";
             this.btnReloadNV.UseVisualStyleBackColor = true;
-            this.btnReloadNV.Click += new System.EventHandler(this.btnReloadNV_Click);
+            
             // 
             // panelLuuHuyNV
             // 
             this.panelLuuHuyNV.Controls.Add(this.btnHuyNhanVien);
             this.panelLuuHuyNV.Controls.Add(this.btnLuuNhanVien);
-            this.panelLuuHuyNV.Location = new System.Drawing.Point(201, 487);
+            this.panelLuuHuyNV.Location = new System.Drawing.Point(196, 0);
             this.panelLuuHuyNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLuuHuyNV.Name = "panelLuuHuyNV";
             this.panelLuuHuyNV.Size = new System.Drawing.Size(280, 74);
@@ -768,7 +786,7 @@ namespace QLThuCung.Views
             // 
             this.btnHuyNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyNhanVien.Location = new System.Drawing.Point(149, 18);
-            this.btnHuyNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyNhanVien.Name = "btnHuyNhanVien";
             this.btnHuyNhanVien.Size = new System.Drawing.Size(107, 37);
             this.btnHuyNhanVien.TabIndex = 22;
@@ -780,7 +798,7 @@ namespace QLThuCung.Views
             // 
             this.btnLuuNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuNhanVien.Location = new System.Drawing.Point(13, 18);
-            this.btnLuuNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuuNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuNhanVien.Name = "btnLuuNhanVien";
             this.btnLuuNhanVien.Size = new System.Drawing.Size(107, 37);
             this.btnLuuNhanVien.TabIndex = 21;
@@ -792,7 +810,7 @@ namespace QLThuCung.Views
             // 
             this.tbTimNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTimNhanVien.Location = new System.Drawing.Point(199, 39);
-            this.tbTimNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTimNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimNhanVien.Name = "tbTimNhanVien";
             this.tbTimNhanVien.Size = new System.Drawing.Size(181, 28);
             this.tbTimNhanVien.TabIndex = 17;
@@ -807,7 +825,7 @@ namespace QLThuCung.Views
             "Tuổi",
             "Lương"});
             this.cbbTimNhanVien.Location = new System.Drawing.Point(28, 39);
-            this.cbbTimNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbTimNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.cbbTimNhanVien.Name = "cbbTimNhanVien";
             this.cbbTimNhanVien.Size = new System.Drawing.Size(135, 30);
             this.cbbTimNhanVien.TabIndex = 16;
@@ -815,10 +833,11 @@ namespace QLThuCung.Views
             // panel8
             // 
             this.panel8.Controls.Add(this.btnSuaNhanVien);
+            this.panel8.Controls.Add(this.panelLuuHuyNV);
             this.panel8.Controls.Add(this.btnXoaNhanVien);
             this.panel8.Controls.Add(this.btnThemNhanVien);
             this.panel8.Location = new System.Drawing.Point(5, 487);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(528, 74);
             this.panel8.TabIndex = 15;
@@ -827,7 +846,7 @@ namespace QLThuCung.Views
             // 
             this.btnSuaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaNhanVien.Location = new System.Drawing.Point(208, 18);
-            this.btnSuaNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSuaNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaNhanVien.Name = "btnSuaNhanVien";
             this.btnSuaNhanVien.Size = new System.Drawing.Size(107, 37);
             this.btnSuaNhanVien.TabIndex = 19;
@@ -839,7 +858,7 @@ namespace QLThuCung.Views
             // 
             this.btnXoaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaNhanVien.Location = new System.Drawing.Point(344, 18);
-            this.btnXoaNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoaNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaNhanVien.Name = "btnXoaNhanVien";
             this.btnXoaNhanVien.Size = new System.Drawing.Size(107, 37);
             this.btnXoaNhanVien.TabIndex = 18;
@@ -851,7 +870,7 @@ namespace QLThuCung.Views
             // 
             this.btnThemNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemNhanVien.Location = new System.Drawing.Point(72, 18);
-            this.btnThemNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemNhanVien.Name = "btnThemNhanVien";
             this.btnThemNhanVien.Size = new System.Drawing.Size(107, 37);
             this.btnThemNhanVien.TabIndex = 16;
@@ -876,7 +895,7 @@ namespace QLThuCung.Views
             this.pnlDataBindNV.Controls.Add(this.txtMaNhanVien);
             this.pnlDataBindNV.Controls.Add(this.label14);
             this.pnlDataBindNV.Location = new System.Drawing.Point(5, 106);
-            this.pnlDataBindNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDataBindNV.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDataBindNV.Name = "pnlDataBindNV";
             this.pnlDataBindNV.Size = new System.Drawing.Size(528, 374);
             this.pnlDataBindNV.TabIndex = 9;
@@ -905,7 +924,7 @@ namespace QLThuCung.Views
             // 
             this.txtLuongNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLuongNhanVien.Location = new System.Drawing.Point(195, 266);
-            this.txtLuongNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLuongNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.txtLuongNhanVien.Name = "txtLuongNhanVien";
             this.txtLuongNhanVien.Size = new System.Drawing.Size(257, 26);
             this.txtLuongNhanVien.TabIndex = 6;
@@ -925,7 +944,7 @@ namespace QLThuCung.Views
             // 
             this.txtDiaChiNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChiNhanVien.Location = new System.Drawing.Point(195, 214);
-            this.txtDiaChiNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaChiNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChiNhanVien.Name = "txtDiaChiNhanVien";
             this.txtDiaChiNhanVien.Size = new System.Drawing.Size(257, 26);
             this.txtDiaChiNhanVien.TabIndex = 7;
@@ -945,7 +964,7 @@ namespace QLThuCung.Views
             // 
             this.txtTuoiNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTuoiNhanVien.Location = new System.Drawing.Point(195, 166);
-            this.txtTuoiNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTuoiNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTuoiNhanVien.Name = "txtTuoiNhanVien";
             this.txtTuoiNhanVien.Size = new System.Drawing.Size(257, 26);
             this.txtTuoiNhanVien.TabIndex = 1;
@@ -965,7 +984,7 @@ namespace QLThuCung.Views
             // 
             this.txtSDTNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDTNhanVien.Location = new System.Drawing.Point(195, 114);
-            this.txtSDTNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSDTNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDTNhanVien.Name = "txtSDTNhanVien";
             this.txtSDTNhanVien.Size = new System.Drawing.Size(259, 26);
             this.txtSDTNhanVien.TabIndex = 1;
@@ -985,7 +1004,7 @@ namespace QLThuCung.Views
             // 
             this.txtTenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNhanVien.Location = new System.Drawing.Point(195, 63);
-            this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
             this.txtTenNhanVien.Size = new System.Drawing.Size(259, 26);
             this.txtTenNhanVien.TabIndex = 3;
@@ -1005,7 +1024,7 @@ namespace QLThuCung.Views
             // 
             this.txtMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNhanVien.Location = new System.Drawing.Point(196, 18);
-            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
             this.txtMaNhanVien.Size = new System.Drawing.Size(257, 26);
             this.txtMaNhanVien.TabIndex = 1;
@@ -1025,7 +1044,7 @@ namespace QLThuCung.Views
             // 
             this.btnTimNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimNhanVien.Location = new System.Drawing.Point(399, 26);
-            this.btnTimNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimNhanVien.Name = "btnTimNhanVien";
             this.btnTimNhanVien.Size = new System.Drawing.Size(119, 53);
             this.btnTimNhanVien.TabIndex = 0;
@@ -1038,10 +1057,10 @@ namespace QLThuCung.Views
             this.tabKhachHang.Controls.Add(this.panel3);
             this.tabKhachHang.Controls.Add(this.dgvKhachHang);
             this.tabKhachHang.Location = new System.Drawing.Point(4, 22);
-            this.tabKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.tabKhachHang.Name = "tabKhachHang";
-            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabKhachHang.Size = new System.Drawing.Size(1323, 776);
+            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(4);
+            this.tabKhachHang.Size = new System.Drawing.Size(1287, 742);
             this.tabKhachHang.TabIndex = 2;
             this.tabKhachHang.Text = "Khách Hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
@@ -1056,7 +1075,7 @@ namespace QLThuCung.Views
             this.panel3.Controls.Add(this.pnlDataBindKH);
             this.panel3.Controls.Add(this.btnTimKhachHang);
             this.panel3.Location = new System.Drawing.Point(737, 7);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(539, 722);
             this.panel3.TabIndex = 2;
@@ -1065,7 +1084,7 @@ namespace QLThuCung.Views
             // 
             this.btnReloadKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReloadKH.Location = new System.Drawing.Point(389, 544);
-            this.btnReloadKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReloadKH.Margin = new System.Windows.Forms.Padding(4);
             this.btnReloadKH.Name = "btnReloadKH";
             this.btnReloadKH.Size = new System.Drawing.Size(129, 57);
             this.btnReloadKH.TabIndex = 24;
@@ -1087,7 +1106,7 @@ namespace QLThuCung.Views
             // 
             this.btnHuyKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyKhachHang.Location = new System.Drawing.Point(155, 17);
-            this.btnHuyKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyKhachHang.Name = "btnHuyKhachHang";
             this.btnHuyKhachHang.Size = new System.Drawing.Size(107, 37);
             this.btnHuyKhachHang.TabIndex = 22;
@@ -1099,7 +1118,7 @@ namespace QLThuCung.Views
             // 
             this.btnLuuKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuKhachHang.Location = new System.Drawing.Point(19, 17);
-            this.btnLuuKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuuKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuKhachHang.Name = "btnLuuKhachHang";
             this.btnLuuKhachHang.Size = new System.Drawing.Size(107, 37);
             this.btnLuuKhachHang.TabIndex = 21;
@@ -1111,7 +1130,7 @@ namespace QLThuCung.Views
             // 
             this.tbTimKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTimKhachHang.Location = new System.Drawing.Point(199, 39);
-            this.tbTimKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTimKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimKhachHang.Name = "tbTimKhachHang";
             this.tbTimKhachHang.Size = new System.Drawing.Size(181, 28);
             this.tbTimKhachHang.TabIndex = 17;
@@ -1125,7 +1144,7 @@ namespace QLThuCung.Views
             "Tên",
             "SĐT"});
             this.cbTimKhachHang.Location = new System.Drawing.Point(28, 39);
-            this.cbTimKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbTimKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.cbTimKhachHang.Name = "cbTimKhachHang";
             this.cbTimKhachHang.Size = new System.Drawing.Size(135, 30);
             this.cbTimKhachHang.TabIndex = 16;
@@ -1136,7 +1155,7 @@ namespace QLThuCung.Views
             this.panel4.Controls.Add(this.btnXoaKhachHang);
             this.panel4.Controls.Add(this.btnThemKhachHang);
             this.panel4.Location = new System.Drawing.Point(4, 443);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(528, 74);
             this.panel4.TabIndex = 15;
@@ -1145,7 +1164,7 @@ namespace QLThuCung.Views
             // 
             this.btnSuaKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaKhachHang.Location = new System.Drawing.Point(203, 18);
-            this.btnSuaKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSuaKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaKhachHang.Name = "btnSuaKhachHang";
             this.btnSuaKhachHang.Size = new System.Drawing.Size(107, 37);
             this.btnSuaKhachHang.TabIndex = 19;
@@ -1157,7 +1176,7 @@ namespace QLThuCung.Views
             // 
             this.btnXoaKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaKhachHang.Location = new System.Drawing.Point(339, 18);
-            this.btnXoaKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoaKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaKhachHang.Name = "btnXoaKhachHang";
             this.btnXoaKhachHang.Size = new System.Drawing.Size(107, 37);
             this.btnXoaKhachHang.TabIndex = 18;
@@ -1169,7 +1188,7 @@ namespace QLThuCung.Views
             // 
             this.btnThemKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemKhachHang.Location = new System.Drawing.Point(67, 18);
-            this.btnThemKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemKhachHang.Name = "btnThemKhachHang";
             this.btnThemKhachHang.Size = new System.Drawing.Size(107, 37);
             this.btnThemKhachHang.TabIndex = 16;
@@ -1188,7 +1207,7 @@ namespace QLThuCung.Views
             this.pnlDataBindKH.Controls.Add(this.txtMaKhachHang);
             this.pnlDataBindKH.Controls.Add(this.label13);
             this.pnlDataBindKH.Location = new System.Drawing.Point(5, 106);
-            this.pnlDataBindKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDataBindKH.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDataBindKH.Name = "pnlDataBindKH";
             this.pnlDataBindKH.Size = new System.Drawing.Size(528, 329);
             this.pnlDataBindKH.TabIndex = 9;
@@ -1197,7 +1216,7 @@ namespace QLThuCung.Views
             // 
             this.txtTuoiKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTuoiKhachHang.Location = new System.Drawing.Point(203, 202);
-            this.txtTuoiKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTuoiKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.txtTuoiKhachHang.Name = "txtTuoiKhachHang";
             this.txtTuoiKhachHang.Size = new System.Drawing.Size(181, 28);
             this.txtTuoiKhachHang.TabIndex = 1;
@@ -1217,7 +1236,7 @@ namespace QLThuCung.Views
             // 
             this.txtSDTKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDTKhachHang.Location = new System.Drawing.Point(203, 146);
-            this.txtSDTKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSDTKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDTKhachHang.Name = "txtSDTKhachHang";
             this.txtSDTKhachHang.Size = new System.Drawing.Size(181, 28);
             this.txtSDTKhachHang.TabIndex = 1;
@@ -1237,7 +1256,7 @@ namespace QLThuCung.Views
             // 
             this.txtTenKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKhachHang.Location = new System.Drawing.Point(204, 94);
-            this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
             this.txtTenKhachHang.Size = new System.Drawing.Size(181, 28);
             this.txtTenKhachHang.TabIndex = 3;
@@ -1257,7 +1276,7 @@ namespace QLThuCung.Views
             // 
             this.txtMaKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKhachHang.Location = new System.Drawing.Point(203, 34);
-            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
             this.txtMaKhachHang.Size = new System.Drawing.Size(179, 28);
             this.txtMaKhachHang.TabIndex = 1;
@@ -1277,7 +1296,7 @@ namespace QLThuCung.Views
             // 
             this.btnTimKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKhachHang.Location = new System.Drawing.Point(399, 26);
-            this.btnTimKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKhachHang.Name = "btnTimKhachHang";
             this.btnTimKhachHang.Size = new System.Drawing.Size(119, 53);
             this.btnTimKhachHang.TabIndex = 0;
@@ -1303,10 +1322,10 @@ namespace QLThuCung.Views
             this.tabThuCung.Controls.Add(this.panel1);
             this.tabThuCung.Controls.Add(this.dgvThuCung);
             this.tabThuCung.Location = new System.Drawing.Point(4, 22);
-            this.tabThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.tabThuCung.Name = "tabThuCung";
-            this.tabThuCung.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabThuCung.Size = new System.Drawing.Size(1323, 776);
+            this.tabThuCung.Padding = new System.Windows.Forms.Padding(4);
+            this.tabThuCung.Size = new System.Drawing.Size(1287, 742);
             this.tabThuCung.TabIndex = 1;
             this.tabThuCung.Text = "ThuCung";
             this.tabThuCung.UseVisualStyleBackColor = true;
@@ -1321,7 +1340,7 @@ namespace QLThuCung.Views
             this.panel1.Controls.Add(this.pnlDataBind);
             this.panel1.Controls.Add(this.btnTim);
             this.panel1.Location = new System.Drawing.Point(739, 7);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(539, 722);
             this.panel1.TabIndex = 1;
@@ -1330,7 +1349,7 @@ namespace QLThuCung.Views
             // 
             this.btnReloadTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReloadTC.Location = new System.Drawing.Point(399, 554);
-            this.btnReloadTC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReloadTC.Margin = new System.Windows.Forms.Padding(4);
             this.btnReloadTC.Name = "btnReloadTC";
             this.btnReloadTC.Size = new System.Drawing.Size(129, 57);
             this.btnReloadTC.TabIndex = 23;
@@ -1343,7 +1362,7 @@ namespace QLThuCung.Views
             this.panelLuuHuy.Controls.Add(this.btnLuuThuCung);
             this.panelLuuHuy.Controls.Add(this.btnHuyThuCung);
             this.panelLuuHuy.Location = new System.Drawing.Point(188, 457);
-            this.panelLuuHuy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLuuHuy.Margin = new System.Windows.Forms.Padding(4);
             this.panelLuuHuy.Name = "panelLuuHuy";
             this.panelLuuHuy.Size = new System.Drawing.Size(287, 75);
             this.panelLuuHuy.TabIndex = 22;
@@ -1352,7 +1371,7 @@ namespace QLThuCung.Views
             // 
             this.btnLuuThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuThuCung.Location = new System.Drawing.Point(21, 16);
-            this.btnLuuThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuuThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuThuCung.Name = "btnLuuThuCung";
             this.btnLuuThuCung.Size = new System.Drawing.Size(107, 37);
             this.btnLuuThuCung.TabIndex = 20;
@@ -1364,7 +1383,7 @@ namespace QLThuCung.Views
             // 
             this.btnHuyThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyThuCung.Location = new System.Drawing.Point(157, 16);
-            this.btnHuyThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyThuCung.Name = "btnHuyThuCung";
             this.btnHuyThuCung.Size = new System.Drawing.Size(107, 37);
             this.btnHuyThuCung.TabIndex = 19;
@@ -1376,7 +1395,7 @@ namespace QLThuCung.Views
             // 
             this.tbTimThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTimThuCung.Location = new System.Drawing.Point(199, 39);
-            this.tbTimThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTimThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimThuCung.Name = "tbTimThuCung";
             this.tbTimThuCung.Size = new System.Drawing.Size(181, 28);
             this.tbTimThuCung.TabIndex = 17;
@@ -1390,7 +1409,7 @@ namespace QLThuCung.Views
             "Giới Tính",
             "Tuổi"});
             this.cbbTimThuCung.Location = new System.Drawing.Point(29, 39);
-            this.cbbTimThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbTimThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.cbbTimThuCung.Name = "cbbTimThuCung";
             this.cbbTimThuCung.Size = new System.Drawing.Size(135, 30);
             this.cbbTimThuCung.TabIndex = 16;
@@ -1401,7 +1420,7 @@ namespace QLThuCung.Views
             this.panel2.Controls.Add(this.btnXoaThuCung);
             this.panel2.Controls.Add(this.btnThemThuCung);
             this.panel2.Location = new System.Drawing.Point(5, 457);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(531, 75);
             this.panel2.TabIndex = 15;
@@ -1410,7 +1429,7 @@ namespace QLThuCung.Views
             // 
             this.btnSuaThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaThuCung.Location = new System.Drawing.Point(203, 16);
-            this.btnSuaThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSuaThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaThuCung.Name = "btnSuaThuCung";
             this.btnSuaThuCung.Size = new System.Drawing.Size(107, 37);
             this.btnSuaThuCung.TabIndex = 21;
@@ -1422,7 +1441,7 @@ namespace QLThuCung.Views
             // 
             this.btnXoaThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaThuCung.Location = new System.Drawing.Point(339, 16);
-            this.btnXoaThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoaThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaThuCung.Name = "btnXoaThuCung";
             this.btnXoaThuCung.Size = new System.Drawing.Size(107, 37);
             this.btnXoaThuCung.TabIndex = 18;
@@ -1434,7 +1453,7 @@ namespace QLThuCung.Views
             // 
             this.btnThemThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemThuCung.Location = new System.Drawing.Point(67, 16);
-            this.btnThemThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemThuCung.Name = "btnThemThuCung";
             this.btnThemThuCung.Size = new System.Drawing.Size(107, 37);
             this.btnThemThuCung.TabIndex = 16;
@@ -1459,7 +1478,7 @@ namespace QLThuCung.Views
             this.pnlDataBind.Controls.Add(this.tbIDThuCung);
             this.pnlDataBind.Controls.Add(this.labMaDoUong);
             this.pnlDataBind.Location = new System.Drawing.Point(5, 106);
-            this.pnlDataBind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDataBind.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDataBind.Name = "pnlDataBind";
             this.pnlDataBind.Size = new System.Drawing.Size(531, 343);
             this.pnlDataBind.TabIndex = 9;
@@ -1472,7 +1491,7 @@ namespace QLThuCung.Views
             "Male",
             "Female"});
             this.cbGioitinh.Location = new System.Drawing.Point(141, 207);
-            this.cbGioitinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbGioitinh.Margin = new System.Windows.Forms.Padding(4);
             this.cbGioitinh.Name = "cbGioitinh";
             this.cbGioitinh.Size = new System.Drawing.Size(177, 28);
             this.cbGioitinh.TabIndex = 4;
@@ -1481,7 +1500,7 @@ namespace QLThuCung.Views
             // 
             this.tbGiaNhapThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbGiaNhapThuCung.Location = new System.Drawing.Point(141, 261);
-            this.tbGiaNhapThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbGiaNhapThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.tbGiaNhapThuCung.Name = "tbGiaNhapThuCung";
             this.tbGiaNhapThuCung.Size = new System.Drawing.Size(177, 26);
             this.tbGiaNhapThuCung.TabIndex = 1;
@@ -1512,7 +1531,7 @@ namespace QLThuCung.Views
             // 
             this.tbCanNangThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCanNangThuCung.Location = new System.Drawing.Point(141, 155);
-            this.tbCanNangThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCanNangThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.tbCanNangThuCung.Name = "tbCanNangThuCung";
             this.tbCanNangThuCung.Size = new System.Drawing.Size(177, 26);
             this.tbCanNangThuCung.TabIndex = 1;
@@ -1532,7 +1551,7 @@ namespace QLThuCung.Views
             // 
             this.tbNccThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNccThuCung.Location = new System.Drawing.Point(141, 101);
-            this.tbNccThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNccThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.tbNccThuCung.Name = "tbNccThuCung";
             this.tbNccThuCung.Size = new System.Drawing.Size(177, 26);
             this.tbNccThuCung.TabIndex = 1;
@@ -1552,7 +1571,7 @@ namespace QLThuCung.Views
             // 
             this.tbTuoiThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTuoiThuCung.Location = new System.Drawing.Point(400, 78);
-            this.tbTuoiThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTuoiThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.tbTuoiThuCung.Name = "tbTuoiThuCung";
             this.tbTuoiThuCung.Size = new System.Drawing.Size(96, 26);
             this.tbTuoiThuCung.TabIndex = 1;
@@ -1572,7 +1591,7 @@ namespace QLThuCung.Views
             // 
             this.tbLoaiThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLoaiThuCung.Location = new System.Drawing.Point(141, 52);
-            this.tbLoaiThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbLoaiThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.tbLoaiThuCung.Name = "tbLoaiThuCung";
             this.tbLoaiThuCung.Size = new System.Drawing.Size(175, 26);
             this.tbLoaiThuCung.TabIndex = 3;
@@ -1592,7 +1611,7 @@ namespace QLThuCung.Views
             // 
             this.tbIDThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDThuCung.Location = new System.Drawing.Point(141, 5);
-            this.tbIDThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbIDThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.tbIDThuCung.Name = "tbIDThuCung";
             this.tbIDThuCung.Size = new System.Drawing.Size(175, 26);
             this.tbIDThuCung.TabIndex = 1;
@@ -1612,7 +1631,7 @@ namespace QLThuCung.Views
             // 
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.Location = new System.Drawing.Point(399, 26);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(4);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(119, 53);
             this.btnTim.TabIndex = 0;
@@ -1625,7 +1644,7 @@ namespace QLThuCung.Views
             this.dgvThuCung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThuCung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThuCung.Location = new System.Drawing.Point(8, 7);
-            this.dgvThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.dgvThuCung.Name = "dgvThuCung";
             this.dgvThuCung.RowHeadersWidth = 51;
             this.dgvThuCung.Size = new System.Drawing.Size(723, 722);
@@ -1638,10 +1657,10 @@ namespace QLThuCung.Views
             this.tabHome.Controls.Add(this.fpnlMain);
             this.tabHome.Controls.Add(this.btnHDDV);
             this.tabHome.Location = new System.Drawing.Point(4, 22);
-            this.tabHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabHome.Margin = new System.Windows.Forms.Padding(4);
             this.tabHome.Name = "tabHome";
-            this.tabHome.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabHome.Size = new System.Drawing.Size(1323, 776);
+            this.tabHome.Padding = new System.Windows.Forms.Padding(4);
+            this.tabHome.Size = new System.Drawing.Size(1287, 742);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
@@ -1652,7 +1671,7 @@ namespace QLThuCung.Views
             this.pnlChiTietThuCung.Controls.Add(this.panel9);
             this.pnlChiTietThuCung.Controls.Add(this.label35);
             this.pnlChiTietThuCung.Location = new System.Drawing.Point(8, 4);
-            this.pnlChiTietThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlChiTietThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.pnlChiTietThuCung.Name = "pnlChiTietThuCung";
             this.pnlChiTietThuCung.Size = new System.Drawing.Size(692, 734);
             this.pnlChiTietThuCung.TabIndex = 14;
@@ -1661,7 +1680,7 @@ namespace QLThuCung.Views
             // 
             this.btnBackHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackHome.Location = new System.Drawing.Point(509, 545);
-            this.btnBackHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBackHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnBackHome.Name = "btnBackHome";
             this.btnBackHome.Size = new System.Drawing.Size(124, 39);
             this.btnBackHome.TabIndex = 13;
@@ -1684,7 +1703,7 @@ namespace QLThuCung.Views
             this.panel9.Controls.Add(this.txtIDChiTietThuCung);
             this.panel9.Controls.Add(this.label34);
             this.panel9.Location = new System.Drawing.Point(137, 144);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(401, 377);
             this.panel9.TabIndex = 11;
@@ -1693,7 +1712,7 @@ namespace QLThuCung.Views
             // 
             this.txtGenderChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGenderChiTietThuCung.Location = new System.Drawing.Point(179, 304);
-            this.txtGenderChiTietThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGenderChiTietThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenderChiTietThuCung.Name = "txtGenderChiTietThuCung";
             this.txtGenderChiTietThuCung.Size = new System.Drawing.Size(127, 26);
             this.txtGenderChiTietThuCung.TabIndex = 4;
@@ -1713,7 +1732,7 @@ namespace QLThuCung.Views
             // 
             this.txtCanNangChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCanNangChiTietThuCung.Location = new System.Drawing.Point(180, 242);
-            this.txtCanNangChiTietThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCanNangChiTietThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.txtCanNangChiTietThuCung.Name = "txtCanNangChiTietThuCung";
             this.txtCanNangChiTietThuCung.Size = new System.Drawing.Size(125, 26);
             this.txtCanNangChiTietThuCung.TabIndex = 1;
@@ -1733,7 +1752,7 @@ namespace QLThuCung.Views
             // 
             this.txtNCCChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNCCChiTietThuCung.Location = new System.Drawing.Point(179, 128);
-            this.txtNCCChiTietThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNCCChiTietThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.txtNCCChiTietThuCung.Name = "txtNCCChiTietThuCung";
             this.txtNCCChiTietThuCung.Size = new System.Drawing.Size(177, 26);
             this.txtNCCChiTietThuCung.TabIndex = 1;
@@ -1753,7 +1772,7 @@ namespace QLThuCung.Views
             // 
             this.txtTuoiChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTuoiChiTietThuCung.Location = new System.Drawing.Point(181, 182);
-            this.txtTuoiChiTietThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTuoiChiTietThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.txtTuoiChiTietThuCung.Name = "txtTuoiChiTietThuCung";
             this.txtTuoiChiTietThuCung.Size = new System.Drawing.Size(124, 26);
             this.txtTuoiChiTietThuCung.TabIndex = 1;
@@ -1773,7 +1792,7 @@ namespace QLThuCung.Views
             // 
             this.txtLoaiChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoaiChiTietThuCung.Location = new System.Drawing.Point(181, 69);
-            this.txtLoaiChiTietThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLoaiChiTietThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.txtLoaiChiTietThuCung.Name = "txtLoaiChiTietThuCung";
             this.txtLoaiChiTietThuCung.Size = new System.Drawing.Size(175, 26);
             this.txtLoaiChiTietThuCung.TabIndex = 3;
@@ -1793,7 +1812,7 @@ namespace QLThuCung.Views
             // 
             this.txtIDChiTietThuCung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDChiTietThuCung.Location = new System.Drawing.Point(181, 22);
-            this.txtIDChiTietThuCung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIDChiTietThuCung.Margin = new System.Windows.Forms.Padding(4);
             this.txtIDChiTietThuCung.Name = "txtIDChiTietThuCung";
             this.txtIDChiTietThuCung.Size = new System.Drawing.Size(175, 26);
             this.txtIDChiTietThuCung.TabIndex = 1;
@@ -1834,7 +1853,7 @@ namespace QLThuCung.Views
             // 
             this.btnHDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHDDV.Location = new System.Drawing.Point(1100, 21);
-            this.btnHDDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHDDV.Margin = new System.Windows.Forms.Padding(4);
             this.btnHDDV.Name = "btnHDDV";
             this.btnHDDV.Size = new System.Drawing.Size(148, 59);
             this.btnHDDV.TabIndex = 0;
@@ -1850,26 +1869,192 @@ namespace QLThuCung.Views
             this.tabctrlMain.Controls.Add(this.tabNhanVien);
             this.tabctrlMain.Controls.Add(this.tabProfile);
             this.tabctrlMain.Controls.Add(this.tabUser);
+            this.tabctrlMain.Controls.Add(this.tb);
             this.tabctrlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabctrlMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabctrlMain.ItemSize = new System.Drawing.Size(42, 18);
             this.tabctrlMain.Location = new System.Drawing.Point(0, 0);
-            this.tabctrlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabctrlMain.Margin = new System.Windows.Forms.Padding(4);
             this.tabctrlMain.Name = "tabctrlMain";
             this.tabctrlMain.Padding = new System.Drawing.Point(8, 3);
             this.tabctrlMain.SelectedIndex = 0;
-            this.tabctrlMain.Size = new System.Drawing.Size(1331, 802);
+            this.tabctrlMain.Size = new System.Drawing.Size(1295, 768);
             this.tabctrlMain.TabIndex = 0;
             this.tabctrlMain.Click += new System.EventHandler(this.tabctrlMain_Click);
+            // 
+            // tb
+            // 
+            this.tb.Controls.Add(this.panel11);
+            this.tb.Controls.Add(this.dgvLoaiTC);
+            this.tb.Location = new System.Drawing.Point(4, 22);
+            this.tb.Name = "tb";
+            this.tb.Padding = new System.Windows.Forms.Padding(3);
+            this.tb.Size = new System.Drawing.Size(1287, 742);
+            this.tb.TabIndex = 7;
+            this.tb.Text = "Loại thú cưng";
+            this.tb.UseVisualStyleBackColor = true;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.button1);
+            this.panel11.Controls.Add(this.panel13);
+            this.panel11.Controls.Add(this.txtTLTC);
+            this.panel11.Controls.Add(this.label39);
+            this.panel11.Controls.Add(this.txtIDLTC);
+            this.panel11.Controls.Add(this.label40);
+            this.panel11.Location = new System.Drawing.Point(692, 20);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(531, 349);
+            this.panel11.TabIndex = 10;
+            // 
+            // txtTLTC
+            // 
+            this.txtTLTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTLTC.Location = new System.Drawing.Point(141, 52);
+            this.txtTLTC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTLTC.Name = "txtTLTC";
+            this.txtTLTC.Size = new System.Drawing.Size(175, 26);
+            this.txtTLTC.TabIndex = 3;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(17, 52);
+            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(46, 20);
+            this.label39.TabIndex = 2;
+            this.label39.Text = "Tên:";
+            // 
+            // txtIDLTC
+            // 
+            this.txtIDLTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDLTC.Location = new System.Drawing.Point(141, 5);
+            this.txtIDLTC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIDLTC.Name = "txtIDLTC";
+            this.txtIDLTC.Size = new System.Drawing.Size(175, 26);
+            this.txtIDLTC.TabIndex = 1;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(17, 7);
+            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(34, 20);
+            this.label40.TabIndex = 0;
+            this.label40.Text = "ID:";
+            // 
+            // dgvLoaiTC
+            // 
+            this.dgvLoaiTC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLoaiTC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoaiTC.Location = new System.Drawing.Point(4, 4);
+            this.dgvLoaiTC.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLoaiTC.Name = "dgvLoaiTC";
+            this.dgvLoaiTC.RowHeadersWidth = 51;
+            this.dgvLoaiTC.Size = new System.Drawing.Size(632, 722);
+            this.dgvLoaiTC.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.panelLuuHuyL);
+            this.panel13.Controls.Add(this.btSuaL);
+            this.panel13.Controls.Add(this.btXoaL);
+            this.panel13.Controls.Add(this.btThemL);
+            this.panel13.Location = new System.Drawing.Point(0, 139);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(531, 75);
+            this.panel13.TabIndex = 26;
+            // 
+            // panelLuuHuyL
+            // 
+            this.panelLuuHuyL.Controls.Add(this.btLuuL);
+            this.panelLuuHuyL.Controls.Add(this.btHuyL);
+            this.panelLuuHuyL.Location = new System.Drawing.Point(191, 0);
+            this.panelLuuHuyL.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLuuHuyL.Name = "panelLuuHuyL";
+            this.panelLuuHuyL.Size = new System.Drawing.Size(287, 75);
+            this.panelLuuHuyL.TabIndex = 23;
+            // 
+            // btLuuL
+            // 
+            this.btLuuL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLuuL.Location = new System.Drawing.Point(21, 16);
+            this.btLuuL.Margin = new System.Windows.Forms.Padding(4);
+            this.btLuuL.Name = "btLuuL";
+            this.btLuuL.Size = new System.Drawing.Size(107, 37);
+            this.btLuuL.TabIndex = 20;
+            this.btLuuL.Text = "Lưu";
+            this.btLuuL.UseVisualStyleBackColor = true;
+            // 
+            // btHuyL
+            // 
+            this.btHuyL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHuyL.Location = new System.Drawing.Point(157, 16);
+            this.btHuyL.Margin = new System.Windows.Forms.Padding(4);
+            this.btHuyL.Name = "btHuyL";
+            this.btHuyL.Size = new System.Drawing.Size(107, 37);
+            this.btHuyL.TabIndex = 19;
+            this.btHuyL.Text = "Hủy";
+            this.btHuyL.UseVisualStyleBackColor = true;
+            // 
+            // btSuaL
+            // 
+            this.btSuaL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSuaL.Location = new System.Drawing.Point(203, 16);
+            this.btSuaL.Margin = new System.Windows.Forms.Padding(4);
+            this.btSuaL.Name = "btSuaL";
+            this.btSuaL.Size = new System.Drawing.Size(107, 37);
+            this.btSuaL.TabIndex = 21;
+            this.btSuaL.Text = "Sửa";
+            this.btSuaL.UseVisualStyleBackColor = true;
+            // 
+            // btXoaL
+            // 
+            this.btXoaL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXoaL.Location = new System.Drawing.Point(339, 16);
+            this.btXoaL.Margin = new System.Windows.Forms.Padding(4);
+            this.btXoaL.Name = "btXoaL";
+            this.btXoaL.Size = new System.Drawing.Size(107, 37);
+            this.btXoaL.TabIndex = 18;
+            this.btXoaL.Text = "Xóa";
+            this.btXoaL.UseVisualStyleBackColor = true;
+            // 
+            // btThemL
+            // 
+            this.btThemL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThemL.Location = new System.Drawing.Point(67, 16);
+            this.btThemL.Margin = new System.Windows.Forms.Padding(4);
+            this.btThemL.Name = "btThemL";
+            this.btThemL.Size = new System.Drawing.Size(107, 37);
+            this.btThemL.TabIndex = 16;
+            this.btThemL.Text = "Thêm";
+            this.btThemL.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(348, 238);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 57);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Tải Lại";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1331, 802);
+            this.ClientSize = new System.Drawing.Size(1295, 768);
             this.Controls.Add(this.tabctrlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLy";
@@ -1877,10 +2062,10 @@ namespace QLThuCung.Views
             this.tabUser.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.pnlLuuHuyUser.ResumeLayout(false);
             this.pnlDataBindUser.ResumeLayout(false);
             this.pnlDataBindUser.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.pnlLuuHuyUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.tabProfile.ResumeLayout(false);
             this.pnlLuuHuyProfile.ResumeLayout(false);
@@ -1916,6 +2101,12 @@ namespace QLThuCung.Views
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.tabctrlMain.ResumeLayout(false);
+            this.tb.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiTC)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panelLuuHuyL.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2066,5 +2257,20 @@ namespace QLThuCung.Views
         private System.Windows.Forms.TextBox txtIDChiTietThuCung;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TabPage tb;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.TextBox txtTLTC;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtIDLTC;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.DataGridView dgvLoaiTC;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panelLuuHuyL;
+        private System.Windows.Forms.Button btLuuL;
+        private System.Windows.Forms.Button btHuyL;
+        private System.Windows.Forms.Button btSuaL;
+        private System.Windows.Forms.Button btXoaL;
+        private System.Windows.Forms.Button btThemL;
+        private System.Windows.Forms.Button button1;
     }
 }
